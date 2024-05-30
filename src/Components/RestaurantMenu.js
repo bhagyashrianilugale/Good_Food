@@ -8,7 +8,7 @@ const RestaurantMenu = ()=>{
 
     const { resId }  = useParams(); //to fetch the restaurant id from url
 
-    const [ showIndex, setShowIndex ] = useState(0);
+    const [ showIndex, setShowIndex ] = useState(null);
 
     const resInfo = useRestaurant(resId);
 
@@ -24,12 +24,7 @@ const RestaurantMenu = ()=>{
           return c?.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory" || c?.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
       });
 
-    
-        // console.log(categories);
-    
-    // const { name } = resInfo
-
-   return (
+    return (
         <div className="text-center p-6 m-6">              
              <h2 className=" font-bold text-2xl ">{name}</h2>
              <p className="font-light">

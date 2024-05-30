@@ -5,9 +5,9 @@ const Error = ()=>{
 
     console.log(error);
     return(
-        <div>
-            <h1>Oops!!</h1>
-            <h4>Something wents wrong yarr😸!</h4>
+        <div className="m-auto">
+            <h1 className="font-bold">Oops!!</h1>
+            <h4 className="text-red-500">Something wents wrong yarr😸!</h4>
             <p> {error.status}: {error.statusText}</p>
         </div>
     )

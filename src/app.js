@@ -7,10 +7,13 @@ import Error from './Components/Error';
 import ContactUs from './Components/ContactUs';
 import ResraurantMenu from './Components/RestaurantMenu';
 import Grocery from './Components/Grocery';
+import MindItemCollection from './Components/MindItemCollection';
 import { createBrowserRouter , RouterProvider, Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { UserContext } from './utils/UserContext';
+import { Provider } from 'react-redux';
+import appStore from './utils/appStore';
 
 //React Components
 /*
@@ -32,7 +35,9 @@ import { UserContext } from './utils/UserContext';
 
 const Grocery = lazy(()=> import('./Components/Grocery'));
 
-const About = lazy(()=> import('./Components/About'))
+const About = lazy(()=> import('./Components/About'));
+
+const Cart = lazy(()=> import('./Components/Cart'));
 
 const AppLayout = ()=>{
 
@@ -50,12 +55,14 @@ useEffect(()=>{
 
 }, []);
    return(
+    <Provider store={appStore}>
       <UserContext.Provider value={{ loggedUser : userName, SetUserName }}>
           <div className="app">
               <Header/>
               <Outlet/>
          </div>
       </UserContext.Provider>
+   </Provider>
    )
 }
 
@@ -81,9 +88,17 @@ const appRouter  = createBrowserRouter([
             element: <ResraurantMenu/>
          },
          {
+            path:"/collections/:itemId",
+            element: <MindItemCollection/>
+         },
+         {
             path:"/grocery",
             element: <Suspense fallback={<h1>Loading...</h1>}><Grocery/></Suspense>
-         }
+         },
+         {
+            path:"/cart",
+            element: <Suspense fallback={<h1>Loading...</h1>}><Cart/></Suspense>
+         },
       ],
       errorElement: <Error/>
    },
