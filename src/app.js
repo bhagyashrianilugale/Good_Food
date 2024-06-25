@@ -43,10 +43,11 @@ const AppLayout = ()=>{
 
 const [ userName, SetUserName ] = useState("");
 
+
 //Authentication logic
 
 useEffect(()=>{
-   // Authentication by API
+// Authentication by API
   const data = {
       name: "Bhagyashri Ugale"
    }
@@ -60,7 +61,7 @@ useEffect(()=>{
           <div className="app">
               <Header/>
               <Outlet/>
-         </div>
+          </div>
       </UserContext.Provider>
    </Provider>
    )

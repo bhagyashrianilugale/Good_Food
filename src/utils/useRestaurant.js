@@ -3,7 +3,6 @@ import { MENU_URL } from "./constant";
 
 
 const useRestaurant = (resId)=>{
-    console.log(resId);
     const [ resInfo, setResInfo ] = useState(null);
 
     useEffect(()=>{

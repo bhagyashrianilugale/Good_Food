@@ -1,23 +1,27 @@
 import { Link } from "react-router-dom";
+import { CDN_URL } from "../utils/constant";
+import useMind from "../utils/useMind";
+import { useDispatch } from "react-redux";
+import { addfilteredMindItems } from "../utils/restaurantSlice";
 
-const Mind = (props)=>{
-    const { mindItemsData} = props;
+const Mind = ({ imageId, itemLink })=>{
+     
+    // Slice itemid from itemLink and pass into useMind custom hook to get filtered mind items
+    const itemId = itemLink.slice(35,40);
+    const filteredMindItems = useMind(itemId);
+    const dispatch = useDispatch();
+    dispatch(addfilteredMindItems(filteredMindItems));
      return(
-        <div>
-           <h1 className="font-bold text-2xl mx-12">What's on your mind?</h1>
-           <div className="flex overflow-x-scroll   no-scrollbar m-6 p-4">
-                {mindItemsData.info.map((item)=>{
-                return(
-                <Link key={item.id}
-                    to= {"/collections/"+ item.id}>
-                   <div className="w-20 h-20 m-2">
-                      <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/"+item.imageId}  alt="itemImg"/>
+        <>
+           <div>
+              <Link key={ itemId }
+                    to= { "/collections/"+ itemId }>
+                   <div className="w-40 h-40">
+                        <img src={ CDN_URL + imageId }  alt="itemImg"/>
                    </div>
-                </Link>
-                )
-            })}
-             </div>
-        </div>
+              </Link>
+            </div>
+        </>
 
     )
 };

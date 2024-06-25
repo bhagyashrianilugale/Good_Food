@@ -2,4 +2,4 @@
 /.parcel-cache
 /dist
 /coverage
-src/utils/constant.js
+src/utils/constant.js 

@@ -16,12 +16,10 @@ class UserClass extends React.Component{
  
 async componentDidMount(){
         const Data = await fetch("https://api.github.com/users/bhagyashrianilugale");
-        const Json = await Data.json();
-        console.log(Json);
+        let Json = await Data.json();
         this.setState({
             userInfo: Json
         });
-    console.log( "child component did mount");
     this.timer = setInterval(()=>{
         console.log("Bhagyashri");
     },1000);

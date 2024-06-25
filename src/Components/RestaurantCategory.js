@@ -1,10 +1,20 @@
+import { useDispatch } from "react-redux";
 import ItemCard from "./ItemCard";
+import { addShowItemIndex, removeShowItemIndex } from "../utils/restaurantSlice";
+import { useEffect } from "react";
 
-const RestaurantCategory = ({data, showItem, setShowIndex})=>{
+const RestaurantCategory = ({data, showItem, showIndex})=>{
 
+    const dispatch = useDispatch();
     const handleClick = () =>{
-          setShowIndex();
+         // Dispatch action to add showItemIndex on redux store
+          dispatch(addShowItemIndex(showIndex));
     }
+
+    useEffect(()=>{
+         // Dispatch action to remove showItemIndex from redux store
+         dispatch(removeShowItemIndex());
+    }, []);
 
     return (
         <div>

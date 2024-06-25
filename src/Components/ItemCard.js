@@ -1,14 +1,17 @@
-import  CDN_URL  from "../utils/constant";
+import  { CDN_URL}  from "../utils/constant";
 import { addItem } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
-
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const ItemCard = ({items}) =>{
     const dispatch = useDispatch();
     
     const handleAddItem = (item) =>{
             dispatch(addItem(item));
-    } 
+            toast.success("Your delicious item is added to cart!",{ autoClose: 1000 });
+
+} 
 return(
         <div>
                { items?.map((item)=>{
@@ -33,7 +36,8 @@ return(
                                       <img src={ CDN_URL + item.card.info.imageId } alt="item_card_img"/> 
                                       <button  onClick={()=>handleAddItem(item)} 
                                           className="p-2 bg-white shadow-lg mx-8 text-green-500 rounded-lg hover:shadow-black">Add +</button>
-                                </div>
+                                          <ToastContainer position="top-center"/>
+                                 </div>
                                 : <img/> 
                                 }
                             </div> 
