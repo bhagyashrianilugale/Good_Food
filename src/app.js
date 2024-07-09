@@ -2,12 +2,11 @@
 import React, { Suspense, lazy, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './Components/Header';
-import Body from './Components/Body';
-import Error from './Components/Error';
-import ContactUs from './Components/ContactUs';
-import ResraurantMenu from './Components/RestaurantMenu';
-import Grocery from './Components/Grocery';
-import MindItemCollection from './Components/MindItemCollection';
+import Body from './pages/Body';
+import Error from './pages/Error';
+import ContactUs from './pages/ContactUs';
+import ResraurantMenu from './components/RestaurantMenu';
+import MindItemCollection from './components/MindItemCollection';
 import { createBrowserRouter , RouterProvider, Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -33,11 +32,11 @@ import appStore from './utils/appStore';
 
 */
 
-const Grocery = lazy(()=> import('./Components/Grocery'));
+// const Grocery = lazy(()=> import('./components/Grocery'));
 
-const About = lazy(()=> import('./Components/About'));
+const About = lazy(()=> import('./pages/About'));
 
-const Cart = lazy(()=> import('./Components/Cart'));
+const Cart = lazy(()=> import('./components/Cart'));
 
 const AppLayout = ()=>{
 
@@ -55,15 +54,16 @@ useEffect(()=>{
    SetUserName(data.name);
 
 }, []);
+
    return(
     <Provider store={appStore}>
-      <UserContext.Provider value={{ loggedUser : userName, SetUserName }}>
+      {/* <UserContext.Provider value={{ loggedUser : userName, SetUserName }}> */}
           <div className="app">
               <Header/>
               <Outlet/>
           </div>
-      </UserContext.Provider>
-   </Provider>
+      {/* </UserContext.Provider> */}
+    </Provider>
    )
 }
 
@@ -89,12 +89,8 @@ const appRouter  = createBrowserRouter([
             element: <ResraurantMenu/>
          },
          {
-            path:"/collections/:itemId",
+            path:"/collections/:resId/:itemName",
             element: <MindItemCollection/>
-         },
-         {
-            path:"/grocery",
-            element: <Suspense fallback={<h1>Loading...</h1>}><Grocery/></Suspense>
          },
          {
             path:"/cart",

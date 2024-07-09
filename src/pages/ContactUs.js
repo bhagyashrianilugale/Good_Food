@@ -1,7 +1,8 @@
 
 const ContactUs = () =>{
     return (
-        <div className=" flex">
+        <>
+        <div className="flex mt-[10%]">
             <div className=" py-56 px-8 m-4" >
                 <p className="font-bold text-xl">Hi there 🙋‍♂️ <br></br>
                 I am Bhagyashri Ugale, if you have any queries or suggestions please reach out to me via mail.
@@ -11,7 +12,7 @@ const ContactUs = () =>{
                 <img  src="https://pngfile.net/public/uploads/preview/flying-burger-png-image-11703410842ovsg23xhhr.png"></img>
             </div>
         </div>
-        
+    </>
     )
 }
 

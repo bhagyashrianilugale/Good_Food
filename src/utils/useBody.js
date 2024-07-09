@@ -3,7 +3,7 @@ import { SWIGGY_URL } from './constant';
 
 const useBody = () =>{ 
 
-     const [data, setData] = useState([]);
+    const [data, setData] = useState([]);
 
     useEffect(()=>{
         fetchData();

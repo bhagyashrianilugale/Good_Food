@@ -4,31 +4,54 @@ const cartSlice = createSlice({
     name: "cart",
 
     initialState: {
-        items: []
+        items: [],
+        restaurant: null
     },
 
     reducers: {
         addItem : (state, action)=>{
-
-            //Mutating state here
-            state.items.push(action.payload); 
+             const { item, restaurant } = action.payload;
+             if (state.restaurant === null){
+                 state.restaurant = restaurant;
+                 state.items.push(item);
+             } else if (state?.restaurant?.id !== restaurant?.id){
+                 state.restaurant = restaurant;
+                 state.items = [item];
+             } else {
+                state.items.push(item);
+             }
         },
 
-        removeItem : (state, action)=>{
-
-           //Mutating state here
-           state.items.pop();
+        increaseCount : (state, action) =>{
+               state.items.map((item)=>{
+                   if(item[0]?.card?.info?.id == action.payload){
+                    item[1]++;
+                   }
+               });
         },
 
-        clearItem : (state, action)=>{
-            
-            //Mutating state here
-            state.items.length = 0;
+        decreaseCount : (state, action) =>{
+            state.items.map((item, index)=>{
+                if(item[0]?.card?.info?.id == action.payload){
+                    item[1]--;
+                    if(item[1] == 0) state.items.splice(index, 1);
+                }
+                if(state.items.length == 0) state.restaurant = null;
+            });
+           
         },
-    }
+
+        clearCart : ()=>{
+            return {
+                items: [],
+                restaurant: null,
+            };
+        },
+
+    },
 
 });
 
-export const { addItem, removeItem, clearItem } = cartSlice.actions;
+export const { addItem, increaseCount, decreaseCount, clearCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

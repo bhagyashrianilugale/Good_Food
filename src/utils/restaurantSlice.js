@@ -6,38 +6,55 @@ const restaurantSlice = createSlice({
     initialState : {
           listOfRestaurant: null,
           filteredRestaurant: null,
-          filteredMindItems: null,
           mindItems: null,
           restaurantSearchText: "",
-          showItemIndex: null,
+          showItemIndex: 0,
+          showHiddenUI : false,
+          menuCategory : ""
     },
 
     reducers: {
-        addlistOfRestaurants: (state, action)=>{
+         addlistOfRestaurants: (state, action)=>{
             state.listOfRestaurant = action.payload;
         },
 
-       addfilteredRestaurants: (state, action)=>{
+         addfilteredRestaurants: (state, action)=>{
             state.filteredRestaurant = action.payload;
-       },
+        },
 
-       addMindItems: (state, action)=>{
+        addMindItems: (state, action)=>{
            state.mindItems = action.payload;
-       },
+         },
 
-       addfilteredMindItems: (state, action)=>{
-        state.filteredMindItems = action.payload;
-      },
+         addMenuCategory: (state, action)=>{
+         state.menuCategory = action.payload;
+        },
+
+    //    addfilteredMindItems: (state, action)=>{
+    //     state.filteredMindItems = action.payload;
+    //   },
+        
+    //    addallMindItems: (state, action)=>{
+    //     state.filteredMindItems = action.payload;
+    //   },
        
-       updateSearchText: (state, action)=>{
+         updateSearchText: (state, action)=>{
            state.restaurantSearchText = action.payload;
-       },
+        },
+ 
+         removeSearchText: (state, action)=>{
+           state.restaurantSearchText = action.payload;
+        },
+       
+         updateShowList: (state, action)=>{
+          state.showHiddenUI= action.payload;
+        },
 
-       addShowItemIndex: (state, action)=>{
+         addShowItemIndex: (state, action)=>{
             state.showItemIndex = action.payload;
        },
        
-       removeShowItemIndex: (state, action)=>{
+         removeShowItemIndex: (state)=>{
            state.showItemIndex = null;
        }
     }
@@ -45,6 +62,14 @@ const restaurantSlice = createSlice({
 });
 
 
-export const { addlistOfRestaurants, addfilteredRestaurants,  addMindItems, addfilteredMindItems, updateSearchText, addShowItemIndex, removeShowItemIndex } = restaurantSlice.actions;
+export const { addlistOfRestaurants, 
+               addfilteredRestaurants,  
+               addMindItems,
+               addMenuCategory, 
+               updateSearchText,
+               removeSearchText,
+               updateShowList,
+               addShowItemIndex, 
+               removeShowItemIndex} = restaurantSlice.actions;
 
 export default restaurantSlice.reducer;
