@@ -1,4 +1,4 @@
-import UserClass from "../components/UserClass";
+import UserClass from "../Components/UserClass";
 import React from 'react'
 
 const About = () => {

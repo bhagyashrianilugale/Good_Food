@@ -1,12 +1,12 @@
 
 import React, { Suspense, lazy, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import Header from './components/Header';
+import Header from './Components/Header';
 import Body from './pages/Body';
 import Error from './pages/Error';
 import ContactUs from './pages/ContactUs';
-import ResraurantMenu from './components/RestaurantMenu';
-import MindItemCollection from './components/MindItemCollection';
+import ResraurantMenu from './Components/RestaurantMenu';
+import MindItemCollection from './Components/MindItemCollection';
 import { createBrowserRouter , RouterProvider, Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -17,7 +17,7 @@ import appStore from './utils/appStore';
 
 const About = lazy(()=> import('./pages/About'));
 
-const Cart = lazy(()=> import('./components/Cart'));
+const Cart = lazy(()=> import('./Components/Cart'));
 
 const AppLayout = ()=>{
 
