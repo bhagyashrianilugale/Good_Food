@@ -1,7 +1,7 @@
 
 import React, { Suspense, lazy, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import Header from './Components/Header';
+import Header from './components/Header';
 import Body from './pages/Body';
 import Error from './pages/Error';
 import ContactUs from './pages/ContactUs';
@@ -10,29 +10,10 @@ import MindItemCollection from './components/MindItemCollection';
 import { createBrowserRouter , RouterProvider, Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { UserContext } from './utils/UserContext';
 import { Provider } from 'react-redux';
 import appStore from './utils/appStore';
 
-//React Components
-/*
- -Header
-    - logo
-    - nav items
- -Body
-   - search component
-   - restaurant Container
-      -Img
-      - Star rating
-      - cuisine
- -Footer
-   - copy rights
-   - links
-   - links, contact, address
 
-*/
-
-// const Grocery = lazy(()=> import('./components/Grocery'));
 
 const About = lazy(()=> import('./pages/About'));
 
@@ -57,12 +38,10 @@ useEffect(()=>{
 
    return(
     <Provider store={appStore}>
-      {/* <UserContext.Provider value={{ loggedUser : userName, SetUserName }}> */}
           <div className="app">
               <Header/>
               <Outlet/>
           </div>
-      {/* </UserContext.Provider> */}
     </Provider>
    )
 }

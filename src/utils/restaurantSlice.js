@@ -30,15 +30,7 @@ const restaurantSlice = createSlice({
          state.menuCategory = action.payload;
         },
 
-    //    addfilteredMindItems: (state, action)=>{
-    //     state.filteredMindItems = action.payload;
-    //   },
-        
-    //    addallMindItems: (state, action)=>{
-    //     state.filteredMindItems = action.payload;
-    //   },
-       
-         updateSearchText: (state, action)=>{
+        updateSearchText: (state, action)=>{
            state.restaurantSearchText = action.payload;
         },
  

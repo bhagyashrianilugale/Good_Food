@@ -4,10 +4,12 @@ import { addShowItemIndex, removeShowItemIndex } from "../utils/restaurantSlice"
 import { useEffect } from "react";
 import { BiSolidDownArrow, BiSolidUpArrow } from "react-icons/bi";
 
+
+
 const RestaurantCategory = ({data, showItem, showIndex, restaurant})=>{
     
-    const menuCategory = useSelector(store => store.restaurant.menuCategory);
     const dispatch = useDispatch();
+    
     const handleClick = () =>{
          // Dispatch action to add showItemIndex on redux store
            dispatch(addShowItemIndex(showIndex));

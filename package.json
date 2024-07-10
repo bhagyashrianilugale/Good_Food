@@ -1,13 +1,13 @@
 {
-    "name": "reactbynamaste",
+    "name": "goodfood",
     "version": "1.0.0",
-    "description": "",
+    "description": "order your delicious food",
     "scripts": {
         "start": "parcel index.html",
         "build": "parcel build index.html",
         "test": "jest"
     },
-    "author": "",
+    "author": "bhagyashriugale",
     "license": "ISC",
     "devDependencies": {
         "@testing-library/react": "^15.0.7",

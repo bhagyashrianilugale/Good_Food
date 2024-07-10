@@ -1,22 +1,16 @@
-import  { CDN_URL, DEFAULT_IMG_URL}  from "../utils/constant";
 import { addItem, increaseCount, decreaseCount }  from "../utils/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { BsRecordCircle } from "react-icons/bs";
 import { IoCaretUpCircleOutline } from "react-icons/io5";
-import { toast } from "react-toastify";
-import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import { DEFAULT_IMG_URL } from "../utils/constant";
+const CDN_URL = process.env.REACT_APP_CDN_URL;
 
-
-const ItemCard = ({ item, restaurants }) =>{
+const ItemCard =({ item, restaurants }) =>{
   
   const {items, restaurant } = useSelector((store)=>( store.cart));
   const dispatch = useDispatch();
-    const handleCount= (e, item) => { 
-      // toast.success('Your delicious item is added to cart!', {position: "top-right",
-      //   autoClose: 500,
-      //   theme: "light"});
 
+    const handleCount= (e, item) => { 
          if(e.target.innerText == "Add +"){
                                dispatch(addItem({ item: [item, 1], restaurant: restaurants }));
                                
@@ -28,7 +22,7 @@ const ItemCard = ({ item, restaurants }) =>{
                                const id = item?.card?.info?.id;
                                dispatch(decreaseCount(id));
          }
-}
+    }
 
 return(
         <>
@@ -70,12 +64,11 @@ return(
                                                              </div>
                                                           )
                                                     }
-                                                   </div>
+                                   </div>
 
-                                             </div>
-                                        </div>
-                                        {/* <ToastContainer position="top-center"/> */}
-                    </>
+                          </div>
+                </div>
+          </>
     )
 };
 

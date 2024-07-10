@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CDN_URL } from "../utils/constant";
+const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 const Mind = ({ imageId, itemLink, itemName })=>{
   // Slice itemid from itemLink and pass into useMind custom hook to get filtered mind items

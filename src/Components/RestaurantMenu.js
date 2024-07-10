@@ -12,8 +12,9 @@ import { IoBicycle } from "react-icons/io5";
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import MenuFrame from "./MenuFrame";
-import { CDN_URL } from "../utils/constant";
 import { TiLocation } from "react-icons/ti";
+import { DEFAULT_IMG_URL } from "../utils/constant";
+const CDN_URL = process.env.REACT_APP_CND_URL;
 
 const RestaurantMenu = ()=>{
 
@@ -21,10 +22,9 @@ const RestaurantMenu = ()=>{
     const [ showMenu, setShowMenu ] = useState(false);
 
     const showItemIndex = useSelector((store)=>store.restaurant.showItemIndex);
-    const  cartItems = useSelector((store)=> store.cart.items);
+    const cartItems = useSelector((store)=> store.cart.items);
 
     const resInfo = useRestaurant(resId);
-    // const [isOpen, setIsOpen ] = useState();
    
     if(resInfo === null) return <Shimmer/>;
     const { name, 
@@ -61,7 +61,7 @@ return (
                                 </p>
                             </div>
                          </div>
-                         <img src={ CDN_URL + cloudinaryImageId} className="h-40 w-60 p-4 rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer"/>
+                         <img src={ cloudinaryImageId ? (CDN_URL + cloudinaryImageId) : DEFAULT_IMG_URL } className="h-40 w-60 p-4 rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer"/>
                       </div>
                 </div>
               <h1 className="text-center m-2 p-2 text-xl font-extrabold">Deals for you</h1>

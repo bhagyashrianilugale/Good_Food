@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MENU_URL } from "./constant";
+const MENU_URL = process.env.REACT_APP_MENU_URL;
 
 
 const useRestaurant = (resId)=>{

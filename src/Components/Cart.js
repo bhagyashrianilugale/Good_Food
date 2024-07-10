@@ -1,22 +1,26 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addItem, clearCart, decreaseCount, increaseCount } from "../utils/cartSlice";
+import { clearCart, decreaseCount, increaseCount } from "../utils/cartSlice";
 import { Link } from "react-router-dom";
-import { CDN_URL, DEFAULT_IMG_URL, EMPTY_CART_IMG } from "../utils/constant";
 import { BsRecordCircle } from "react-icons/bs";
 import { IoCaretUpCircleOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { RiDoubleQuotesL } from "react-icons/ri";
 import { MdOutlineLocationCity } from "react-icons/md";
-import { GiShoppingCart } from "react-icons/gi";
-
+import { DEFAULT_IMG_URL } from "../utils/constant";
+import { EMPTY_CART_IMG } from "../utils/constant";
+const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 const Cart = () => {
+
     let items = useSelector((store) => store.cart.items);
     let restaurant = useSelector((store) => store.cart.restaurant);
+    const resId = restaurant?.id;
+
     const dispatch = useDispatch();
+
     const [changeText, setChangetext] = useState(false);
     const [totalPrice, setTotalPrice] = useState(null);
-    const resId = restaurant?.id;
+
 
     const handleClearCart = () => {
         dispatch(clearCart());
@@ -47,15 +51,15 @@ const Cart = () => {
     }, [items]);
 
     return ( 
-        <div className="p-10 m-[5%]">
-             <div className="m-auto w-5/12 p-4 text-gray-800 bg-white shadow-black">
-                <h1 className="p-2 rounded-sm w-[20%] my-10 m-auto font-semibold bg-orange-500 text-center text-white">Cart</h1>
+        <div className="p-10 mt-[10%]">
+             <div className="m-auto w-5/12 p-4 shadow-lg text-gray-800 bg-white rounded-lg hover:shadow-orange-400">
+                <h1 className="p-2 rounded-sm w-[20%] my-2 m-auto font-semibold bg-orange-500 text-center text-white">Cart</h1>
 
                   {items?.length !== 0 ? (
                     <div>
                         <div className="flex justify-evenly items-center m-auto">
                             <img
-                                className="w-[50%] h-20 rounded-lg mr-4"
+                                className="w-[40%] h-20 rounded-lg mr-4"
                                 src={
                                     restaurant?.cloudinaryImageId
                                         ? CDN_URL + restaurant?.cloudinaryImageId
@@ -65,15 +69,15 @@ const Cart = () => {
                             />
                             <div>
                                 <h2 className="text-lg font-semibold">{restaurant?.name}</h2>
-                                <p className="text-gray-500 text-sm border border-b-slate-950"> 
+                                <p className="text-gray-500 text-sm border"> 
                                      <MdOutlineLocationCity className="inline text-cyan-700 mx-2"/>
                                      {restaurant?.city}
                                 </p>
                             </div>
                         </div>
-                        <div className="m-auto p-4 text-gray-800 bg-white">
+                        <div className="m-auto p-4 text-gray-800 bg-white my-2 h-40 overflow-y-scroll no-scrollbar">
                             {items?.map((item, index) => (
-                                <div key={index} className="flex items-center my-4 border-b pb-4">
+                                <div key={index} className="flex items-center my-1">
                                     <span className="mr-2">
                                         {item[0]?.card?.info?.itemAttribute?.vegClassifier === "VEG" ? (
                                             <BsRecordCircle className="text-green-700 inline" />
@@ -82,7 +86,7 @@ const Cart = () => {
                                         )}
                                     </span>
                                     <span className="w-60 text-sm">{item[0]?.card?.info?.name}</span>
-                                    <div className="bg-white shadow-lg mx-10 mt-2 w-40 text-center h-10 text-orange-500 rounded-lg hover:shadow-black">
+                                    <div className="bg-white shadow-sm shadow-zinc-500 mx-10 mt-2 w-40 text-center h-10 text-orange-500 rounded-lg">
                                         <button
                                             className="mx-2 w-5 font-bold my-1"
                                             onClick={(e) => handleCount(e, item[0])}
@@ -113,13 +117,13 @@ const Cart = () => {
                         </div>
                         <div className="flex justify-between my-4">
                             <button
-                                className="bg-white shadow-lg mx-10 mt-2 w-40 text-center h-10 text-orange-500 rounded-lg hover:shadow-black"
+                                className="bg-white shadow-lg mx-10 mt-2 w-40 text-center h-10 text-orange-500 rounded-lg hover:shadow-zinc-500"
                                 onClick={handleClearCart}
                             >
                                 Clear cart
                             </button>
                             <Link to={"/restaurants/" + resId}>
-                                <button className="bg-white shadow-lg mx-10 mt-2 w-40 text-center h-10 text-orange-500 rounded-lg hover:shadow-black">
+                                <button className="bg-white shadow-lg mx-10 mt-2 w-40 text-center h-10 text-orange-500 rounded-lg hover:shadow-zinc-500">
                                     Add more items
                                 </button>
                             </Link>

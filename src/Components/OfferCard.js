@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import useRestaurant from '../utils/useRestaurant';
-import { CDN_URL } from '../utils/constant';
+const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 const OfferCard = ({resId}) => {
     const resInfo = useRestaurant(resId);

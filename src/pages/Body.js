@@ -3,16 +3,16 @@ import { useEffect, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import { withPromotedLabel } from "../components/RestaurantCard";
-import { SWIGGY_URL } from "../utils/constant";
-import { UserContext } from "../utils/UserContext";
 import Mind from "../components/Mind";
 import Toprestaurantchain from "../components/Toprestaurantchain";
 import { addMindItems, addfilteredRestaurants, addlistOfRestaurants } from "../utils/restaurantSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { BG_IMG_URL } from "../utils/constant";
 import Shimmer from "../components/Shimmer";
 import Search from "../components/Search";
 import { RxCross1 } from "react-icons/rx";
+import { BG_IMG_URL } from "../utils/constant";
+const SWIGGY_URL =  process.env.REACT_APP_SWIGGY_URL;
+
 
 const Body = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,6 @@ const Body = () => {
   const showHiddenUI = useSelector((store) => store.restaurant.showHiddenUI);
   const status = useOnline();
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
-  const { loggedUser, SetUserName } = useContext(UserContext);
   const [activeFilters, setActiveFilters] = useState({
     fastDelivery: false,
     price300to600: false,

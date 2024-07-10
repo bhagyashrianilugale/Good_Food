@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { SWIGGY_URL } from './constant';
+const SWIGGY_URL =  process.env.REACT_APP_SWIGGY_URL
+
 
 const useBody = () =>{ 
 

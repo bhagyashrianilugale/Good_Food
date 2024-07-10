@@ -13,7 +13,6 @@ import { RiCheckboxCircleFill,  RiCloseCircleFill, RiContactsLine } from "react-
 const Header = ()=>{
 
    const [ btnText, setBtnText] = useState("LogIn");
-   // const { loggedUser } = useContext(UserContext);
    const status = useOnline();
    const dispatch = useDispatch();
 
