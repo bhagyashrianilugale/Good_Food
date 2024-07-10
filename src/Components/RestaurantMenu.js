@@ -61,7 +61,7 @@ return (
                                 </p>
                             </div>
                          </div>
-                         <img src={ cloudinaryImageId ? (CDN_URL + cloudinaryImageId) : DEFAULT_IMG_URL } className="h-40 w-60 p-4 rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer"/>
+                         <img src={ cloudinaryImageId?.length ? CDN_URL + cloudinaryImageId : DEFAULT_IMG_URL } className="h-40 w-60 p-4 rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer"/>
                       </div>
                 </div>
               <h1 className="text-center m-2 p-2 text-xl font-extrabold">Deals for you</h1>
