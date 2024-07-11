@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Provider } from 'react-redux';
 import appStore from './utils/appStore';
+import Login from './pages/Login';
 
 
 
@@ -74,6 +75,10 @@ const appRouter  = createBrowserRouter([
          {
             path:"/cart",
             element: <Suspense fallback={<h1>Loading...</h1>}><Cart/></Suspense>
+         },
+         {
+            path:"/login",
+            element: <Login/>
          },
       ],
       errorElement: <Error/>

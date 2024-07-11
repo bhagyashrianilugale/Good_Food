@@ -16,7 +16,7 @@ const Toprestaurantchain = () => {
                                <Link key ={ restaurant.id } to = {"/restaurants/" + restaurant.info.id }>
                                    <RestaurantCard 
                                         restauList = { restaurant } 
-                                        className = {"m-2 w-[250px] h-[300px] rounded-lg p-6"}
+                                        className = {"m-2 w-[300px] h-[300px] rounded-lg p-6"}
                                         classNameImg = {"w-[80%]"}/></Link>
             
                     </div>}

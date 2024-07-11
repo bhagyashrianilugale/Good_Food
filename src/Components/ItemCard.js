@@ -2,7 +2,7 @@ import { addItem, increaseCount, decreaseCount }  from "../utils/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { BsRecordCircle } from "react-icons/bs";
 import { IoCaretUpCircleOutline } from "react-icons/io5";
-import { DEFAULT_IMG_URL } from "../utils/constant";
+import { DEFAULT_IMG_URL, DEFAULT_RESTAURANT_IMG } from "../utils/constant";
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 const ItemCard =({ item, restaurants }) =>{
@@ -42,13 +42,13 @@ return(
                                                 : (item?.card.info.defaultPrice)/100 }
                                              </div>
                                         </div>
-                                          <p className="text-xs px-4">{ item?.card.info.description }</p>
+                                          <p className="text-sm px-4">{ item?.card.info.description }</p>
                                  </div>
                                  <div className="w-3/12 rounded-lg">
-                                           <img src={ item?.card.info.imageId ? (CDN_URL + item?.card.info.imageId) : DEFAULT_IMG_URL } 
+                                           <img src={ item?.card.info.imageId ? (CDN_URL + item?.card.info.imageId) : DEFAULT_RESTAURANT_IMG } 
                                                 className="rounded-lg w-full h-[60%] mt-5 relative" 
                                                 alt="item_card_img"/> 
-                                                <div className="p-2 bg-white shadow-lg mx-10 w-25 h-10 -mt-3 absolute text-green-500 rounded-lg hover:shadow-black">
+                                                <div className="p-2 bg-white mx-10 w-25 h-10 -mt-3 absolute text-green-600  rounded-2xl  shadow-lg shadow-zinc-500">
                                                 {items?.filter(
                                                    (itm) => (itm[0]?.card?.info?.id == item?.card?.info?.id)
                                                        ).length == 0

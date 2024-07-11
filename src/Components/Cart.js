@@ -51,15 +51,13 @@ const Cart = () => {
     }, [items]);
 
     return ( 
-        <div className="p-10 mt-[10%]">
-             <div className="m-auto w-5/12 p-4 shadow-lg text-gray-800 bg-white rounded-lg hover:shadow-orange-400">
-                <h1 className="p-2 rounded-sm w-[20%] my-2 m-auto font-semibold bg-orange-500 text-center text-white">Cart</h1>
-
-                  {items?.length !== 0 ? (
-                    <div>
-                        <div className="flex justify-evenly items-center m-auto">
+        <div className="mt-[10%]">
+             <div>
+                 {items?.length !== 0 ? (
+                    <div className="mx-auto w-6/12 p-20 shadow-lg text-gray-800 rounded-lg hover:shadow-orange-400">
+                        <div className="flex justify-between items-center m-auto px-4">
                             <img
-                                className="w-[40%] h-20 rounded-lg mr-4"
+                                className="w-20 h-20 rounded-lg mr-4"
                                 src={
                                     restaurant?.cloudinaryImageId
                                         ? CDN_URL + restaurant?.cloudinaryImageId
@@ -75,7 +73,7 @@ const Cart = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="m-auto p-4 text-gray-800 bg-white my-2 h-40 overflow-y-scroll no-scrollbar">
+                        <div className="m-auto p-4 text-gray-800 bg-white my-2 h-full overflow-y-scroll no-scrollbar">
                             {items?.map((item, index) => (
                                 <div key={index} className="flex items-center my-1">
                                     <span className="mr-2">
@@ -86,7 +84,7 @@ const Cart = () => {
                                         )}
                                     </span>
                                     <span className="w-60 text-sm">{item[0]?.card?.info?.name}</span>
-                                    <div className="bg-white shadow-sm shadow-zinc-500 mx-10 mt-2 w-40 text-center h-10 text-orange-500 rounded-lg">
+                                    <div className="bg-white shadow-lg shadow-zinc-500 text-center h-8 text-green-600 rounded-2xl">
                                         <button
                                             className="mx-2 w-5 font-bold my-1"
                                             onClick={(e) => handleCount(e, item[0])}
@@ -117,19 +115,19 @@ const Cart = () => {
                         </div>
                         <div className="flex justify-between my-4">
                             <button
-                                className="bg-white shadow-lg mx-10 mt-2 w-40 text-center h-10 text-orange-500 rounded-lg hover:shadow-zinc-500"
+                                className="bg-white shadow-lg mx-10 w-40 text-center h-10 text-orange-500 rounded-lg hover:shadow-zinc-500"
                                 onClick={handleClearCart}
                             >
                                 Clear cart
                             </button>
                             <Link to={"/restaurants/" + resId}>
-                                <button className="bg-white shadow-lg mx-10 mt-2 w-40 text-center h-10 text-orange-500 rounded-lg hover:shadow-zinc-500">
+                                <button className="bg-white shadow-lg mx-10 w-40 text-center h-10 text-orange-500 rounded-lg hover:shadow-zinc-500">
                                     Add more items
                                 </button>
                             </Link>
                         </div>
-                        <div className="border border-gray-300 py-4">
-                            <div className="flex items-center p-2 mb-4">
+                        <div className="border border-gray-300">
+                            <div className="flex items-center p-4">
                                 <input
                                     id="checked-checkbox"
                                     type="checkbox"
@@ -161,11 +159,11 @@ const Cart = () => {
                                 )}
                             </div>
                         </div>
-                        <div className="border-t border-gray-300 pt-4 mt-4 text-xs m-auto">
+                        <div className="border-t border-gray-300 pt-4 mt-4 text-sm m-auto">
                             <div className="grid grid-cols-2 gap-2 text-gray-800">
                                 <span className="col-span-2 font-semibold text-lg">Bill Details</span>
                                 <span>Item Total</span>
-                                <span className="text-right">₹ {totalPrice}</span>
+                                <span className="text-right">₹ {Math.floor( totalPrice )}</span>
                                 <span>Delivery Fee | {restaurant?.sla?.lastMileTravelString}</span>
                                 <span className="text-right">
                                     ₹{" "}
@@ -187,8 +185,13 @@ const Cart = () => {
                         </div>
                         <hr  className="my-2 w-full bg-gray-900 h-0.5 m-auto"/>
                         <div className="flex justify-between w-full">
-                              <b className="font-semibold cursor-pointer">TO PAY</b>
-                              <p className="font-semibold">
+                              <Link to="/login">
+                              <button 
+                                 className="bg-white shadow-lg mx-10 w-40 my-2 text-center text-sm h-10 text-orange-500 rounded-lg hover:shadow-zinc-500">
+                                         TO PAY
+                                    </button>
+                            </Link>
+                              <p className="font-extrabold text-lg my-2">
                                     ₹{" "}
                                     {Math.floor(totalPrice) +
                                         (restaurant.feeDetails.amount / 100

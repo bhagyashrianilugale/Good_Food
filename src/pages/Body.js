@@ -59,7 +59,7 @@ const Body = () => {
   return listOfRestaurant?.length ? (
     <>
       {showHiddenUI && (
-        <div className="px-4 w-full my-8 h-60 bg-gradient-to-t from-violet-300 rounded-3xl mt-[10%] relative">
+        <div className="px-4 w-full my-8 h-60 bg-gradient-to-t -mb-16 from-violet-300 rounded-3xl mt-[10%] relative">
           <div className="flex justify-around">
             <h1 className="text-4xl font-extrabold opacity-80">
               Order Food <br />
@@ -73,18 +73,18 @@ const Body = () => {
         </div>
       )}
       <div className="w-9/12 m-auto">
-        <h1 className="font-bold text-3xl mt-[12%] inline-block">What's on your mind?</h1>
-        <div className="flex overflow-x-scroll no-scrollbar m-6 p-4 border-b-2">
+        <h1 className="font-bold text-3xl inline-block mx-4  mt-[16%] relative">What's on your mind?</h1>
+        <div className="flex overflow-x-scroll no-scrollbar p-4 border-b-2">
           {mindItem?.map((item, index) => (
             <Mind key={index} imageId={item.imageId} itemLink={item.action.link} itemName={item.action.text} />
           ))}
         </div>
 
-        <h1 className="font-bold text-3xl my-8">Restaurants with online food delivery in Nashik</h1>
+        <h1 className="font-bold text-3xl my-8 mx-4">Restaurants with online food delivery in Nashik</h1>
         <div className="flex w-full">
           <Search />
           <div className="flex overflow-x-scroll no-scrollbar mx-8">
-            <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-6 active:bg-orange-200 rounded-xl flex flex-between">
+            <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4 active:bg-orange-200 rounded-xl flex flex-between">
               <p
                 className="w-40 py-2"
                 onClick={() => handleFilter('price300to600', (itemInfo) => 300 < itemInfo?.info?.costForTwo?.slice(1, 4) < 600)}
@@ -94,7 +94,7 @@ const Body = () => {
               {activeFilters.price300to600 && <span onClick={() => handleCross('price300to600')}><RxCross1 className="text-lg my-3 mx-2" /></span>}
             </div>
 
-            <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-6 active:bg-orange-200 rounded-xl flex flex-between">
+            <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4 active:bg-orange-200 rounded-xl flex flex-between">
               <p
                 className="w-40 py-2"
                 onClick={() => handleFilter('lessThan300', (itemInfo) => itemInfo?.info?.costForTwo?.slice(1, 4) < 300)}
@@ -104,7 +104,7 @@ const Body = () => {
               {activeFilters.lessThan300 && <span onClick={() => handleCross('lessThan300')}><RxCross1 className="my-3 text-lg mx-2" /></span>}
             </div>
 
-            <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-10 active:bg-orange-200 rounded-xl flex flex-between">
+            <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4 active:bg-orange-200 rounded-xl flex flex-between">
               <p
                 className="w-40 py-2"
                 onClick={() => handleFilter('fastDelivery', (itemInfo) => itemInfo?.info?.sla?.deliveryTime < 35)}
@@ -114,7 +114,7 @@ const Body = () => {
               {activeFilters.fastDelivery && <span onClick={() => handleCross('fastDelivery')}><RxCross1 className="my-3 text-lg mx-2" /></span>}
             </div>
 
-            <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-10 active:bg-orange-200 rounded-xl flex flex-between">
+            <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4 active:bg-orange-200 rounded-xl flex flex-between">
               <p
                 className="w-40 py-2"
                 onClick={() => handleFilter('hotOffers', (itemInfo) => itemInfo?.info?.aggregatedDiscountV3?.header.length !== 0)}
@@ -124,7 +124,7 @@ const Body = () => {
               {activeFilters.hotOffers && <span onClick={() => handleCross('hotOffers')}><RxCross1 className="my-3 text-lg mx-2" /></span>}
             </div>
 
-            <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-10 active:bg-orange-200 rounded-xl flex flex-between">
+            <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4 active:bg-orange-200 rounded-xl flex flex-between">
               <p
                 className="w-40 py-2"
                 onClick={() => handleFilter('highRatings', (itemInfo) => 4.0 < itemInfo?.info?.avgRating)}

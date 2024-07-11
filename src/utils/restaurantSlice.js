@@ -8,7 +8,7 @@ const restaurantSlice = createSlice({
           filteredRestaurant: null,
           mindItems: null,
           restaurantSearchText: "",
-          showItemIndex: 0,
+          showItemIndex: "0",
           showHiddenUI : false,
           menuCategory : ""
     },

@@ -12,12 +12,11 @@ export const RestaurantCard = (props)=>{
        locality,
        cuisines,
       } = restauList?.info;
-      console.log(cloudinaryImageId);
 
    return(
-       <div className={`w-[300px] h-100 mx-4 p-4 rounded-2xl overflow-hidden hover:transition-none transition-transform duration-200 transform hover:scale-90 ${className}`}>
+       <div className={`w-[250px] h-100 mx-1 p-4 rounded-2xl overflow-hidden hover:transition-none transition-transform duration-200 transform hover:scale-90 ${className}`}>
            <div className="relative">
-                <img src={ cloudinaryImageId ? (CDN_URL + cloudinaryImageId) : DEFAULT_IMG_URL} 
+                <img src={ cloudinaryImageId ? (CDN_URL+cloudinaryImageId) : DEFAULT_IMG_URL} 
                 alt="cart-img" 
                 className={`rounded-2xl h-40 w-80 absolute${classNameImg}`}></img>
                 <div className="">
