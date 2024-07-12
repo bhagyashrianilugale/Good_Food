@@ -12,7 +12,7 @@ const Login = () => {
    }
 
    const otpGenerator = ()=>{
-          const isPhone = /^(\+\d{1,3}[- ]?)?\d{10}$/.test(phone.slice(phone.length-10));
+          const isPhone = /^(\+\d{1,3}[- ]?)?\d{10}$/.test(phone?.slice(phone?.length-10));
           if(isPhone){
             
           }

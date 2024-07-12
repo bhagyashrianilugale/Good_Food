@@ -208,7 +208,7 @@ const Cart = () => {
                       </div>
                     </div>
                 ) : (
-                    <div className="text-center">
+                    <div className="text-center my-10">
                         <img src={EMPTY_CART_IMG} className="h-60 w-80 m-auto" alt="Empty Cart" />
                         <p className="text-lg font-bold opacity-80">Your cart is empty</p>
                         <p className="text-sm opacity-80">You can go to home page to view more restaurants</p>
