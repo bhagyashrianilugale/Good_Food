@@ -53,41 +53,41 @@ const Cart = () => {
     }, [items]);
 
     return ( 
-        <div className="mt-[10%]">
+        <div className="my-[10%]">
              <div>
                  {items?.length !== 0 ? (
-                    <div className="mx-auto w-6/12 p-20  shadow-lg text-gray-800 rounded-lg">
+                    <div className="mx-auto w-6/12 p-10 shadow-lg text-gray-800 rounded-lg  shadow-black">
                         <h1 className="text-center text-4xl mx-20 font-bold">Cart</h1>
-                        <div className="flex justify-between items-center m-auto px-4">
-                            <img
-                                className="w-20 h-20 rounded-lg mr-4"
+                        <div className="flex justify-between m-auto">
+                            <Link to={"/restaurants/" + resId}><img
+                                className="rounded-lg w-40 h-40"
                                 src={
                                     restaurant?.cloudinaryImageId
                                         ? CDN_URL + restaurant?.cloudinaryImageId
                                         : DEFAULT_RESTAURANT_IMG
                                 }
                                 alt="Restaurant_img"
-                            />
-                            <div>
-                                <h2 className="text-lg font-semibold">{restaurant?.name}</h2>
+                            /></Link>
+                            <div className="my-14">
+                                <h2 className="text-2xl font-bold">{restaurant?.name}</h2>
                                 <p className="text-gray-500 text-sm border"> 
                                      <MdOutlineLocationCity className="inline text-cyan-700 mx-2"/>
                                      {restaurant?.city}
                                 </p>
                             </div>
                         </div>
-                        <div className="text-gray-800 py-4 w-full bg-white my-2 h-full overflow-y-scroll no-scrollbar">
+                        <div className="text-gray-800 py-4 text-left">
                             {items?.map((item, index) => (
                                 <div key={index} className="flex items-center my-1">
-                                    <span className="mr-2">
+                                    <span className="mx-2">
                                         {item[0]?.card?.info?.itemAttribute?.vegClassifier === "VEG" ? (
                                             <BsRecordCircle className="text-green-700 inline" />
                                         ) : (
                                             <IoCaretUpCircleOutline className="text-red-700 inline" />
                                         )}
                                     </span>
-                                    <span className="w-60 text-sm">{item[0]?.card?.info?.name}</span>
-                                    <div className="bg-white shadow-lg shadow-zinc-500 text-center h-8 text-green-600 rounded-2xl">
+                                    <span className="w-60 text-sm mx-4">{item[0]?.card?.info?.name}</span>
+                                    <div className="bg-white shadow-lg shadow-zinc-500 text-center mx-4 h-8 text-green-600 rounded-2xl">
                                         <button
                                             className="mx-2 w-5 font-bold my-1"
                                             onClick={(e) => handleCount(e, item[0])}
@@ -102,11 +102,11 @@ const Cart = () => {
                                             +
                                         </button>
                                     </div>
-                                    <div className="w-20 text-right">
+                                    <div className="w-20 text-right mx-8">
                                         ₹
                                         {item[0]?.card?.info?.price
-                                            ? item[0]?.card?.info?.price / 100
-                                            : item[0]?.card?.info?.defaultPrice / 100}
+                                            ? Math.floor(item[0]?.card?.info?.price) / 100
+                                            : Math.floor(item[0]?.card?.info?.defaultPrice) / 100}
                                     </div>
                                 </div>
                             ))}
@@ -116,18 +116,13 @@ const Cart = () => {
                               <input placeholder="Any suggestions? We will pass it on..." 
                               className="text-sm  text-center m-auto h-10 w-60 outline-none bg-gray-100"/> 
                         </div>
-                        <div className="flex justify-between my-4">
+                        <div className="flex justify-center my-2">
                             <button
-                                className="bg-white shadow-lg mx-10 w-40 text-center h-10 text-orange-500 rounded-lg hover:shadow-zinc-500"
+                                className="bg-white shadow-lg mx-10 w-40 text-center text-lg font-bold h-10 text-orange-500 rounded-lg shadow-zinc-500"
                                 onClick={handleClearCart}
                             >
                                 Clear cart
                             </button>
-                            <Link to={"/restaurants/" + resId}>
-                                <button className="bg-white shadow-lg mx-10 w-40 text-center h-10 text-orange-500 rounded-lg hover:shadow-zinc-500">
-                                    Add more items
-                                </button>
-                            </Link>
                         </div>
                         <div className="border border-gray-300">
                             <div className="flex items-center p-4">
@@ -190,7 +185,7 @@ const Cart = () => {
                         <div className="flex justify-between w-full">
                               <Link to="/login">
                               <button 
-                                 className="bg-white shadow-lg mx-10 w-40 my-2 text-center text-sm h-10 text-orange-500 rounded-lg hover:shadow-zinc-500">
+                                 className="bg-white shadow-lg mx-10 w-40 my-2 text-center text-lg font-bold h-10 text-orange-500 rounded-lg shadow-zinc-500">
                                          TO PAY
                                     </button>
                             </Link>

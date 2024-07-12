@@ -63,7 +63,7 @@ return (
                             </div>
                          </div>
                          <img src={cloudinaryImageId ? CDN_URL+cloudinaryImageId : DEFAULT_RESTAURANT_IMG  }
-                              className="h-40 w-60 p-4 hover:scale-105 transition-all duration-500 cursor-pointer"/>
+                              className="h-30 w-60 m-2 rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer"/>
                       </div>
                 </div>
               <h1 className="text-center m-2 p-2 text-xl font-extrabold">Deals for you</h1>
