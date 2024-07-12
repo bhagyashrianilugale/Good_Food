@@ -1,5 +1,5 @@
 import { MdStars } from "react-icons/md";
-import { DEFAULT_IMG_URL } from "../utils/constant";
+import { DEFAULT_RESTAURANT_IMG } from "../utils/constant";
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 export const RestaurantCard = (props)=>{
@@ -16,7 +16,7 @@ export const RestaurantCard = (props)=>{
    return(
        <div className={`w-[250px] h-100 mx-1 p-4 rounded-2xl overflow-hidden hover:transition-none transition-transform duration-200 transform hover:scale-90 ${className}`}>
            <div className="relative">
-                <img src={ cloudinaryImageId ? (CDN_URL+cloudinaryImageId) : DEFAULT_IMG_URL} 
+                <img src={ cloudinaryImageId ? (CDN_URL+cloudinaryImageId) : DEFAULT_RESTAURANT_IMG} 
                 alt="cart-img" 
                 className={`rounded-2xl h-40 w-80 absolute${classNameImg}`}></img>
                 <div className="">

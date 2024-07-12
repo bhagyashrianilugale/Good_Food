@@ -7,9 +7,8 @@ import { BiSolidDownArrow, BiSolidUpArrow } from "react-icons/bi";
 
 
 const RestaurantCategory = ({data, showItem, showIndex, restaurant})=>{
-    
     const dispatch = useDispatch();
-    
+    console.log(showItem);
     const handleClick = () =>{
          // Dispatch action to add showItemIndex on redux store
            dispatch(addShowItemIndex(showIndex));
@@ -28,7 +27,7 @@ const RestaurantCategory = ({data, showItem, showIndex, restaurant})=>{
                      <span>{data.title } ({ data?.itemCards?.length})</span>
                      <span>{showItem ? <BiSolidUpArrow /> :  <BiSolidDownArrow />}</span>
                 </div>
-                {showItem && data?.itemCards?.map((item)=>( <ItemCard key={ item?.card.info.id }  item = { item } restaurants = {restaurant}/> ))}
+                { showItem && data?.itemCards?.map((item)=>( <ItemCard key={ item?.card.info.id }  item = { item } restaurants = {restaurant}/> ))}
             </div>
         </>
     )

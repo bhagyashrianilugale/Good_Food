@@ -6,8 +6,9 @@ import { IoCaretUpCircleOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { RiDoubleQuotesL } from "react-icons/ri";
 import { MdOutlineLocationCity } from "react-icons/md";
-import { DEFAULT_IMG_URL } from "../utils/constant";
+import { DEFAULT_RESTAURANT_IMG } from "../utils/constant";
 import { EMPTY_CART_IMG } from "../utils/constant";
+import { toast } from "react-toastify";
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 const Cart = () => {
@@ -24,6 +25,7 @@ const Cart = () => {
 
     const handleClearCart = () => {
         dispatch(clearCart());
+        toast.warning("Cleared cart!");
     };
 
     const handleCount = (e, item) => {
@@ -54,14 +56,15 @@ const Cart = () => {
         <div className="mt-[10%]">
              <div>
                  {items?.length !== 0 ? (
-                    <div className="mx-auto w-6/12 p-20 shadow-lg text-gray-800 rounded-lg hover:shadow-orange-400">
+                    <div className="mx-auto w-6/12 p-20  shadow-lg text-gray-800 rounded-lg">
+                        <h1 className="text-center text-4xl mx-20 font-bold">Cart</h1>
                         <div className="flex justify-between items-center m-auto px-4">
                             <img
                                 className="w-20 h-20 rounded-lg mr-4"
                                 src={
                                     restaurant?.cloudinaryImageId
                                         ? CDN_URL + restaurant?.cloudinaryImageId
-                                        : DEFAULT_IMG_URL
+                                        : DEFAULT_RESTAURANT_IMG
                                 }
                                 alt="Restaurant_img"
                             />
@@ -73,7 +76,7 @@ const Cart = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="m-auto p-4 text-gray-800 bg-white my-2 h-full overflow-y-scroll no-scrollbar">
+                        <div className="text-gray-800 py-4 w-full bg-white my-2 h-full overflow-y-scroll no-scrollbar">
                             {items?.map((item, index) => (
                                 <div key={index} className="flex items-center my-1">
                                     <span className="mr-2">

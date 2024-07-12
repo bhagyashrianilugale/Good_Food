@@ -12,7 +12,6 @@ import { RiCheckboxCircleFill,  RiCloseCircleFill, RiContactsLine } from "react-
 
 const Header = ()=>{
 
-   const [ btnText, setBtnText] = useState("LogIn");
    const status = useOnline();
    const dispatch = useDispatch();
 
@@ -27,7 +26,7 @@ const Header = ()=>{
    
    return(
       <>
-        <div  className=" flex justify-between shadow-lg w-full fixed top-0 left-0 bg-white z-20">
+        <header className=" flex justify-between shadow-lg w-full fixed top-0 left-0 bg-white z-20">
                <div>
                  <Link to="/"><h1 className="font-bold text-2xl p-4 m-4">
                          <FaJava className="inline text-4xl bottom-4" />
@@ -43,17 +42,11 @@ const Header = ()=>{
                     <li className="pr-4 hover:text-orange-500 "><Link to="/about"><IoSyncCircleOutline  className="inline text-lg m-0"/>About-Us</Link></li>
                     <li className="px-4 hover:text-orange-500 "><Link to="/contact"><RiContactsLine  className="inline text-xl m-0" /> Contact </Link></li>
                     <li className="px-4 hover:text-orange-500 "><Link to="/cart"><PiShoppingCartBold className="inline text-xl m-0"/> Cart[ { cartItems.length ? cartItems.length : null} ]</Link></li>
-
-                    <button className="px-4" onClick={()=>{
-                                     btnText==="LogIn"? 
-                                     setBtnText("LogOut"): 
-                                     setBtnText("LogIn");
-                        }
-                     }>{btnText}</button>
-                </ul>
+                    <li className="px-4 hover:text-orange-500 "><Link to="/login">LogIn </Link></li>
+                    </ul>
              </div>
              }
-       </div>
+       </header>
      </>
     )
  };

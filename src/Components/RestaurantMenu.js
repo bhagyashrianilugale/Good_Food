@@ -21,7 +21,8 @@ const RestaurantMenu = ()=>{
     const { resId }  = useParams(); //to fetch the restaurant id from url
     const [ showMenu, setShowMenu ] = useState(false);
 
-    const showItemIndex = useSelector((store)=>store.restaurant.showItemIndex);
+    const showItemIndex = useSelector((store)=>store?.restaurant?.showItemIndex);
+    console.log(showItemIndex);
     const cartItems = useSelector((store)=> store.cart.items);
 
     const resInfo = useRestaurant(resId);
@@ -71,13 +72,13 @@ return (
                            return <RestaurantCategory 
                            key = { category?.card?.card?.title }
                            data = { category?.card?.card }
-                           showItem= { index == showItemIndex ? true : false }
+                           showItem={ index == showItemIndex ? true : false }
                            showIndex = { index }
                            restaurant = {resInfo?.cards[2]?.card?.card?.info}
                  />
               })}
                { cartItems?.length !== 0 ? (
-				                      <div className=" h-20 w-6/12 mx-[22%] flex justify-between p-4 my-2 bg-lime-600 text-white fixed top-[90%] z-30">
+				                      <div className=" h-20 w-6/12 mx-[22%] flex justify-between p-4 my-4 bg-lime-600 text-white fixed top-[90%] z-30">
 					                       <h4 className="text-sm">{cartItems?.length} item added</h4>
 					                            <Link to="/cart">
 						                                  <h3 className="text-sm font-bold">VIEW CART <LuShoppingBag className="text-white font-semibold p-0.5  text-center text-xl inline m-0"/></h3>

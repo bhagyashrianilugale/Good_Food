@@ -72,7 +72,7 @@ const Body = () => {
           </div>
         </div>
       )}
-      <div className="w-9/12 m-auto">
+      <div className="w-10/12 m-auto">
         <h1 className="font-bold text-3xl inline-block mx-4  mt-[16%] relative">What's on your mind?</h1>
         <div className="flex overflow-x-scroll no-scrollbar p-4 border-b-2">
           {mindItem?.map((item, index) => (
@@ -148,7 +148,7 @@ const Body = () => {
             </Link>
           ))}
         </div>
-        <h1 className="font-bold text-3xl my-4">Top restaurant chains in Nashik</h1>
+        <h1 className="font-bold text-3xl my-4 w-10/12">Top restaurant chains in Nashik</h1>
         <Toprestaurantchain />
       </div>
     </>

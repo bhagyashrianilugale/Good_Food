@@ -2,25 +2,33 @@ import { addItem, increaseCount, decreaseCount }  from "../utils/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { BsRecordCircle } from "react-icons/bs";
 import { IoCaretUpCircleOutline } from "react-icons/io5";
-import { DEFAULT_IMG_URL, DEFAULT_RESTAURANT_IMG } from "../utils/constant";
+import { DEFAULT_RESTAURANT_IMG } from "../utils/constant";
+import { toast } from "react-toastify";
+
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 const ItemCard =({ item, restaurants }) =>{
   
-  const {items, restaurant } = useSelector((store)=>( store.cart));
+  const { items  } = useSelector((store)=>( store.cart));
   const dispatch = useDispatch();
 
     const handleCount= (e, item) => { 
          if(e.target.innerText == "Add +"){
                                dispatch(addItem({ item: [item, 1], restaurant: restaurants }));
+                               toast.success("Your delicious item added to cart!",{
+                                   onClose: 1500,
+                                   position: "top-center"
+                               });
                                
          }if(e.target.innerText == "+"){
                               const id = item?.card?.info?.id;
                               dispatch(increaseCount(id));
+                              toast.success("Your delicious item added to cart!");
 
          }else if(e.target.innerText == "-"){
                                const id = item?.card?.info?.id;
                                dispatch(decreaseCount(id));
+                               toast.warning("Item removed!");
          }
     }
 

@@ -9,10 +9,12 @@ import ResraurantMenu from './Components/RestaurantMenu';
 import MindItemCollection from './Components/MindItemCollection';
 import { createBrowserRouter , RouterProvider, Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useState } from 'react';
 import { Provider } from 'react-redux';
 import appStore from './utils/appStore';
 import Login from './pages/Login';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Footer from './Components/Footer';
 
 
 
@@ -22,27 +24,18 @@ const Cart = lazy(()=> import('./Components/Cart'));
 
 const AppLayout = ()=>{
 
-const [ userName, SetUserName ] = useState("");
-
-
 //Authentication logic
 
-useEffect(()=>{
-// Authentication by API
-  const data = {
-      name: "Bhagyashri Ugale"
-   }
-
-   SetUserName(data.name);
-
-}, []);
-
-   return(
+return(
     <Provider store={appStore}>
           <div className="app">
               <Header/>
               <Outlet/>
-          </div>
+              <ToastContainer position="top-center"
+                             autoClose={1000}
+                             closeOnClick/>
+               <Footer/>
+            </div>
     </Provider>
    )
 }
