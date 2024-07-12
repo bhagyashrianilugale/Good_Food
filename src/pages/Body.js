@@ -117,7 +117,7 @@ const Body = () => {
             <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4 active:bg-orange-200 rounded-xl flex flex-between">
               <p
                 className="w-40 py-2"
-                onClick={() => handleFilter('hotOffers', (itemInfo) => itemInfo?.info?.aggregatedDiscountV3?.header.length !== 0)}
+                onClick={() => handleFilter('hotOffers', (itemInfo) =>itemInfo?.info?.aggregatedDiscountInfoV3?.header?.slice(0,2) > 20)}
               >
                 Hot offers
               </p>
