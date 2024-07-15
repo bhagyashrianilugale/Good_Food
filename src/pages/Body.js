@@ -73,7 +73,7 @@ const Body = () => {
                     </div>
                 </div>
             )}
-            <div className="w-10/12 m-auto">
+            <div className="w-9/12 m-auto">
                 <h1 className="font-bold text-3xl inline-block mx-4  mt-[14%] relative">What's on your mind?</h1>
                 <div className="flex overflow-x-scroll no-scrollbar p-4 border-b-2">
                     {mindItem?.map((item, index) => (
