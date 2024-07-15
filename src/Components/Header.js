@@ -7,8 +7,10 @@ import { FaJava } from "react-icons/fa6";
 import { IoSyncCircleOutline, IoPersonCircleSharp } from "react-icons/io5";
 import { PiShoppingCartBold } from "react-icons/pi";
 import { RiCheckboxCircleFill,  RiCloseCircleFill, RiContactsLine } from "react-icons/ri";
-
-
+import { auth } from "../utils/firebase";
+import { signOut } from "firebase/auth";
+import { toast } from "react-toastify";
+import { isLoggedStatus } from "../utils/cartSlice";
 
 const Header = ()=>{
 
@@ -18,7 +20,7 @@ const Header = ()=>{
    // Subscribing to the store using a selector
    let cartItems = useSelector((store)=> store.cart.items);
    let showHiddenUI = useSelector((store)=>store.restaurant.showHiddenUI);
-
+   let isLogged = useSelector((store)=>store.cart.isLogged);
 
    const handleHeaderItem = ()=>{
       dispatch(updateShowList(true));
@@ -42,8 +44,19 @@ const Header = ()=>{
                     <li className="pr-4 hover:text-orange-500 "><Link to="/about"><IoSyncCircleOutline  className="inline text-lg m-0"/>About-Us</Link></li>
                     <li className="px-4 hover:text-orange-500 "><Link to="/contact"><RiContactsLine  className="inline text-xl m-0" /> Contact </Link></li>
                     <li className="px-4 hover:text-orange-500 "><Link to="/cart"><PiShoppingCartBold className="inline text-xl m-0"/> Cart[ { cartItems.length ? cartItems.length : null} ]</Link></li>
-                    <li className="px-4 hover:text-orange-500 "><Link to="/login">LogIn </Link></li>
-                    </ul>
+                    { isLogged ? <button className="px-4 hover:text-orange-500 " 
+                                    onClick={()=>{
+                                              signOut(auth)
+                                              .then(()=>{
+                                                 dispatch(isLoggedStatus(false));
+                                                 toast.success("You are logout!");
+                                                })
+                                              .catch((err)=>{
+                                               console.log(err);
+                                               toast.error("Logout failed!");});
+                                    }}> Logout </button>
+                               : <li className="px-4 hover:text-orange-500 "><Link to="/login">Login</Link></li>}
+                  </ul>
              </div>
              }
        </header>

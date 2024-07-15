@@ -5,7 +5,7 @@ const About = () => {
    return (
        <div className="h-full mt-[7%]">
            <div className="flex-1 flex bg-orange-500 text-white">
-                    <div className="p-6 m-auto w-[40%]">
+                    <div className="p-6 m-auto  mt-[1%] w-[40%]">
                         <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
                         <p className="text-lg px-auto">At Good-Food, our mission is to bring happiness and delight 
                                          to every moment. We aim to be a cherished part of your celebrations and a 
@@ -16,7 +16,7 @@ const About = () => {
                    <div className="mt-8">
                         <img 
                            src={require("../assets/Delivery-boy.jpg")}
-                            className="w-60 mx-40 transform transition-transform duration-500 scale-x-[-1] hover:-translate-x-20"
+                            className="w-60 mx-40 transform cursor-pointer transition-transform duration-500 scale-x-[-1] hover:-translate-x-20"
                         />
                     </div>
             </div>
@@ -24,7 +24,7 @@ const About = () => {
                <div className="mt-8">
                         <img 
                             src={require("../assets/Delivery-boy.jpg")}                            
-                            className="w-60 mx-40 transform transition-transform duration-500 hover:translate-x-20"
+                            className="w-60 mx-40 cursor-pointer  transform transition-transform duration-500 hover:translate-x-20"
                         />
                 </div>
                <div className="p-6 m-auto w-[40%] text-left">

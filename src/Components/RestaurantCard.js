@@ -14,13 +14,16 @@ export const RestaurantCard = (props)=>{
       } = restauList?.info;
 
    return(
-       <div className={`w-[250px] h-100 mx-1 p-4 rounded-2xl overflow-hidden hover:transition-none transition-transform duration-200 transform hover:scale-90 ${className}`}>
+       <div className={`w-[250px] h-100 mx-1 p-4 rounded-2xl overflow-hidden hover:transition-none 
+                       transition-transform duration-200 transform hover:scale-90 ${className}`}>
            <div className="relative">
                 <img src={ cloudinaryImageId ? (CDN_URL+cloudinaryImageId) : DEFAULT_RESTAURANT_IMG} 
                 alt="cart-img" 
-                className={`rounded-2xl h-40 w-80 absolute${classNameImg}`}></img>
+                className={`rounded-2xl h-40 w-80 shadow-lg  shadow-zinc-400 absolute${classNameImg}`}></img>
                 <div className="">
-                   <p className="font-bold text-2xl text-white bottom-0 absolute px-2 bg-gradient-to-t from-black w-full rounded-b-2xl py-2">{restauList?.info?.aggregatedDiscountInfoV3?.header}</p>
+                   <p className="font-bold text-2xl text-white bottom-0 
+                                 absolute px-2 bg-gradient-to-t from-black w-full rounded-b-2xl py-2">
+                                    {restauList?.info?.aggregatedDiscountInfoV3?.header}</p>
                 </div>
           </div>
           <div>
@@ -28,7 +31,8 @@ export const RestaurantCard = (props)=>{
                { name }
             </h3>
             <p className="font-bold  opacity-90"> 
-               <MdStars className=" text-green-700 text-xl inline text-center mb-1" /> { avgRating } <span> . {restauList?.info?.sla?.slaString}</span>
+               <MdStars className=" text-green-700 text-xl inline text-center mb-1" /> 
+                  { avgRating } <span> . {restauList?.info?.sla?.slaString}</span>
             </p>
             <div className="truncate text-black text-sm opacity-50 font-semibold">
                {cuisines.join(",")}

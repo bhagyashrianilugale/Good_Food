@@ -87,16 +87,16 @@ const Cart = () => {
                                         )}
                                     </span>
                                     <span className="w-60 text-sm mx-4">{item[0]?.card?.info?.name}</span>
-                                    <div className="bg-white shadow-lg shadow-zinc-500 text-center mx-4 h-8 text-green-600 rounded-2xl">
+                                    <div className="bg-white shadow-lg w-20 shadow-zinc-500 text-center mx-4 h-8 text-green-600 rounded-2xl">
                                         <button
-                                            className="mx-2 w-5 font-bold my-1"
+                                            className="font-bold mx-2 my-1"
                                             onClick={(e) => handleCount(e, item[0])}
                                         >
                                             -
                                         </button>
                                         <span className="text-lg">{item[1]}</span>
                                         <button
-                                            className="mx-2 w-5 font-bold my-1"
+                                            className="font-bold mx-2  my-1"
                                             onClick={(e) => handleCount(e, item[0])}
                                         >
                                             +

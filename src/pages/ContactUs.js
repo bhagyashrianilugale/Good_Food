@@ -1,5 +1,6 @@
-
+import { CONTACT_IMG } from "../utils/constant";
 const ContactUs = () =>{
+
     return (
         <>
         <div className="flex mt-[10%]">
@@ -9,7 +10,7 @@ const ContactUs = () =>{
                 Contact: bhagyashriugale6970@gmail.com </p>
             </div>
             <div className="w-6/12 p-8">
-                <img  src="https://pngfile.net/public/uploads/preview/flying-burger-png-image-11703410842ovsg23xhhr.png"></img>
+                <img  src={ CONTACT_IMG }></img>
             </div>
         </div>
     </>

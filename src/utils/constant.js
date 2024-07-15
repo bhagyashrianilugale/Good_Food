@@ -9,3 +9,5 @@ export const LOGIN_PAGE_IMG = "https://media-assets.swiggy.com/swiggy/image/uplo
 
 export const DEFAULT_RESTAURANT_IMG ="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/brown_placeholder";
 
+export const CONTACT_IMG = "https://pngfile.net/public/uploads/preview/flying-burger-png-image-11703410842ovsg23xhhr.png";
+

@@ -5,7 +5,8 @@ const cartSlice = createSlice({
 
     initialState: {
         items: [],
-        restaurant: null
+        restaurant: null,
+        isLogged: false
     },
 
     reducers: {
@@ -48,10 +49,14 @@ const cartSlice = createSlice({
             };
         },
 
+        isLoggedStatus : (state, action)=>{
+               state.isLogged = action.payload;
+        }
+
     },
 
 });
 
-export const { addItem, increaseCount, decreaseCount, clearCart } = cartSlice.actions;
+export const { addItem, increaseCount, decreaseCount, clearCart, isLoggedStatus } = cartSlice.actions;
 
 export default cartSlice.reducer;

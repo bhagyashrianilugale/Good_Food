@@ -22,7 +22,6 @@ const RestaurantMenu = ()=>{
     const [ showMenu, setShowMenu ] = useState(false);
 
     const showItemIndex = useSelector((store)=>store?.restaurant?.showItemIndex);
-    console.log(showItemIndex);
     const cartItems = useSelector((store)=> store.cart.items);
 
     const resInfo = useRestaurant(resId);
@@ -63,7 +62,7 @@ return (
                             </div>
                          </div>
                          <img src={cloudinaryImageId ? CDN_URL+cloudinaryImageId : DEFAULT_RESTAURANT_IMG  }
-                              className="h-30 w-60 m-2 rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer"/>
+                              className="h-30 w-60 m-2 shadow-lg shadow-slate-400 rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer"/>
                       </div>
                 </div>
               <h1 className="text-center m-2 p-2 text-xl font-extrabold">Deals for you</h1>
@@ -86,7 +85,7 @@ return (
                                      </div> ): null 
                }
             
-               <div className="w-20 ml-[80%] p-4 h-20 text-xs m-0 rounded-full bg-black text-white cursor-pointer top-[85%] z-35 fixed" onClick = {()=>{ setShowMenu(true) }}>
+               <div className="w-20 ml-[80%] p-4 h-20 text-xs rounded-full bg-black -mt-4 text-white cursor-pointer top-[85%] z-35 fixed" onClick = {()=>{ setShowMenu(true) }}>
                     <RiFileMarkedLine className="text-white text-xl my-1 mx-4" />
                      MENU
                 </div>
