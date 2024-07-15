@@ -1,5 +1,5 @@
-# Hello Food - Revolutionizing Your Seamless Food Delivery Journey! 𓌉◯𓇋
-Table of Contents
+## Hello Food - Revolutionizing Your Seamless Food Delivery Journey! 𓌉◯𓇋
+#Table of Contents
 Project Overview
 Tech Stack
 Key Features
