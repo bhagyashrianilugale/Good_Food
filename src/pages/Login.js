@@ -89,7 +89,7 @@ return(<>
                            required
                            ref={username} 
                            placeholder="Name"
-                           className="inline-block outline-none h-10 w-[85%] border 
+                           className="inline-block outline-none h-10 w-[82%] border 
                                     border-zinc-200 shadow-lg shadow-gray-200 rounded-lg my-1 px-2"
                        />
                        <input type="text" 
@@ -98,7 +98,7 @@ return(<>
                            ref={email}
                            required
                            placeholder="Email"
-                           className="inline-block outline-none h-10 w-[85%] border 
+                           className="inline-block outline-none h-10 w-[82%] border 
                                     border-zinc-200 shadow-lg shadow-gray-200 rounded-lg my-1 px-2"
                        />
                    </span>
@@ -115,7 +115,7 @@ return(<>
                        className="shadow-lg w-[70%] my-1"
                    />
                    <button type="submit" onClick={generateOTP} 
-                       className="rounded-lg p-2 block h-10 w-[85%] font-semibold 
+                       className="rounded-lg p-2 block h-10 w-[82%] font-semibold 
                                bg-orange-500 text-white my-4 hover:bg-orange-600"
                    >
                     {loader ? <CgSpinner className="w-8 h-8 mx-auto mb-4 animate-spin"/> : "Send OTP"}
@@ -126,20 +126,20 @@ return(<>
                        value={otp}
                        onChange={(e) => setOtp(e.target.value)}
                        placeholder="Enter OTP"
-                       className="inline-block outline-none h-10 w-[85%] border border-zinc-200 
+                       className="inline-block outline-none h-10 w-[82%] border border-zinc-200 
                                   shadow-lg shadow-gray-200 rounded-lg my-1 px-2"
                    />
                 </span>
                <p className="text-orange-500 text-center font-bold px-2">{errorMessage ? errorMessage : null}</p>
-               { isLogged ? <Link to="/"><span className="rounded-lg p-2 block h-10 w-[85%] 
-                                         font-semibold bg-orange-500 text-white my-4 hover:bg-orange-600" onClick={verifyOTP}>
+               { isLogged ? <Link to="/"><span className="rounded-lg text-center p-2 block h-10 w-[82%] font-semibold bg-orange-500 text-white my-4 hover:bg-orange-600" 
+                                        onClick={verifyOTP}>
                                           Verify OTP
                                          </span></Link>
-                          : <span  onClick={verifyOTP} className="rounded-lg p-2 block h-10 w-[85%] 
+                          : <span  onClick={verifyOTP} className="rounded-lg text-center p-2 block h-10 w-[82%] 
                                  font-semibold bg-orange-500 text-white my-4 hover:bg-orange-600">
                                     Verify OTP
                            </span>}
-               <p className="text-xs font-normal w-[85%]">By clicking on login, I accept the <b>
+               <p className="text-xs font-normal w-[80%]">By clicking on login, I accept the <b>
                    Terms & Conditions & Privacy Policy
                </b> 
                </p>

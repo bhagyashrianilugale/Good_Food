@@ -9,7 +9,7 @@ return <div className="w-full h-[80%] mt-[8%]">
                        <ImSpinner2 
                            className="animate-spin w-20 h-20 font-thin mx-auto opacity-70 text-white"/>
                        <GiHamburger 
-                           className="w-10 h-10 text-white block top-[35%] pl-2 mx-[48%] absolute"/></div>
+                           className="w-10 h-10 text-white block top-[30%] pl-2 mx-[48%] absolute"/></div>
                    <div>
                        <p className="text-xl py-10 text-center bottom-4 text-white">Looking for great food near you...</p>
                   </div>
