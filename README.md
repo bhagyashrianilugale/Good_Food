@@ -36,7 +36,7 @@ Experience Good_Food seamlessly across all devices, from desktops to smartphones
 Follow these steps to set up and run Good_food locally:
 1. Clone the Repository:
  ```javascript
-    git clone 
+    git clone https://github.com/bhagyashrianilugale/Good_Food.git
  ```
 2. Install Dependencies:
 ```javascript
