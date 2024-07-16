@@ -15,6 +15,7 @@ const Cart = () => {
 
     let items = useSelector((store) => store.cart.items);
     let restaurant = useSelector((store) => store.cart.restaurant);
+    let isLogged = useSelector((store)=>store.cart.isLogged);
     const resId = restaurant?.id;
 
     const dispatch = useDispatch();
@@ -183,13 +184,17 @@ const Cart = () => {
                         </div>
                         <hr  className="my-2 w-full bg-gray-900 h-0.5 m-auto"/>
                         <div className="flex justify-between w-full">
-                              <Link to="/login">
-                              <button 
-                                 className="bg-white shadow-lg mx-10 w-40 my-2 text-center text-lg font-bold h-10 text-orange-500 rounded-lg shadow-zinc-500">
-                                         TO PAY
-                                    </button>
-                            </Link>
-                              <p className="font-extrabold text-lg my-2">
+                          { !isLogged ? <button 
+                                           className="bg-white shadow-lg mx-10 w-40 my-2 text-center text-lg font-bold 
+                                                 h-10 text-orange-500 rounded-lg shadow-zinc-500">
+                                            <Link to="/login">TO PAY</Link>
+                                          </button>
+                                      : <button onClick={()=>toast.success("Paymenet successful!")} 
+                                          className="bg-white shadow-lg mx-10 w-40 my-2 text-center text-lg font-bold 
+                                                  h-10 text-orange-500 rounded-lg shadow-zinc-500">
+                                          TO PAY
+                                        </button>}
+                                   <p className="font-extrabold text-lg my-2">
                                     ₹{" "}
                                     {Math.floor(totalPrice) +
                                         (restaurant.feeDetails.amount / 100

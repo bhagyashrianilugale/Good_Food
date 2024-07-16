@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { isLoggedStatus } from '../utils/cartSlice';
 import { Link } from 'react-router-dom';
 import { auth } from '../utils/firebase';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
@@ -25,6 +26,7 @@ const Login = () => {
    
    const email = useRef(null);
    const username = useRef(null);
+   const navigate = useNavigate();
 
    const generateOTP = async(e) =>{
            e.preventDefault();
@@ -59,6 +61,7 @@ const Login = () => {
           if(data?.operationType=="signIn"){
               dispatch(isLoggedStatus(true));
               toast.success("You are logged Payment successful!");
+              navigate("/");
               
            }}catch(err){
              setErrorMessage(err.message);
