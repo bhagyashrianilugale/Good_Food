@@ -62,7 +62,7 @@ const Body = () => {
             {showHiddenUI && (
                 <div className="px-4 w-full my-8 h-60 bg-gradient-to-t -mb-16 from-violet-300 rounded-3xl mt-[10%] relative">
                     <div className="flex justify-around">
-                        <h1 className="text-4xl font-extrabold opacity-80">
+                        <h1 className="text-6xl font-extrabold opacity-80">
                             Order Food <br />
                             Online in <br />
                             Nashik

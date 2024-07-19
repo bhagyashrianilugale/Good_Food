@@ -56,7 +56,7 @@ return(
                                            <img src={ item?.card?.info?.imageId?.length ? CDN_URL + item?.card?.info?.imageId : DEFAULT_RESTAURANT_IMG } 
                                                 className="rounded-lg w-full my-12 shadow-lg -top-1 shadow-zinc-400 h-70 relative" 
                                                 alt="item_card_img"/> 
-                                                <div className="p-2 bg-white mx-8 w-25 h-10 -mt-16 absolute text-green-600  rounded-2xl  shadow-lg shadow-zinc-500">
+                                                <div className="p-2 bg-white mx-12 w-25 h-10 -mt-16 absolute text-green-600  rounded-2xl  shadow-lg shadow-zinc-500">
                                                 {items?.filter(
                                                    (itm) => (itm[0]?.card?.info?.id == item?.card?.info?.id)
                                                        ).length == 0
