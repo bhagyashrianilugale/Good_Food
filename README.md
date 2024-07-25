@@ -44,7 +44,8 @@ Follow these steps to set up and run Good_food locally:
    npm start
 ```
 5. Open in Your Browser: Open http://localhost:1234 in your web browser.
-# LiveURL[https://goofoodappuba.netlify.app/]
+## Live Demo
+  [Liveurl](https://goofoodappuba.netlify.app/)
 ## Author
 Bhagyashri Ugale
 Email: bhagyashriugale6970@gmail.com
