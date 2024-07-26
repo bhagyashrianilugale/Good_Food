@@ -92,7 +92,7 @@ return(<>
                            required
                            ref={username} 
                            placeholder="Name"
-                           className="inline-block outline-none h-10 w-[72%] border 
+                           className="inline-block outline-none h-10 w-[85%] border 
                                     border-zinc-200 shadow-lg shadow-gray-200 rounded-lg my-1 px-2"
                        />
                        <input type="text" 
@@ -101,7 +101,7 @@ return(<>
                            ref={email}
                            required
                            placeholder="Email"
-                           className="inline-block outline-none h-10 w-[72%] border 
+                           className="inline-block outline-none h-10 w-[85%] border 
                                     border-zinc-200 shadow-lg shadow-gray-200 rounded-lg my-1 px-2"
                        />
                    </span>
@@ -115,10 +115,10 @@ return(<>
                        value={phone}
                        onChange={(phone) => setPhone("+" + phone)}
                        placeholder="Enter mobile number"
-                       className="shadow-lg w-[72%] my-1"
+                       className="shadow-lg w-[85%] my-1"
                    />
                    <button type="submit" onClick={generateOTP} 
-                       className="rounded-lg p-2 block h-10 w-[72%] font-semibold 
+                       className="rounded-lg p-2 block h-10 w-[85%] font-semibold 
                                bg-orange-500 text-white my-4 hover:bg-orange-600"
                    >
                     {loader ? <CgSpinner className="w-8 h-8 mx-auto mb-4 animate-spin"/> : "Send OTP"}
@@ -129,16 +129,16 @@ return(<>
                        value={otp}
                        onChange={(e) => setOtp(e.target.value)}
                        placeholder="Enter OTP"
-                       className="inline-block outline-none h-10 w-[72%] border border-zinc-200 
+                       className="inline-block outline-none h-10 w-[85%] border border-zinc-200 
                                   shadow-lg shadow-gray-200 rounded-lg my-1 px-2"
                    />
                 </span>
                <p className="text-orange-500 text-center font-bold px-2">{errorMessage ? errorMessage : null}</p>
-               { isLogged ? <Link to="/"><span className="rounded-lg text-center p-2 block h-10 w-[72%] font-semibold bg-orange-500 text-white my-4 hover:bg-orange-600" 
+               { isLogged ? <Link to="/"><span className="rounded-lg text-center p-2 block h-10 w-[85%] font-semibold bg-orange-500 text-white my-4 hover:bg-orange-600" 
                                         onClick={verifyOTP}>
                                           Verify OTP
                                          </span></Link>
-                          : <span  onClick={verifyOTP} className="rounded-lg text-center p-2 block h-10 w-[72%] 
+                          : <span  onClick={verifyOTP} className="rounded-lg text-center p-2 block h-10 w-[85%] 
                                  font-semibold bg-orange-500 text-white my-4 hover:bg-orange-600">
                                     Verify OTP
                            </span>}
