@@ -29,9 +29,6 @@ Welcome to Good_Food, a cutting-edge food delivery app designed to revolutionize
 ## Powered by Swiggy API
 Good_Food is powered by the robust Swiggy API, providing users with access to a diverse and extensive selection of top-notch restaurants.
 
-## Fully Responsive Design
-Experience Good_Food seamlessly across all devices, from desktops to smartphones, with our fully responsive design.
-
 ## Installation
 Follow these steps to set up and run Good_food locally:
 1. Clone the Repository:
@@ -47,7 +44,8 @@ Follow these steps to set up and run Good_food locally:
    npm start
 ```
 5. Open in Your Browser: Open http://localhost:1234 in your web browser.
-   
+## Live Demo
+  [Liveurl](https://goofoodappuba.netlify.app/)
 ## Author
 Bhagyashri Ugale
 Email: bhagyashriugale6970@gmail.com
