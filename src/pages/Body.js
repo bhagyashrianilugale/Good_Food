@@ -77,7 +77,7 @@ const Body = () => {
             )}
             <div className="w-10/12 lg:w-9/12 m-auto">
                 <h1 className="font-bold text-xl lg:text-3xl sm:text-2xl inline-block mx-4
-                              sm:mt-[40%] md:mt-[36%] lg:mt-[14%] relative">What's on your mind?</h1>
+                              mt-[50%] sm:mt-[40%] md:mt-[36%] lg:mt-[14%] relative">What's on your mind?</h1>
                 <div className="flex overflow-x-scroll no-scrollbar p-4 border-b-2">
                     {mindItem?.map((item, index) => (
                         <Mind key={index} imageId={item.imageId} itemLink={item.action.link} itemName={item.action.text} />
