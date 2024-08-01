@@ -32,7 +32,6 @@ return(
               <Outlet/>
               <ToastContainer position="top-center"
                               autoClose={1000}
-                              className="w-20"
                               closeOnClick/>
                <Footer/>
             </div>

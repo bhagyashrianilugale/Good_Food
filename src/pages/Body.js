@@ -56,7 +56,7 @@ const Body = () => {
         fetchData();
     }, []);
 
-    if (status === false) return <h1 className="m-auto font-bold text-2xl text-center">You're in Offline mode !!!</h1>;
+    if (status == false) return <h1 className="m-auto font-bold text-2xl text-center">You're in Offline mode !!!</h1>;
 
     return listOfRestaurant?.length ? (
         <>
@@ -75,8 +75,9 @@ const Body = () => {
                     </div>
                 </div>
             )}
-            <div className="w-10/12 lg:w-9/12  m-auto">
-                <h1 className="font-bold text-xl lg:text-3xl sm:text-2xl inline-block mx-4 mt-[44%] lg:mt-[14%] relative">What's on your mind?</h1>
+            <div className="w-10/12 lg:w-9/12 m-auto">
+                <h1 className="font-bold text-xl lg:text-3xl sm:text-2xl inline-block mx-4
+                              sm:mt-[40%] md:mt-[36%] lg:mt-[14%] relative">What's on your mind?</h1>
                 <div className="flex overflow-x-scroll no-scrollbar p-4 border-b-2">
                     {mindItem?.map((item, index) => (
                         <Mind key={index} imageId={item.imageId} itemLink={item.action.link} itemName={item.action.text} />
@@ -149,7 +150,7 @@ const Body = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-wrap cursor-pointer mt-[5%] border-b-2">
+                <div className="flex lg:w-11.5/12 flex-wrap cursor-pointer mt-[5%] border-b-2">
                     {filteredRestaurant.length !== undefined && filteredRestaurant.map((restaurant) => (
                         <Link
                             key={restaurant.info.id}

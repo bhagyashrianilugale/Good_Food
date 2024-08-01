@@ -42,7 +42,7 @@ return(
                                                     ? <BsRecordCircle className="text-green-700 inline text-center m-1"/> 
                                                     : <IoCaretUpCircleOutline  className=" text-red-700 inline text-center m-1" />
                                              }
-                                             <p className="truncate inline">{ item?.card.info.name }</p>
+                                             <p className="trucate inline">{ item?.card.info.name }</p>
                                            </span>
                                              <br/> 
                                              <div className="mx-5">&#8377;{ item?.card.info.price  

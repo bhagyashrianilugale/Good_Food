@@ -17,7 +17,7 @@ return <div className="w-full h-[80%] mt-[6%]">
                   </div>
             </div>
 
-            <div className="flex flex-wrap mx-auto animate-pulse">
+            <div className="flex flex-wrap w-11/12 mx-auto animate-pulse">
               <div className='m-10 p-4 w-[300px] bg-slate-200  rounded-lg h-60 '></div>
               <div className='m-10 p-4 w-[300px] bg-slate-200  rounded-lg h-60 '></div>
               <div className='m-10 p-4 w-[300px] bg-slate-200  rounded-lg h-60 '></div>

@@ -22,7 +22,7 @@ const RestaurantMenu = ()=>{
 
     const resInfo = useRestaurant(resId);
    
-    if(resInfo === null) return <Shimmer/>;
+    if(resInfo == null) return <Shimmer/>;
     const { name, 
             avgRatingString, 
             costForTwoMessage, 
@@ -41,25 +41,25 @@ const RestaurantMenu = ()=>{
 return (
       <>
         <div className="text-center lg:p-6 mt-[35%] lg:mt-[10%] relative">              
-             <h2 className=" font-bold text-2xl lg:text-3xl">{name}</h2>
+             <h2 className="font-bold text-2xl lg:text-3xl">{name}</h2>
                 <div className=" bg-gradient-to-t from-gray-200 p-4 rounded-xl w-full lg:w-6/12 m-auto">
-                   <div className="h-60 lg:h-40 w-full rounded-xl bg-gray-50 border m-auto flex justify-between">
+                   <div className="h-80 md:h-60 lg:h-38 w-full rounded-xl bg-gray-50 border m-auto lg:flex justify-between">
                         <div className="m-1">
-                             <p className="font-bold my-2 mx-auto lg:mx-4">
+                             <p className="font-bold my-2 mx-auto text-left lg:mx-4">
                                <MdStars className="text-green-700 text-xl inline text-start mb-1" />
                                {avgRatingString} ( {totalRatingsString} ) &#x2022;&nbsp; { costForTwoMessage }
                              </p> 
                              <h3 className="text-orange-600 text-lg font-semibold text-start mx-4">
                                  < TiLocation className="text-purple-700 inline text-2xl m-auto"/> {city}</h3>
                              <div className="flex mx-2">
-                                <PiLineSegmentFill  className="-rotate-45 text-zinc-500 my-6 text-6xl lg:text-4xl"/>
+                                <PiLineSegmentFill  className="-rotate-45 text-zinc-500 my-2 lg:my-6 text-4xl lg:text-4xl"/>
                                  <p className="my-1 lg:my-4"><b>Outlet</b> &nbsp; <span className="text-zinc-600 text-sm">{ areaName } </span><br/>
                                  <b className="flex flex-start">< IoBicycle className="mx-2 my-1" /> {sla.slaString?.toLowerCase()} </b>
                                 </p>
                             </div>
                          </div>
                          <img src={cloudinaryImageId ? CDN_URL+cloudinaryImageId : DEFAULT_RESTAURANT_IMG  }
-                              className="w-60 h-30 lg:w-60 lg:h-30 m-0 lg:m-2 lg:p-0 shadow-lg shadow-slate-400 rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer"/>
+                              className="w-80 mx-6 h-40 md:w-50 md:h-20 lg:w-60 lg:h-[80%] lg:m-4 lg:p-0 shadow-lg shadow-slate-400 rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer"/>
                       </div>
                 </div>
               <h1 className="text-center m-2 p-2 text-xl font-extrabold">Deals for you</h1>

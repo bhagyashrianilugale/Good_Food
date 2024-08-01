@@ -58,7 +58,7 @@ const MindItemCollection = () => {
             <p className="text-lg px-2 my-4 opacity-80">{allItem[0].card.card.description}</p>
          </div>
          <div className="flex justify-around w-full lg:w-6/12 lg:mx-10">
-            <div className="px-0 lg:px-2 cursor-pointer text-center mx-2 lg:mx-2 my-3 text-white
+            <div className="px-0 lg:px-4 lg:py-1 cursor-pointer text-center mx-2 my-3 text-white
                            bg-orange-400 h-8 active:bg-orange-200 rounded-xl flex flex-between">
                <p
                   onClick={() => applyFilter('lessThan40Mins', () => 
@@ -73,7 +73,7 @@ const MindItemCollection = () => {
                )}
             </div>
 
-            <div className="px-0 lg:px-2 cursor-pointer text-center mx-2 lg:mx-2 my-3 text-white bg-orange-400 
+            <div className="px-0 lg:px-4 lg:py-1  cursor-pointer text-center mx-2  my-3 text-white bg-orange-400 
                        h-8 active:bg-orange-200 rounded-xl flex flex-between">
                <p
                   onClick={() => applyFilter('rs300To600', () => 
@@ -89,7 +89,7 @@ const MindItemCollection = () => {
                )}
             </div>
 
-            <div className="px-0 lg:px-2 cursor-pointer text-center mx-2 lg:mx-2 my-3 text-white bg-orange-400 
+            <div className="px-0 lg:px-4 lg:py-1  cursor-pointer text-center mx-2 my-3 text-white bg-orange-400 
                      h-8 active:bg-orange-200 rounded-xl flex flex-between">
                <p
                   onClick={() => applyFilter('lessThanRs300', () => 
@@ -106,8 +106,8 @@ const MindItemCollection = () => {
          </div>
 
          <p className="text-2xl sm:text-2xl lg:text-3xl
-                       px-1 lg:px-2 sm:px-0 font-bold opacity-90 mx-12 sm:mx-12 lg:mx-20 my-4">Restaurants to explore</p>
-         <div className="flex flex-wrap mx-[5%]">
+                       px-1 lg:px-4 lg:py-1  sm:px-0 font-bold opacity-90 mx-12 sm:mx-12 lg:mx-20 my-4">Restaurants to explore</p>
+         <div className="flex flex-wrap mx-[5%] w-full">
             {mindItem?.map((itemInfo, index) =>(
                <Link key={index} to={"/restaurants/" + resId}>
                   <RestaurantCard restauList={itemInfo?.card?.card} />

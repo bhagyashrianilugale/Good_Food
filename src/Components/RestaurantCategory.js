@@ -21,7 +21,7 @@ const RestaurantCategory = ({data, showItem, showIndex, restaurant})=>{
 
     return (
         <>
-            <div className="w-full p-4 lg:w-6/12 lg:mx-auto my-4 bg-gray-50 shadow-lg lg:p-4 cursor-pointer">
+            <div className="w-full p-4 md:w-10/12 lg:w-6/12 lg:mx-auto my-4 bg-gray-50 shadow-lg lg:p-4 cursor-pointer">
                 <div className="flex text-sm lg:text-lg justify-between font-bold" onClick={ handleClick }>
                      <span>{data.title } ({ data?.itemCards?.length})</span>
                      <span>{showItem ? <BiSolidUpArrow /> :  <BiSolidDownArrow />}</span>

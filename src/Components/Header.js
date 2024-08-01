@@ -11,6 +11,8 @@ import { auth } from "../utils/firebase";
 import { signOut } from "firebase/auth";
 import { toast } from "react-toastify";
 import { isLoggedStatus } from "../utils/cartSlice";
+import { GoXCircle } from "react-icons/go";
+
 
 const Header = ()=>{
 
@@ -71,6 +73,7 @@ const Header = ()=>{
              }
              {isSideBarOpen &&(
                      <div className="absolute right-0 w-48 h-screen bg-white text-black text-semibold shadow-lg">
+                      <GoXCircle className=" text-right text-2xl font-bold mx-1 my-2" onClick={handleIsSideBar}/>
                      <ul>
                        <li className="px-4 my-4"> Internet Status: {
                       (status == true) ? < RiCheckboxCircleFill className="inline text-green-600" />

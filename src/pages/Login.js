@@ -69,7 +69,7 @@ const Login = () => {
          }
     }
 return(<>
-        <div className="h-[70%] w-full lg:w-4/12 bg-white lg:m-auto my-[40%] lg:my-[10%] shadow shadow-orange-500 p-8">
+        <div className="h-[70%] w-full lg:w-4/12 bg-white lg:m-auto my-[40%] lg:my-[10%] lg:shadow lg:shadow-orange-500 p-8">
                <div className="flex justify-between">
                    <p className="text-lg">
                        <b className="text-2xl lg:text-3xl py-2">{isLog ? "Log in" : "Sign up"}</b><br />
@@ -81,7 +81,7 @@ return(<>
                    <img 
                        src={LOGIN_PAGE_IMG} 
                        alt="login_img"
-                       className="w-40 h-20"
+                       className="w-[30%] h-[35%] lg:w-40 lg:h-20"
                    />
                </div>
                  {!isLog && 

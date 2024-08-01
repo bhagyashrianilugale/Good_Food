@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-10 -top-0 w-full">
-      <div className="block sm:hidden text-white text-center -top-0">goodfood@gmail.com</div>
-      <div className="container mx-auto px-4 hidden sm:block">
+    <footer className="bg-black text-white md:mt-[80%] lg:mt-0 lg:py-10 -top-0 w-full">
+      <div className="block sm:hidden md:hidden text-white text-center -top-0">goodfood@gmail.com</div>
+      <div className="container mx-auto px-4 hidden sm:block md:block">
         <div className="grid grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-2">Good-Food</h3>
