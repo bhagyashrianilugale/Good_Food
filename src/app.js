@@ -1,5 +1,5 @@
 
-import React, { Suspense, lazy, useEffect } from 'react';
+import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './Components/Header';
 import Body from './pages/Body';
@@ -8,7 +8,6 @@ import ContactUs from './pages/ContactUs';
 import ResraurantMenu from './Components/RestaurantMenu';
 import MindItemCollection from './Components/MindItemCollection';
 import { createBrowserRouter , RouterProvider, Outlet } from 'react-router-dom';
-import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import appStore from './utils/appStore';
 import Login from './pages/Login';
@@ -33,6 +32,7 @@ return(
               <Outlet/>
               <ToastContainer position="top-center"
                               autoClose={1000}
+                              className="w-20"
                               closeOnClick/>
                <Footer/>
             </div>

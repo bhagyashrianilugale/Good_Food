@@ -54,14 +54,14 @@ const Cart = () => {
     }, [items]);
 
     return ( 
-        <div className="my-[10%]">
+        <div className="lg:my-[10%] my-[36%]">
              <div>
                  {items?.length !== 0 ? (
-                    <div className="mx-auto w-6/12 p-10 shadow-lg text-gray-800 rounded-lg  shadow-black">
-                        <h1 className="text-center text-4xl mx-20 font-bold">Cart</h1>
+                    <div className="mx-0 lg:mx-auto w-full lg:w-6/12 p-6 lg:p-10 lg:shadow-lg text-gray-800 rounded-lg lg:shadow-black">
+                        <h1 className="text-center text-4xl mx-20 my-4 font-bold">Cart</h1>
                         <div className="flex justify-between m-auto">
                             <Link to={"/restaurants/" + resId}><img
-                                className="rounded-lg w-40 h-40"
+                                className="rounded-lg w-40 lg:w-40 h-20 lg:h-40 lg:p-0"
                                 src={
                                     restaurant?.cloudinaryImageId
                                         ? CDN_URL + restaurant?.cloudinaryImageId
@@ -69,8 +69,8 @@ const Cart = () => {
                                 }
                                 alt="Restaurant_img"
                             /></Link>
-                            <div className="my-14">
-                                <h2 className="text-2xl font-bold">{restaurant?.name}</h2>
+                            <div className="my-0 lg:my-14 px-6 lg:p-0">
+                                <h2 className="text-xl lg:text-2xl font-bold">{restaurant?.name}</h2>
                                 <p className="text-gray-500 text-sm border"> 
                                      <MdOutlineLocationCity className="inline text-cyan-700 mx-2"/>
                                      {restaurant?.city}
@@ -79,7 +79,7 @@ const Cart = () => {
                         </div>
                         <div className="text-gray-800 py-4 text-left">
                             {items?.map((item, index) => (
-                                <div key={index} className="flex items-center my-1">
+                                <div key={index} className="flex items-center mx-0 lg:mx-16 my-1">
                                     <span className="mx-2">
                                         {item[0]?.card?.info?.itemAttribute?.vegClassifier === "VEG" ? (
                                             <BsRecordCircle className="text-green-700 inline" />
@@ -87,17 +87,18 @@ const Cart = () => {
                                             <IoCaretUpCircleOutline className="text-red-700 inline" />
                                         )}
                                     </span>
-                                    <span className="w-60 text-sm mx-4">{item[0]?.card?.info?.name}</span>
-                                    <div className="bg-white shadow-lg w-20 shadow-zinc-500 text-center mx-4 h-8 text-green-600 rounded-2xl">
+                                    <span className="w-60 text-sm truncate lg:text-lg mx-2 lg:mx-4">{item[0]?.card?.info?.name}</span>
+                                    <div className="bg-white shadow-lg w-80 lg:w-20 shadow-zinc-500 text-center mx-4 h-8 
+                                                   text-green-600 rounded-2xl">
                                         <button
                                             className="font-bold mx-2 my-1"
                                             onClick={(e) => handleCount(e, item[0])}
                                         >
                                             -
                                         </button>
-                                        <span className="text-lg">{item[1]}</span>
+                                        <span className="text-lg lg:text-xl">{item[1]}</span>
                                         <button
-                                            className="font-bold mx-2  my-1"
+                                            className="font-bold mx-2 my-1"
                                             onClick={(e) => handleCount(e, item[0])}
                                         >
                                             +
@@ -115,13 +116,12 @@ const Cart = () => {
                         <div className="h-10 w-80 bg-gray-100 m-auto">
                               <RiDoubleQuotesL className="inline m-auto mx-1"/>
                               <input placeholder="Any suggestions? We will pass it on..." 
-                              className="text-sm  text-center m-auto h-10 w-60 outline-none bg-gray-100"/> 
+                              className="text-sm lg:text-lg text-center m-auto h-10 w-60 outline-none bg-gray-100"/> 
                         </div>
                         <div className="flex justify-center my-2">
                             <button
                                 className="bg-white shadow-lg mx-10 w-40 text-center text-lg font-bold h-10 text-orange-500 rounded-lg shadow-zinc-500"
-                                onClick={handleClearCart}
-                            >
+                                onClick={handleClearCart}>
                                 Clear cart
                             </button>
                         </div>
@@ -137,7 +137,7 @@ const Cart = () => {
                                 {!changeText ? (
                                     <label
                                         htmlFor="checked-checkbox"
-                                        className="text-sm"
+                                        className="text-sm lg:text-lg"
                                     >
                                        <b>Opt in for No-contact Delivery</b> <br />
                                         <span className="text-zinc-400">Unwell, or avoiding contact? Please select no-contact 
@@ -148,7 +148,7 @@ const Cart = () => {
                                 ) : (
                                     <label
                                         htmlFor="checked-checkbox"
-                                        className="text-sm"
+                                        className="text-sm lg:text-lg"
                                     >
                                         <b>Opt in for No-contact Delivery</b> <br />
                                          <span  className="text-zinc-400">Our delivery partner will call to confirm. 
@@ -158,7 +158,7 @@ const Cart = () => {
                                 )}
                             </div>
                         </div>
-                        <div className="border-t border-gray-300 pt-4 mt-4 text-sm m-auto">
+                        <div className="border-t border-gray-300 pt-4 mt-4 text-sm lg:text-lg m-auto">
                             <div className="grid grid-cols-2 gap-2 text-gray-800">
                                 <span className="col-span-2 font-semibold text-lg">Bill Details</span>
                                 <span>Item Total</span>
@@ -190,7 +190,7 @@ const Cart = () => {
                                             <Link to="/login">TO PAY</Link>
                                           </button>
                                       : <button onClick={()=>toast.success("Paymenet successful!")} 
-                                          className="bg-white shadow-lg mx-10 w-40 my-2 text-center text-lg font-bold 
+                                          className="bg-white shadow-lg mx-0 lg:mx-10 w-40 my-2 text-center text-lg font-bold 
                                                   h-10 text-orange-500 rounded-lg shadow-zinc-500">
                                           TO PAY
                                         </button>}
@@ -208,7 +208,7 @@ const Cart = () => {
                       </div>
                     </div>
                 ) : (
-                    <div className="text-center my-10">
+                    <div className="text-center py-16 lg:p-0 my-10">
                         <img src={EMPTY_CART_IMG} className="h-60 w-80 m-auto" alt="Empty Cart" />
                         <p className="text-lg font-bold opacity-80">Your cart is empty</p>
                         <p className="text-sm opacity-80">You can go to home page to view more restaurants</p>

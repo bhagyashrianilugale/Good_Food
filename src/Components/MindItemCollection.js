@@ -53,12 +53,13 @@ const MindItemCollection = () => {
       <Shimmer />
    ) : (
       <>
-         <div className="mt-[12%] mx-20">
+         <div className="mt-[32%] sm:mt-[34%] mx-4 lg:mt-[12%] lg:mx-20">
             <h2 className="text-4xl px-2 font-bold opacity-80 ">{allItem[0].card.card.title}</h2>
             <p className="text-lg px-2 my-4 opacity-80">{allItem[0].card.card.description}</p>
          </div>
-         <div className="flex justify-around w-6/12 mx-10">
-            <div className="px-2 cursor-pointer text-center mx-2 my-1 text-white bg-orange-400 h-8 active:bg-orange-200 rounded-xl flex flex-between">
+         <div className="flex justify-around w-full lg:w-6/12 lg:mx-10">
+            <div className="px-0 lg:px-2 cursor-pointer text-center mx-2 lg:mx-2 my-3 text-white
+                           bg-orange-400 h-8 active:bg-orange-200 rounded-xl flex flex-between">
                <p
                   onClick={() => applyFilter('lessThan40Mins', () => 
                                     allItem?.filter((itemInfo) => itemInfo?.card?.card?.info?.sla?.slaString?.slice(0, 2) < 40))}
@@ -72,7 +73,8 @@ const MindItemCollection = () => {
                )}
             </div>
 
-            <div className="px-2 cursor-pointer text-center mx-2 my-1 text-white bg-orange-400 h-8 active:bg-orange-200 rounded-xl flex flex-between">
+            <div className="px-0 lg:px-2 cursor-pointer text-center mx-2 lg:mx-2 my-3 text-white bg-orange-400 
+                       h-8 active:bg-orange-200 rounded-xl flex flex-between">
                <p
                   onClick={() => applyFilter('rs300To600', () => 
                                               allItem?.filter((itemInfo) =>(itemInfo?.card?.card?.info?.costForTwo?.slice(1, 4) > 300)
@@ -81,13 +83,14 @@ const MindItemCollection = () => {
                   Rs.300-Rs.600
                </p>
                {filterState.rs300To600 && (
-                  <span onClick={() => handleCross('rs300To600')} className=" mx-2 my-1 text-lg">
+                  <span onClick={() => handleCross('rs300To600')} className="mx-2 my-1 text-lg">
                      <RxCross1 />
                   </span>
                )}
             </div>
 
-            <div className="px-2 cursor-pointer text-center mx-2 my-1 text-white bg-orange-400 h-8 active:bg-orange-200 rounded-xl flex flex-between">
+            <div className="px-0 lg:px-2 cursor-pointer text-center mx-2 lg:mx-2 my-3 text-white bg-orange-400 
+                     h-8 active:bg-orange-200 rounded-xl flex flex-between">
                <p
                   onClick={() => applyFilter('lessThanRs300', () => 
                                                allItem?.filter((itemInfo) => itemInfo?.card?.card?.info?.costForTwo?.slice(1, 4) < 300))}
@@ -102,7 +105,8 @@ const MindItemCollection = () => {
             </div>
          </div>
 
-         <p className="text-2xl px-2 font-bold opacity-90 mx-20 my-4">Restaurants to explore</p>
+         <p className="text-2xl sm:text-2xl lg:text-3xl
+                       px-1 lg:px-2 sm:px-0 font-bold opacity-90 mx-12 sm:mx-12 lg:mx-20 my-4">Restaurants to explore</p>
          <div className="flex flex-wrap mx-[5%]">
             {mindItem?.map((itemInfo, index) =>(
                <Link key={index} to={"/restaurants/" + resId}>

@@ -1,6 +1,6 @@
 import { Link, useRouteError } from "react-router-dom";
 import { ERROR_IMG } from "../utils/constant";
-import Header from "../Components/Header";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const Error = ()=>{
     const error = useRouteError();
@@ -19,6 +19,9 @@ const Error = ()=>{
                        <p className="text-2xl font-bold my-2 text-center">404 : Page Not Found</p>
                        <Link to={"/"}>
                                 <button className="p-2 block rounded-sm font-semibold bg-orange-500 text-white my-2 mx-auto">Go to homepage</button>
+                       </Link>
+                       <Link to={"/contact"} className="text-lg font-semibold inline">
+                            Contact support <FaArrowRightLong/>
                        </Link>
                        
                    </div>

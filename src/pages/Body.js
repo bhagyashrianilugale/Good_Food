@@ -32,6 +32,7 @@ const Body = () => {
 
     const fetchData = async () => {
         const response = await fetch(SWIGGY_URL);
+        console.log(response);
         const jsonData = await response.json();
         dispatch(addlistOfRestaurants(jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants));
         dispatch(addfilteredRestaurants(jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants));
@@ -60,7 +61,8 @@ const Body = () => {
     return listOfRestaurant?.length ? (
         <>
             {showHiddenUI && (
-                <div className="px-4 w-full my-8 h-60 bg-gradient-to-t -mb-16 from-violet-300 rounded-3xl mt-[10%] relative">
+                <div className="px-4 w-full my-8 h-60 bg-gradient-to-t -mb-16
+                               from-violet-300 rounded-3xl mt-[10%] relative hidden lg:block sm:hidden">
                     <div className="flex justify-around">
                         <h1 className="text-6xl font-extrabold opacity-80">
                             Order Food <br />
@@ -73,19 +75,19 @@ const Body = () => {
                     </div>
                 </div>
             )}
-            <div className="w-9/12 m-auto">
-                <h1 className="font-bold text-3xl inline-block mx-4  mt-[14%] relative">What's on your mind?</h1>
+            <div className="w-10/12 lg:w-9/12  m-auto">
+                <h1 className="font-bold text-xl lg:text-3xl sm:text-2xl inline-block mx-4 mt-[44%] lg:mt-[14%] relative">What's on your mind?</h1>
                 <div className="flex overflow-x-scroll no-scrollbar p-4 border-b-2">
                     {mindItem?.map((item, index) => (
                         <Mind key={index} imageId={item.imageId} itemLink={item.action.link} itemName={item.action.text} />
                     ))}
                 </div>
 
-                <h1 className="font-bold text-3xl my-8 mx-4">Restaurants with online food delivery in Nashik</h1>
-                <div className="flex w-full">
-                    <Search />
-                    <div className="flex overflow-x-scroll no-scrollbar mx-8">
-                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
+                <h1 className="font-bold text-xl lg:text-3xl sm:text-xl md:text-2xl my-4 ml-4 lg:my-8 lg:mx-4">Restaurants with online food delivery in Nashik</h1>
+                <div className="flex">
+                    <div className="flex overflow-x-scroll no-scrollbar lg:mx-8">
+                      <Search />
+                          <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-2
                                        active:bg-orange-200 rounded-xl flex flex-between">
                             <p
                                 className="w-40 py-2"
@@ -97,7 +99,7 @@ const Body = () => {
                                      <RxCross1 className="text-lg my-3 mx-2" /></span>}
                         </div>
 
-                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
+                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-2
                                   active:bg-orange-200 rounded-xl flex flex-between">
                             <p
                                 className="w-40 py-2"
@@ -109,7 +111,7 @@ const Body = () => {
                                      <RxCross1 className="my-3 text-lg mx-2" /></span>}
                         </div>
 
-                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
+                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-2
                                   active:bg-orange-200 rounded-xl flex flex-between">
                             <p
                                 className="w-40 py-2"
@@ -121,7 +123,7 @@ const Body = () => {
                                       <RxCross1 className="my-3 text-lg mx-2" /></span>}
                         </div>
 
-                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
+                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-2
                                  active:bg-orange-200 rounded-xl flex flex-between">
                             <p
                                 className="w-40 py-2"
@@ -133,7 +135,7 @@ const Body = () => {
                                        <RxCross1 className="my-3 text-lg mx-2" /></span>}
                         </div>
 
-                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
+                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-2 
                                 active:bg-orange-200 rounded-xl flex flex-between">
                             <p
                                 className="w-40 py-2"
@@ -159,7 +161,7 @@ const Body = () => {
                         </Link>
                     ))}
                 </div>
-                <h1 className="font-bold text-3xl my-4 w-10/12">Top restaurant chains in Nashik</h1>
+                <h1 className="font-bold text-xl sm:text-xl lg:text-3xl md:text-2xl my-4 w-10/12 ml-4 lg:w-10/12 sm:w-full sm:ml-4">Top restaurant chains in Nashik</h1>
                 <Toprestaurantchain />
             </div>
         </>

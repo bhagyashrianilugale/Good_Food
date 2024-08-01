@@ -21,20 +21,20 @@ export const RestaurantCard = (props)=>{
                 alt="cart-img" 
                 className={`rounded-2xl h-40 w-80 shadow-lg  shadow-zinc-400 absolute${classNameImg}`}></img>
                 <div className="">
-                   <p className="font-bold text-2xl text-white bottom-0 
+                   <p className="font-bold text-2xl sm:text-2xl lg:text-3xl text-white bottom-0 
                                  absolute px-2 bg-gradient-to-t from-black w-full rounded-b-2xl py-2">
                                     {restauList?.info?.aggregatedDiscountInfoV3?.header}</p>
                 </div>
           </div>
           <div>
-            <h3 className="font-bold opacity-90">
+            <h3 className="font-bold opacity-90 text-lg lg:text-xl">
                { name }
             </h3>
-            <p className="font-bold  opacity-90"> 
-               <MdStars className=" text-green-700 text-xl inline text-center mb-1" /> 
+            <p className="font-bold opacity-90 text-lg sm:text-lg lg:text-lg"> 
+               <MdStars className=" text-green-700 inline mr-2 text-center text-2xl mb-1" /> 
                   { avgRating } <span> . {restauList?.info?.sla?.slaString}</span>
             </p>
-            <div className="truncate text-black text-sm opacity-50 font-semibold">
+            <div className="truncate text-black text-sm lg:text-lg opacity-50 font-semibold">
                {cuisines.join(",")}
                <p>{locality}</p>
             </div>

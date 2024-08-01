@@ -69,10 +69,10 @@ const Login = () => {
          }
     }
 return(<>
-        <div className="h-[70%] w-4/12 bg-white m-auto my-[10%] shadow shadow-orange-500 p-8">
+        <div className="h-[70%] w-full lg:w-4/12 bg-white lg:m-auto my-[40%] lg:my-[10%] shadow shadow-orange-500 p-8">
                <div className="flex justify-between">
                    <p className="text-lg">
-                       <b className="text-3xl py-2">{isLog ? "Log in" : "Sign up"}</b><br />
+                       <b className="text-2xl lg:text-3xl py-2">{isLog ? "Log in" : "Sign up"}</b><br />
                        or <span className="text-orange-500 font-bold text-base cursor-pointer"
                                 onClick={()=>setIsLog(!isLog)}>
                                 { isLog ? "create an account" : "login to your account"}
@@ -92,7 +92,7 @@ return(<>
                            required
                            ref={username} 
                            placeholder="Name"
-                           className="inline-block outline-none h-10 w-[85%] border 
+                           className="inline-block outline-none h-10  w-full lg:w-[85%] border 
                                     border-zinc-200 shadow-lg shadow-gray-200 rounded-lg my-1 px-2"
                        />
                        <input type="text" 
@@ -101,7 +101,7 @@ return(<>
                            ref={email}
                            required
                            placeholder="Email"
-                           className="inline-block outline-none h-10 w-[85%] border 
+                           className="inline-block outline-none h-10 w-full lg:w-[85%] border 
                                     border-zinc-200 shadow-lg shadow-gray-200 rounded-lg my-1 px-2"
                        />
                    </span>
@@ -115,10 +115,10 @@ return(<>
                        value={phone}
                        onChange={(phone) => setPhone("+" + phone)}
                        placeholder="Enter mobile number"
-                       className="shadow-lg w-[85%] my-1"
+                       className="shadow-lg w-full lg:w-[85%] my-1"
                    />
                    <button type="submit" onClick={generateOTP} 
-                       className="rounded-lg p-2 block h-10 w-[85%] font-semibold 
+                       className="rounded-lg p-2 block h-10 w-full lg:w-[85%] font-semibold 
                                bg-orange-500 text-white my-4 hover:bg-orange-600"
                    >
                     {loader ? <CgSpinner className="w-8 h-8 mx-auto mb-4 animate-spin"/> : "Send OTP"}
@@ -129,16 +129,16 @@ return(<>
                        value={otp}
                        onChange={(e) => setOtp(e.target.value)}
                        placeholder="Enter OTP"
-                       className="inline-block outline-none h-10 w-[85%] border border-zinc-200 
+                       className="inline-block outline-none h-10 w-full lg:w-[85%] border border-zinc-200 
                                   shadow-lg shadow-gray-200 rounded-lg my-1 px-2"
                    />
                 </span>
                <p className="text-orange-500 text-center font-bold px-2">{errorMessage ? errorMessage : null}</p>
-               { isLogged ? <Link to="/"><span className="rounded-lg text-center p-2 block h-10 w-[85%] font-semibold bg-orange-500 text-white my-4 hover:bg-orange-600" 
+               { isLogged ? <Link to="/"><span className="rounded-lg text-center p-2 block h-10 w-full lg:w-[85%] font-semibold bg-orange-500 text-white my-4 hover:bg-orange-600" 
                                         onClick={verifyOTP}>
                                           Verify OTP
                                          </span></Link>
-                          : <span  onClick={verifyOTP} className="rounded-lg text-center p-2 block h-10 w-[85%] 
+                          : <span  onClick={verifyOTP} className="rounded-lg text-center p-2 block h-10 w-full lg:w-[85%] 
                                  font-semibold bg-orange-500 text-white my-4 hover:bg-orange-600">
                                     Verify OTP
                            </span>}
