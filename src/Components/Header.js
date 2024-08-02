@@ -12,6 +12,7 @@ import { signOut } from "firebase/auth";
 import { toast } from "react-toastify";
 import { isLoggedStatus } from "../utils/cartSlice";
 import { GoXCircle } from "react-icons/go";
+import { BsCart2 } from "react-icons/bs";
 
 
 const Header = ()=>{
@@ -55,7 +56,9 @@ const Header = ()=>{
                     }</li>
                     <li className="pr-4 hover:text-orange-500 "><Link to="/about"><IoSyncCircleOutline  className="inline text-lg m-0"/>About-Us</Link></li>
                     <li className="px-4 hover:text-orange-500 "><Link to="/contact"><RiContactsLine  className="inline text-xl m-0" /> Contact </Link></li>
-                    <li className="px-4 hover:text-orange-500 "><Link to="/cart"><PiShoppingCartBold className="inline text-xl m-0"/> Cart[ { cartItems.length ? cartItems.length : null} ]</Link></li>
+                    <li className="px-4 hover:text-orange-500 "><Link to="/cart"><span className="bg-orange-500 text-sm -my-2 text-white px-2 rounded-full absolute">{ cartItems.length ? cartItems.length : null}</span>
+                                          <BsCart2 className="inline text-xl m-0 relative"/> Cart</Link>
+                    </li>
                     { isLogged ? <button className="px-4 hover:text-orange-500 " 
                                     onClick={()=>{
                                               signOut(auth)
@@ -86,7 +89,9 @@ const Header = ()=>{
                                   <RiContactsLine  className="inline text-xl m-0" /> Contact </Link>
                        </li>
                        <li onClick={handleIsSideBar} className="px-4  my-4 hover:text-orange-500 "><Link to="/cart">
-                                  <PiShoppingCartBold className="inline text-xl m-0"/> Cart[ { cartItems.length ? cartItems.length : null} ]</Link>
+                                  <span className="bg-orange-500  text-sm -my-3 text-white px-2 rounded-full absolute">
+                                     { cartItems.length ? cartItems.length : null}</span>
+                                     <BsCart2 className="inline text-xl m-0 relative"/> Cart</Link>
                        </li>
                        { isLogged ? <button className="px-4 hover:text-orange-500 " 
                                     onClick={()=>{

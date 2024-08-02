@@ -45,7 +45,7 @@ return (
                 <div className=" bg-gradient-to-t from-gray-200 p-4 rounded-xl w-full lg:w-6/12 m-auto">
                    <div className="h-80 md:h-60 lg:h-38 w-full rounded-xl bg-gray-50 border m-auto lg:flex justify-between">
                         <div className="m-1">
-                             <p className="font-bold my-2 mx-auto text-left lg:mx-4">
+                             <p className="font-bold my-2 mx-4 text-left lg:mx-4">
                                <MdStars className="text-green-700 text-xl inline text-start mb-1" />
                                {avgRatingString} ( {totalRatingsString} ) &#x2022;&nbsp; { costForTwoMessage }
                              </p> 
@@ -59,7 +59,8 @@ return (
                             </div>
                          </div>
                          <img src={cloudinaryImageId ? CDN_URL+cloudinaryImageId : DEFAULT_RESTAURANT_IMG  }
-                              className="w-[80%] mx-6 h-40 md:w-50 md:h-20 lg:w-60 lg:h-[80%] lg:m-4 lg:p-0 shadow-lg shadow-slate-400 rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer"/>
+                              className="w-[80%] mx-10 h-40 md:w-50 md:h-20 lg:w-60 lg:h-[80%] lg:m-6 lg:p-0 shadow-lg shadow-slate-400 rounded-lg 
+                                        hover:scale-105 transition-all duration-500 cursor-pointer"/>
                       </div>
                 </div>
               <h1 className="text-center m-2 p-2 text-xl font-extrabold">Deals for you</h1>

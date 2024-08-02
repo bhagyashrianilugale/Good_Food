@@ -54,9 +54,9 @@ return(
                                  </div>
                                  <div className="w-3/12 rounded-lg">
                                            <img src={ item?.card?.info?.imageId?.length ? CDN_URL + item?.card?.info?.imageId : DEFAULT_RESTAURANT_IMG } 
-                                                className="rounded-lg lg:w-full my-4 w-[100%] lg:h-40 h-40 lg:my-12 shadow-lg -top-1 shadow-zinc-400 relative" 
+                                                className="rounded-lg lg:w-full my-4 w-[100%] lg:h-40 h-[80%] lg:my-12 shadow-lg -top-1 shadow-zinc-400 relative" 
                                                 alt="item_card_img"/> 
-                                                <div className="p-2 bg-white mx-2 lg:mx-12 w-[18%] lg:w-[6%] h-10 lg:-mt-16 -mt-10 absolute
+                                                <div className="px-2 py-1 md:p-2 lg:p-2 bg-white mx-2 lg:mx-12 w-[18%] lg:w-[6%] h-8 md:h-8 lg:h-10 lg:-mt-16 -mt-10 absolute
                                                            text-green-600  rounded-2xl  shadow-lg shadow-zinc-500">
                                                 {items?.filter(
                                                    (itm) => (itm[0]?.card?.info?.id == item?.card?.info?.id)
@@ -65,7 +65,7 @@ return(
                                                         :  ( <div>
                                                                <button className="mx-auto lg:mx-2 font-bold text-xl" onClick = {(e)=> handleCount(e, item) }>-</button>
                                                                 {items.map((itm, index)=>(itm[0]?.card?.info?.id == item?.card?.info?.id 
-                                                                                         ?<span key={ index } className="mx-auto p-2 lg:p-0 lg:mx-2 font-semibold  text-xl">{itm[1]}</span>
+                                                                                         ?<span key={ index } className="mx-1 p-2 lg:p-0 lg:mx-2 font-semibold  text-xl">{itm[1]}</span>
                                                                                          : null)
                                                                                    
                                                                 )}

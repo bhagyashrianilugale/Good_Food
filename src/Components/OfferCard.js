@@ -8,7 +8,8 @@ const OfferCard = ({resId}) => {
 return (
      <>
          <div className="flex lg:w-6/12 w-full overflow-x-scroll no-scrollbar m-auto">
-               { offers?.map((offer, index)=> <div key={index} className="w-80 h-[20%] flex mx-8 lg:mx-6 text-black border border-x-gray-300 p-2 rounded-3xl">
+               { offers?.map((offer, index)=> <div key={index} className="w-80 h-[16%] lg:h-[20%] flex mx-8 lg:mx-6 text-black border 
+                                                       border-x-gray-300 p-2 rounded-3xl">
                                                  <img className="w-10 h-10 m-2" src={CDN_URL + offer.info.offerLogo}/>
                                                  <div className="px-1 py-2 w-60 h-8">
                                                      <h1 className="font-extrabold text-sm text-left">{offer.info.header}</h1>

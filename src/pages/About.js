@@ -6,8 +6,8 @@ const About = () => {
        <div className="h-full mt-[28%] lg:mt-[6%]">
            <div className="flex-none lg:flex-1 lg:flex bg-orange-500 text-white">
                     <div className="p-4 lg:p-6 lg:m-auto w-full lg:w-[40%] text-center lg:text-left">
-                        <h2 className="text-3xl font-bold mb-4 lg:text-3xl sm:text-xl">Our Mission</h2>
-                        <p className="text-lg px-auto">At Good-Food, our mission is to bring happiness and delight 
+                        <h2 className="text-lg font-bold mb-4 lg:text-3xl sm:text-xl">Our Mission</h2>
+                        <p className="text-sm lg:text-lg px-auto">At Good-Food, our mission is to bring happiness and delight 
                                          to every moment. We aim to be a cherished part of your celebrations and a 
                                          trusted companion in satisfying your cravings. With each meal, we strive to 
                                          make special occasions unforgettable and everyday moments extraordinary. 
@@ -28,8 +28,8 @@ const About = () => {
                         />
                 </div>
                <div className="p-4 lg:p-6 lg:m-auto w-full lg:w-[40%] text-center lg:text-left">
-                   <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
-                   <p className="text-lg">To become the culinary bridge that brings diverse flavors to every 
+                   <h2 className="text-lg font-bold mb-4">Our Vision</h2>
+                   <p className="text-sm lg:text-lg">To become the culinary bridge that brings diverse flavors to every 
                                        doorstep, fostering a global community where every meal is a celebration 
                                        of taste, convenience, and cultural connection.
                    </p>

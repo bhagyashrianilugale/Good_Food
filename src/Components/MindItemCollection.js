@@ -107,7 +107,7 @@ const MindItemCollection = () => {
 
          <p className="text-2xl sm:text-2xl lg:text-3xl
                        px-1 lg:px-4 lg:py-1  sm:px-0 font-bold opacity-90 mx-12 sm:mx-12 lg:mx-20 my-4">Restaurants to explore</p>
-         <div className="flex flex-wrap mx-[5%] w-full">
+         <div className="flex flex-wrap mx-[5%] w-11.8/12">
             {mindItem?.map((itemInfo, index) =>(
                <Link key={index} to={"/restaurants/" + resId}>
                   <RestaurantCard restauList={itemInfo?.card?.card} />

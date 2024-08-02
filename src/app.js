@@ -27,9 +27,9 @@ const AppLayout = ()=>{
 
 return(
     <Provider store={appStore}>
-          <div className="app">
+          <div className="app flex flex-col">
               <Header/>
-              <Outlet/>
+              <Outlet className="min-h-screen"/>
               <ToastContainer position="top-center"
                               autoClose={1000}
                               closeOnClick/>
