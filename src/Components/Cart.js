@@ -54,10 +54,11 @@ const Cart = () => {
     }, [items]);
 
     return ( 
-        <div className="my-[36%] md:mt-[18%]  lg:my-[10%]">
+        <div className="my-[36%] sm:mt-[18%]  md:mt-[18%]  lg:my-[10%]">
              <div>
                  {items?.length !== 0 ? (
-                    <div className="mx-0 lg:mx-auto w-full md:w-10/12 md:mx-auto lg:w-6/12 p-6 md:shadow-lg lg:shadow-lg text-gray-800 rounded-lg 
+                    <div className="mx-0 lg:mx-auto w-full sm:w-10/12 sm:mx-auto  md:w-10/12  md:mx-auto lg:w-6/12 p-6  
+                                    sm:shadow-lg md:shadow-lg lg:shadow-lg text-gray-800 rounded-lg 
                                  md:shadow-black lg:shadow-black">
                         <h1 className="text-center text-4xl mx-20 my-4 font-bold">Cart</h1>
                         <div className="flex justify-between m-auto">
@@ -89,7 +90,7 @@ const Cart = () => {
                                         )}
                                     </span>
                                     <span className="w-60 text-sm truncate lg:text-lg mx-2 lg:mx-4">{item[0]?.card?.info?.name}</span>
-                                    <div className="bg-white shadow-lg w-80 md:w-20 lg:w-20 shadow-zinc-500 text-center mx-4 h-8 
+                                    <div className="bg-white shadow-lg w-80 sm:w-20  md:w-20 lg:w-20 shadow-zinc-500 text-center mx-4 h-8 
                                                    text-green-600 rounded-2xl">
                                         <button
                                             className="font-bold mx-2 my-1"

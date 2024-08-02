@@ -77,21 +77,21 @@ const Body = () => {
             )}
             <div className="w-10/12 lg:w-9/12 m-auto">
                 <h1 className="font-bold text-xl lg:text-3xl sm:text-2xl inline-block mx-4
-                              mt-[50%] sm:mt-[40%] md:mt-[22%] lg:mt-[14%] relative">What's on your mind?</h1>
+                              mt-[50%] sm:mt-[22%] md:mt-[22%] lg:mt-[14%] relative">What's on your mind?</h1>
                 <div className="flex overflow-x-scroll no-scrollbar p-4 border-b-2">
                     {mindItem?.map((item, index) => (
                         <Mind key={index} imageId={item.imageId} itemLink={item.action.link} itemName={item.action.text} />
                     ))}
                 </div>
 
-                <h1 className="font-bold text-xl lg:text-3xl sm:text-xl md:text-2xl my-4 ml-4 lg:my-8 lg:mx-4">Restaurants with online food delivery in Nashik</h1>
+                <h1 className="font-bold text-xl lg:text-3xl sm:text-2xl md:text-2xl my-4 ml-4 lg:my-8 lg:mx-4">Restaurants with online food delivery in Nashik</h1>
                 <div className="flex">
                     <div className="flex overflow-x-scroll no-scrollbar lg:mx-8">
                       <Search />
                           <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
                                        active:bg-orange-200 rounded-xl flex flex-between px-1">
                             <p
-                                className="w-40 md:w-40 lg:w-35 px-2 py-2"
+                                className="w-40 sm:w-40 md:w-40 lg:w-35 px-2 py-2"
                                 onClick={() => handleFilter('price300to600', (itemInfo) => 300 < itemInfo?.info?.costForTwo?.slice(1, 4) < 600)}
                             >
                                 Rs.300-Rs.600
@@ -103,7 +103,7 @@ const Body = () => {
                         <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
                                   active:bg-orange-200 rounded-xl flex flex-between px-1">
                             <p
-                                className="w-40 md:w-40 lg:w-35 px-2 py-2"
+                                className="w-40 sm:w-40 md:w-40 lg:w-35 px-2 py-2"
                                 onClick={() => handleFilter('lessThan300', (itemInfo) => itemInfo?.info?.costForTwo?.slice(1, 4) < 300)}
                             >
                                 Less than Rs.300
@@ -115,7 +115,7 @@ const Body = () => {
                         <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
                                   active:bg-orange-200 rounded-xl flex flex-between px-1">
                             <p
-                                className="w-40 md:w-40 lg:w-35 px-2 py-2"
+                                className="w-40  sm:w-40 md:w-40 lg:w-35 px-2 py-2"
                                 onClick={() => handleFilter('fastDelivery', (itemInfo) => itemInfo?.info?.sla?.deliveryTime < 35)}
                             >
                                 Fast delivery
@@ -127,7 +127,7 @@ const Body = () => {
                         <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
                                  active:bg-orange-200 rounded-xl flex flex-between px-1">
                             <p
-                                className="w-40 md:w-40 lg:w-35 px-2 py-2"
+                                className="w-40  sm:w-40 md:w-40 lg:w-35 px-2 py-2"
                                 onClick={() => handleFilter('hotOffers', (itemInfo) =>itemInfo?.info?.aggregatedDiscountInfoV3?.header?.slice(0,2) > 20)}
                             >
                                 Hot offers
@@ -139,7 +139,7 @@ const Body = () => {
                         <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
                                 active:bg-orange-200 rounded-xl flex flex-between px-1">
                             <p
-                                className="w-40 md:w-40 lg:w-35 px-2 py-2"
+                                className="w-40 sm:w-40 md:w-40 lg:w-35 px-2 py-2"
                                 onClick={() => handleFilter('highRatings', (itemInfo) => 4.0 < itemInfo?.info?.avgRating)}
                             >
                                 Ratings 4.0+
@@ -162,7 +162,7 @@ const Body = () => {
                         </Link>
                     ))}
                 </div>
-                <h1 className="font-bold text-xl sm:text-xl lg:text-3xl md:text-2xl my-4 w-10/12 ml-4 lg:w-10/12 sm:w-full sm:ml-4">Top restaurant chains in Nashik</h1>
+                <h1 className="font-bold text-xl sm:text-2xl lg:text-3xl md:text-2xl my-4 w-10/12 ml-4 lg:w-10/12 sm:w-full sm:ml-4">Top restaurant chains in Nashik</h1>
                 <Toprestaurantchain />
             </div>
         </>

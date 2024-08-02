@@ -53,12 +53,12 @@ const MindItemCollection = () => {
       <Shimmer />
    ) : (
       <>
-         <div className="mt-[32%] sm:mt-[34%] mx-4 md:mt-[20%] lg:mt-[12%] lg:mx-20">
+         <div className="mt-[32%] sm:mt-[20%] mx-4 md:mt-[20%] lg:mt-[12%] lg:mx-20">
             <h2 className="text-4xl px-2 font-bold opacity-80 ">{allItem[0].card.card.title}</h2>
             <p className="text-lg px-2 my-4 opacity-80">{allItem[0].card.card.description}</p>
          </div>
          <div className="flex justify-around w-full lg:w-6/12 lg:mx-10">
-            <div className="p-1 md:px-4 lg:px-4 lg:py-1 cursor-pointer text-center mx-1 md:mx-1 lg:mx-2 my-3 text-white
+            <div className="p-1 sm:px-4 md:px-4 lg:px-4 lg:py-1 cursor-pointer text-center mx-1 sm:mx-1 md:mx-1 lg:mx-2 my-3 text-white
                            bg-orange-400 h-8 active:bg-orange-200 rounded-xl flex flex-between">
                <p
                   onClick={() => applyFilter('lessThan40Mins', () => 
@@ -73,7 +73,7 @@ const MindItemCollection = () => {
                )}
             </div>
 
-            <div className="p-1 md:px-4 lg:px-4 lg:py-1  cursor-pointer text-center  md:mx-1 lg:mx-2  my-3 text-white bg-orange-400 
+            <div className="p-1 sm:px-4 md:px-4 lg:px-4 lg:py-1  cursor-pointer text-center sm:mx-1 md:mx-1 lg:mx-2  my-3 text-white bg-orange-400 
                        h-8 active:bg-orange-200 rounded-xl flex flex-between">
                <p
                   onClick={() => applyFilter('rs300To600', () => 
@@ -89,7 +89,7 @@ const MindItemCollection = () => {
                )}
             </div>
 
-            <div className="p-1 md:px-4 lg:px-4 lg:py-1  cursor-pointer text-center  md:mx-1 lg:mx-2 my-3 text-white bg-orange-400 
+            <div className="p-1 sm:px-4 md:px-4 lg:px-4 lg:py-1  cursor-pointer text-center sm:mx-1 md:mx-1 lg:mx-2 my-3 text-white bg-orange-400 
                      h-8 active:bg-orange-200 rounded-xl flex flex-between">
                <p
                   onClick={() => applyFilter('lessThanRs300', () => 

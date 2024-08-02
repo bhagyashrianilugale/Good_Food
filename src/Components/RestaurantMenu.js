@@ -40,10 +40,10 @@ const RestaurantMenu = ()=>{
 
 return (
       <>
-        <div className="text-center lg:p-6 mt-[35%] md:mt-[18%] lg:mt-[10%] relative">              
+        <div className="text-center lg:p-6 mt-[35%]  sm:mt-[18%] md:mt-[18%] lg:mt-[10%] relative">              
              <h2 className="font-bold text-2xl lg:text-3xl">{name}</h2>
                 <div className=" bg-gradient-to-t from-gray-200 p-4 rounded-xl w-full lg:w-6/12 m-auto">
-                   <div className="h-80 md:h-60 lg:h-38 w-full rounded-xl bg-gray-50 border m-auto md:flex lg:flex justify-between">
+                   <div className="h-80  sm:h-60 md:h-60 lg:h-38 w-full rounded-xl bg-gray-50 border m-auto sm:flex  md:flex lg:flex justify-between">
                         <div className="m-1">
                              <p className="font-bold my-2 mx-4 text-left lg:mx-4">
                                <MdStars className="text-green-700 text-xl inline text-start mb-1" />
@@ -59,7 +59,7 @@ return (
                             </div>
                          </div>
                          <img src={cloudinaryImageId ? CDN_URL+cloudinaryImageId : DEFAULT_RESTAURANT_IMG  }
-                              className="w-[80%] md:w-60 md:m-6 md:p-0 md:h-[80%] mx-10 h-40 md:w-50 lg:w-60 lg:h-[80%] lg:m-6 lg:p-0 shadow-lg shadow-slate-400 rounded-lg 
+                              className="w-[80%] sm:w-60 sm:m-6 sm:p-0 sm:h-[80%] md:w-60 md:m-6 md:p-0 md:h-[80%] mx-10 h-40 lg:w-60 lg:h-[80%] lg:m-6 lg:p-0 shadow-lg shadow-slate-400 rounded-lg 
                                         hover:scale-105 transition-all duration-500 cursor-pointer"/>
                       </div>
                 </div>
