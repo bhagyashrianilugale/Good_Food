@@ -54,14 +54,15 @@ const Cart = () => {
     }, [items]);
 
     return ( 
-        <div className="lg:my-[10%] my-[36%]">
+        <div className="my-[36%] md:mt-[18%]  lg:my-[10%]">
              <div>
                  {items?.length !== 0 ? (
-                    <div className="mx-0 lg:mx-auto w-full lg:w-6/12 p-6 lg:p-10 lg:shadow-lg text-gray-800 rounded-lg lg:shadow-black">
+                    <div className="mx-0 lg:mx-auto w-full md:w-10/12 md:mx-auto lg:w-6/12 p-6 md:shadow-lg lg:shadow-lg text-gray-800 rounded-lg 
+                                 md:shadow-black lg:shadow-black">
                         <h1 className="text-center text-4xl mx-20 my-4 font-bold">Cart</h1>
                         <div className="flex justify-between m-auto">
                             <Link to={"/restaurants/" + resId}><img
-                                className="rounded-lg w-40 lg:w-40 h-20 lg:h-40 lg:p-0"
+                                className="rounded-lg w-40 lg:w-[60%] h-20 lg:h-[40%] lg:p-0"
                                 src={
                                     restaurant?.cloudinaryImageId
                                         ? CDN_URL + restaurant?.cloudinaryImageId
@@ -69,7 +70,7 @@ const Cart = () => {
                                 }
                                 alt="Restaurant_img"
                             /></Link>
-                            <div className="my-0 lg:my-14 px-6 lg:p-0">
+                            <div className="my-0 lg:my-4 px-6 lg:p-0">
                                 <h2 className="text-xl lg:text-2xl font-bold">{restaurant?.name}</h2>
                                 <p className="text-gray-500 text-sm border"> 
                                      <MdOutlineLocationCity className="inline text-cyan-700 mx-2"/>
@@ -88,7 +89,7 @@ const Cart = () => {
                                         )}
                                     </span>
                                     <span className="w-60 text-sm truncate lg:text-lg mx-2 lg:mx-4">{item[0]?.card?.info?.name}</span>
-                                    <div className="bg-white shadow-lg w-80 lg:w-20 shadow-zinc-500 text-center mx-4 h-8 
+                                    <div className="bg-white shadow-lg w-80 md:w-20 lg:w-20 shadow-zinc-500 text-center mx-4 h-8 
                                                    text-green-600 rounded-2xl">
                                         <button
                                             className="font-bold mx-2 my-1"

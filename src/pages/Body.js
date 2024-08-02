@@ -77,7 +77,7 @@ const Body = () => {
             )}
             <div className="w-10/12 lg:w-9/12 m-auto">
                 <h1 className="font-bold text-xl lg:text-3xl sm:text-2xl inline-block mx-4
-                              mt-[50%] sm:mt-[40%] md:mt-[36%] lg:mt-[14%] relative">What's on your mind?</h1>
+                              mt-[50%] sm:mt-[40%] md:mt-[22%] lg:mt-[14%] relative">What's on your mind?</h1>
                 <div className="flex overflow-x-scroll no-scrollbar p-4 border-b-2">
                     {mindItem?.map((item, index) => (
                         <Mind key={index} imageId={item.imageId} itemLink={item.action.link} itemName={item.action.text} />
@@ -88,64 +88,64 @@ const Body = () => {
                 <div className="flex">
                     <div className="flex overflow-x-scroll no-scrollbar lg:mx-8">
                       <Search />
-                          <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-2
-                                       active:bg-orange-200 rounded-xl flex flex-between">
+                          <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
+                                       active:bg-orange-200 rounded-xl flex flex-between px-1">
                             <p
-                                className="w-40 py-2"
+                                className="w-40 md:w-40 lg:w-35 px-2 py-2"
                                 onClick={() => handleFilter('price300to600', (itemInfo) => 300 < itemInfo?.info?.costForTwo?.slice(1, 4) < 600)}
                             >
                                 Rs.300-Rs.600
                             </p>
                             {activeFilters.price300to600 && <span onClick={() => handleCross('price300to600')}>
-                                     <RxCross1 className="text-lg my-3 mx-2" /></span>}
+                                     <RxCross1 className="text-lg mr-1 my-3" /></span>}
                         </div>
 
-                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-2
-                                  active:bg-orange-200 rounded-xl flex flex-between">
+                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
+                                  active:bg-orange-200 rounded-xl flex flex-between px-1">
                             <p
-                                className="w-40 py-2"
+                                className="w-40 md:w-40 lg:w-35 px-2 py-2"
                                 onClick={() => handleFilter('lessThan300', (itemInfo) => itemInfo?.info?.costForTwo?.slice(1, 4) < 300)}
                             >
                                 Less than Rs.300
                             </p>
                             {activeFilters.lessThan300 && <span onClick={() => handleCross('lessThan300')}>
-                                     <RxCross1 className="my-3 text-lg mx-2" /></span>}
+                                     <RxCross1 className="text-lg mr-1 my-3" /></span>}
                         </div>
 
-                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-2
-                                  active:bg-orange-200 rounded-xl flex flex-between">
+                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
+                                  active:bg-orange-200 rounded-xl flex flex-between px-1">
                             <p
-                                className="w-40 py-2"
+                                className="w-40 md:w-40 lg:w-35 px-2 py-2"
                                 onClick={() => handleFilter('fastDelivery', (itemInfo) => itemInfo?.info?.sla?.deliveryTime < 35)}
                             >
                                 Fast delivery
                             </p>
                             {activeFilters.fastDelivery && <span onClick={() => handleCross('fastDelivery')}>
-                                      <RxCross1 className="my-3 text-lg mx-2" /></span>}
+                                      <RxCross1 className="text-lg mr-1 my-3" /></span>}
                         </div>
 
-                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-2
-                                 active:bg-orange-200 rounded-xl flex flex-between">
+                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
+                                 active:bg-orange-200 rounded-xl flex flex-between px-1">
                             <p
-                                className="w-40 py-2"
+                                className="w-40 md:w-40 lg:w-35 px-2 py-2"
                                 onClick={() => handleFilter('hotOffers', (itemInfo) =>itemInfo?.info?.aggregatedDiscountInfoV3?.header?.slice(0,2) > 20)}
                             >
                                 Hot offers
                             </p>
                             {activeFilters.hotOffers && <span onClick={() => handleCross('hotOffers')}>
-                                       <RxCross1 className="my-3 text-lg mx-2" /></span>}
+                                       <RxCross1 className="text-lg mr-1 my-3" /></span>}
                         </div>
 
-                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-2 
-                                active:bg-orange-200 rounded-xl flex flex-between">
+                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
+                                active:bg-orange-200 rounded-xl flex flex-between px-1">
                             <p
-                                className="w-40 py-2"
+                                className="w-40 md:w-40 lg:w-35 px-2 py-2"
                                 onClick={() => handleFilter('highRatings', (itemInfo) => 4.0 < itemInfo?.info?.avgRating)}
                             >
                                 Ratings 4.0+
                             </p>
                             {activeFilters.highRatings && <span onClick={() => handleCross('highRatings')}>
-                                     <RxCross1 className="my-3 mx-2 text-lg" /></span>}
+                                     <RxCross1 className="text-lg mr-1 my-3" /></span>}
                         </div>
                     </div>
                 </div>

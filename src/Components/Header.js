@@ -50,13 +50,13 @@ const Header = ()=>{
                { !showHiddenUI && <IoPersonCircleSharp  className="h-10 w-20 text-zinc-800 m-8 hidden sm:block" onClick={handleHeaderItem}/> }
                { !isSideBarOpen && <IoPersonCircleSharp  className="h-10 w-20 text-zinc-800 m-8 block sm:hidden" onClick={toggleSideBar}/>}
                {  showHiddenUI && <div className="items-center">
-                 <ul className="flex flex-col md:flex-row m-4 p-4 font-semibold cursor-pointer space-y-2 md:space-y-0 md:space-x-4">
-                    <li className="px-4"> Internet Status: {
+                 <ul className="flex m-4 p-4 font-semibold cursor-pointer space-y-2 md:space-y-0 md:space-x-4">
+                    <li className="px-4 md:px-0 lg:px-4"> Internet Status: {
                       (status == true) ? < RiCheckboxCircleFill className="inline text-green-600" /> : < RiCloseCircleFill className="inline text-red-600" />
                     }</li>
-                    <li className="pr-4 hover:text-orange-500 "><Link to="/about"><IoSyncCircleOutline  className="inline text-lg m-0"/>About-Us</Link></li>
-                    <li className="px-4 hover:text-orange-500 "><Link to="/contact"><RiContactsLine  className="inline text-xl m-0" /> Contact </Link></li>
-                    <li className="px-4 hover:text-orange-500 "><Link to="/cart"><span className="bg-orange-500 text-sm -my-2 text-white px-2 rounded-full absolute">{ cartItems.length ? cartItems.length : null}</span>
+                    <li className="px-4 md:px-0 lg:pr-4 hover:text-orange-500 "><Link to="/about"><IoSyncCircleOutline  className="inline text-lg m-0"/>About-Us</Link></li>
+                    <li className="px-4 md:px-0 lg:px-4 hover:text-orange-500 "><Link to="/contact"><RiContactsLine  className="inline text-xl m-0" /> Contact </Link></li>
+                    <li className="px-4 md:px-0 lg:px-4 hover:text-orange-500 "><Link to="/cart"><span className="bg-orange-500 text-sm -my-2 text-white px-2 rounded-full absolute">{ cartItems.length ? cartItems.length : null}</span>
                                           <BsCart2 className="inline text-xl m-0 relative"/> Cart</Link>
                     </li>
                     { isLogged ? <button className="px-4 hover:text-orange-500 " 
@@ -70,7 +70,7 @@ const Header = ()=>{
                                                console.log(err);
                                                toast.error("Logout failed!");});
                                     }}> Logout </button>
-                               : <li className="px-4 hover:text-orange-500 "><Link to="/login">Login</Link></li>}
+                               : <li className="px-4 md:px-0 lg:px-4 hover:text-orange-500 "><Link to="/login">Login</Link></li>}
                   </ul>
              </div>
              }
