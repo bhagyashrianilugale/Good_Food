@@ -57,13 +57,13 @@ const Cart = () => {
         <div className="my-[36%] sm:mt-[18%]  md:mt-[18%]  lg:my-[10%]">
              <div>
                  {items?.length !== 0 ? (
-                    <div className="mx-0 lg:mx-auto w-full sm:w-10/12 sm:mx-auto  md:w-10/12  md:mx-auto lg:w-6/12 p-6  
+                    <div className="mx-0 lg:mx-auto w-full sm:w-10/12 sm:mx-auto  md:w-10/12  md:mx-auto lg:w-6/12 p-8
                                     sm:shadow-lg md:shadow-lg lg:shadow-lg text-gray-800 rounded-lg 
-                                 md:shadow-black lg:shadow-black">
-                        <h1 className="text-center text-4xl mx-20 my-4 font-bold">Cart</h1>
+                                  md:shadow-black lg:shadow-black">
+                        <h1 className="text-center text-2xl lg:text-4xl mx-20 my-4 top-0 lg:my-0 font-bold">Cart</h1>
                         <div className="flex justify-between m-auto">
                             <Link to={"/restaurants/" + resId}><img
-                                className="rounded-lg w-40 lg:w-[60%] h-20 lg:h-[40%] lg:p-0"
+                                className="rounded-lg w-40 lg:w-[40%] h-20 lg:h-[70%] lg:p-0"
                                 src={
                                     restaurant?.cloudinaryImageId
                                         ? CDN_URL + restaurant?.cloudinaryImageId
@@ -71,7 +71,7 @@ const Cart = () => {
                                 }
                                 alt="Restaurant_img"
                             /></Link>
-                            <div className="my-0 lg:my-4 px-6 lg:p-0">
+                            <div className="my-2 lg:my-0 px-6 lg:px-2 lg:p-0">
                                 <h2 className="text-xl lg:text-2xl font-bold">{restaurant?.name}</h2>
                                 <p className="text-gray-500 text-sm border"> 
                                      <MdOutlineLocationCity className="inline text-cyan-700 mx-2"/>
@@ -79,7 +79,7 @@ const Cart = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="text-gray-800 py-4 text-left">
+                        <div className="text-gray-800 py-2 text-left">
                             {items?.map((item, index) => (
                                 <div key={index} className="flex items-center mx-0 lg:mx-16 my-1">
                                     <span className="mx-2">
