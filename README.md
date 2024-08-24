@@ -39,11 +39,11 @@ Follow these steps to set up and run Good_food locally:
 ```javascript
    npm install
 ```
-4.  Start the Development Server:
+3.  Start the Development Server:
 ```javascript
    npm start
 ```
-5. Open in Your Browser: Open http://localhost:1234 in your web browser.
+4. Open in Your Browser: Open http://localhost:1234 in your web browser.
 ## Live Demo
   [Liveurl](https://goofoodappuba.netlify.app/)
 ## Author
