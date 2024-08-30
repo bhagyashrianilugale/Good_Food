@@ -54,12 +54,12 @@ const Cart = () => {
     }, [items]);
 
     return ( 
-        <div className="my-[36%] sm:mt-[18%]  md:mt-[18%]  lg:my-[10%]">
+        <div className="mt-[32%] sm:my-[20%] md:mt-[10%]">
              <div>
                  {items?.length !== 0 ? (
-                    <div className="mx-0 lg:mx-auto w-full sm:w-10/12 sm:mx-auto  md:w-10/12  md:mx-auto lg:w-6/12 p-8
+                    <div className="mx-auto w-11/12 sm:w-10/12 md:w-6/12 p-8
                                     sm:shadow-lg md:shadow-lg lg:shadow-lg text-gray-800 rounded-lg 
-                                  md:shadow-black lg:shadow-black">
+                                  md:shadow-black">
                         <h1 className="text-center text-2xl lg:text-4xl mx-20 my-4 top-0 lg:my-0 font-bold">Cart</h1>
                         <div className="flex justify-between m-auto">
                             <Link to={"/restaurants/" + resId}><img

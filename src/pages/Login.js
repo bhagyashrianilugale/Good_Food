@@ -66,8 +66,8 @@ const Login = () => {
          }
     }
 return(<>
-        <div className="h-[70%] w-full sm:w-6/12  md:w-6/12 lg:w-4/12 bg-white sm:m-auto  md:m-auto lg:m-auto my-[40%] sm:my-[16%]  md:my-[16%] 
-                lg:my-[10%] md:shadow md:shadow-orange-500 lg:shadow lg:shadow-orange-500 p-8">
+        <div className="h-[70%] w-full sm:w-6/12 md:w-4/12 bg-white m-auto my-[40%] sm:my-[16%] md:my-[16%] 
+                 sm:shadow sm:shadow-orange-500 md:shadow md:shadow-orange-500 p-10">
                <div className="flex justify-between">
                    <p className="text-lg">
                        <b className="text-2xl lg:text-3xl py-2">{isLog ? "Log in" : "Sign up"}</b><br />

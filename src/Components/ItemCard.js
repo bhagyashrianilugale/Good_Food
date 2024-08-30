@@ -34,7 +34,7 @@ const ItemCard =({ item, restaurants }) =>{
 
 return(
         <>
-            <div className="p-2 m-2 border-grey-200 border-b-2 text-left flex justify-between">
+          <div className="p-2 m-2 border-grey-200 border-b-2 text-left flex justify-between">
                         <div className="w-9/12">
                                  <div className="py-2 font-medium">
                                            <span>
@@ -54,22 +54,22 @@ return(
                                  </div>
                                  <div className="w-3/12 rounded-lg">
                                            <img src={ item?.card?.info?.imageId?.length ? CDN_URL + item?.card?.info?.imageId : DEFAULT_RESTAURANT_IMG } 
-                                                className="rounded-lg lg:w-full my-4 w-[100%]  sm:h-[60%] md:h-[60%] lg:h-40 h-[80%] lg:my-12 shadow-lg -top-1 shadow-zinc-400 relative" 
+                                                className="rounded-lg md:w-full my-4 w-[100%]  h-[60%] sm:h-[60%] md:h-40 lg:my-12 shadow-lg -top-1 shadow-zinc-400 relative" 
                                                 alt="item_card_img"/> 
-                                                <div className="px-2 py-1 sm:p-2 md:p-2 lg:p-2 bg-white mx-2 sm:mx-10  md:mx-10 lg:mx-12 w-[18%] sm:w-[10%] md:w-[10%] lg:w-[6%] 
-                                                                h-8 md:h-10 lg:h-10 lg:-mt-16 md:-mt-12 -mt-10 absolute text-green-600 rounded-2xl shadow-lg shadow-zinc-500">
+                                                <div className="px-2 py-1 sm:p-2 sm:mx-6 bg-white w-[18%] sm:w-[10%] md:w-[8%] 
+                                                                h-18 md:h-10 -mt-10 sm:-mt-12 md:-mt-16 absolute text-green-600 rounded-2xl shadow-lg shadow-zinc-500">
                                                 {items?.filter(
                                                    (itm) => (itm[0]?.card?.info?.id == item?.card?.info?.id)
                                                        ).length == 0
-                                                        ? <button className="mx-2 lg:mx-6 font-medium" onClick = {(e)=> handleCount(e, item) } >ADD</button>
+                                                        ? <button className="px-2 sm:px-7 font-medium" onClick = {(e)=> handleCount(e, item) } >ADD</button>
                                                         :  ( <div>
-                                                               <button className="mx-auto lg:mx-2 font-bold text-xl" onClick = {(e)=> handleCount(e, item) }>-</button>
+                                                               <button className="mx-auto md:mx-2 font-bold text-xl" onClick = {(e)=> handleCount(e, item) }>-</button>
                                                                 {items.map((itm, index)=>(itm[0]?.card?.info?.id == item?.card?.info?.id 
-                                                                                         ?<span key={ index } className="mx-1 p-2 lg:p-0 lg:mx-2 font-semibold  text-xl">{itm[1]}</span>
+                                                                                         ?<span key={ index } className="mx-1 p-2 md:p-0 md:mx-2 font-semibold  text-xl">{itm[1]}</span>
                                                                                          : null)
                                                                                    
                                                                 )}
-                                                               <button className="mx-auto lg:mx-2 font-bold text-xl" onClick={(e)=> handleCount(e, item) }>+</button>
+                                                               <button className="mx-auto md:mx-2 font-bold text-xl" onClick={(e)=> handleCount(e, item) }>+</button>
                                                              </div>
                                                           )
                                                     }
