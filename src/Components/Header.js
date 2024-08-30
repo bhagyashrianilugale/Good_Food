@@ -42,21 +42,28 @@ const Header = ()=>{
       <>
         <header className="flex justify-between shadow-lg w-full fixed top-0 left-0 bg-white z-20">
                <div>
-                 <Link to="/"><h1 className="font-bold text-2xl p-4 m-4">
-                         <FaJava className="inline text-4xl bottom-4" />
+                 <Link to="/">
+                     <h1 className="font-bold text-2xl sm:text-4xl px-1 py-1 sm:p-2 my-4">
+                         <FaJava className="inline text-4xl sm:text-6xl bottom-4"/>
                            good<i className="text-orange-500">food</i>
-                    </h1></Link>
+                    </h1>
+                </Link>
                 </div>
-               { !showHiddenUI && <IoPersonCircleSharp  className="h-10 w-20 text-zinc-800 m-8 hidden sm:block" onClick={handleHeaderItem}/> }
-               { !isSideBarOpen && <IoPersonCircleSharp  className="h-10 w-20 text-zinc-800 m-8 block sm:hidden" onClick={toggleSideBar}/>}
+               { !showHiddenUI && <IoPersonCircleSharp  
+                                   className="h-10 w-20 text-zinc-800 hidden my-6 md:block" 
+                                   onClick={handleHeaderItem}/> }
+               { !isSideBarOpen && <IoPersonCircleSharp  
+                                    className="h-10 w-20 text-zinc-800 my-6               block md:hidden" 
+                                    onClick={toggleSideBar}/>}
                {  showHiddenUI && <div className="items-center">
-                 <ul className="flex m-4 p-4 font-semibold cursor-pointer space-y-2 md:space-y-0 md:space-x-4">
-                    <li className="px-4 md:px-0 lg:px-4"> Internet Status: {
+                                  <ul className="flex m-4 p-4 font-semibold cursor-pointer space-y-2 md:space-y-0 md:space-x-4">
+                    <li className="px-4 md:px-4"> 
+                                      Internet Status: {
                       (status == true) ? < RiCheckboxCircleFill className="inline text-green-600" /> : < RiCloseCircleFill className="inline text-red-600" />
                     }</li>
-                    <li className="px-4 md:px-0 lg:pr-4 hover:text-orange-500 "><Link to="/about"><IoSyncCircleOutline  className="inline text-lg m-0"/>About-Us</Link></li>
-                    <li className="px-4 md:px-0 lg:px-4 hover:text-orange-500 "><Link to="/contact"><RiContactsLine  className="inline text-xl m-0" /> Contact </Link></li>
-                    <li className="px-4 md:px-0 lg:px-4 hover:text-orange-500 "><Link to="/cart"><span className="bg-orange-500 text-sm -my-2 text-white px-2 rounded-full absolute">{ cartItems.length ? cartItems.length : null}</span>
+                    <li className="px-4  md:pr-4 hover:text-orange-500 "><Link to="/about"><IoSyncCircleOutline  className="inline text-lg m-0"/>About-Us</Link></li>
+                    <li className="px-4  md:px-4 hover:text-orange-500 "><Link to="/contact"><RiContactsLine  className="inline text-xl m-0" /> Contact </Link></li>
+                    <li className="px-4  md:px-4 hover:text-orange-500 "><Link to="/cart"><span className="bg-orange-500 text-sm -my-2 text-white px-2 rounded-full absolute">{ cartItems.length ? cartItems.length : null}</span>
                                           <BsCart2 className="inline text-xl m-0 relative"/> Cart</Link>
                     </li>
                     { isLogged ? <button className="px-4 hover:text-orange-500 " 
@@ -70,7 +77,7 @@ const Header = ()=>{
                                                console.log(err);
                                                toast.error("Logout failed!");});
                                     }}> Logout </button>
-                               : <li className="px-4 md:px-0 lg:px-4 hover:text-orange-500 "><Link to="/login">Login</Link></li>}
+                               : <li className="px-4 md:px-4 hover:text-orange-500 "><Link to="/login">Login</Link></li>}
                   </ul>
              </div>
              }

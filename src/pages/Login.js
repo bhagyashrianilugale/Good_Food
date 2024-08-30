@@ -34,7 +34,6 @@ const Login = () => {
            if(!isLog){
                 const message = checkValidData( email.current.value, username.current.value );
                 if(message){
-                    console.log(message);
                     setErrorMessage(message);
                     setShowLoader(false);
                     return;
@@ -43,8 +42,6 @@ const Login = () => {
             try{
                  const recaptcha = new RecaptchaVerifier(auth, "recaptcha", {'size': 'invisible'});
                  const confirmation = await signInWithPhoneNumber(auth, phone, recaptcha);
-                 console.log(phone);
-                 console.log(confirmation);
                  setShowLoader(false);
                  setUser(confirmation);
             }catch(err){

@@ -53,13 +53,13 @@ const MindItemCollection = () => {
       <Shimmer />
    ) : (
       <>
-         <div className="mt-[32%] sm:mt-[20%] mx-4 md:mt-[20%] lg:mt-[12%] lg:mx-20">
-            <h2 className="text-2xl lg:text-4xl px-2 font-bold opacity-80 ">{allItem[0].card.card.title}</h2>
-            <p className="text-lg px-2 my-4 opacity-80">{allItem[0].card.card.description}</p>
+         <div className="mt-[36%] sm:mt-[20%] md:mt-[12%]">
+            <h2 className="text-3xl sm:text-4xl mx-10 md:mx-[15%] font-bold opacity-90">{allItem[0].card.card.title}</h2>
+            <p className="text-sm sm:text-lg mx-10 md:mx-[15%] my-4 opacity-80">{allItem[0].card.card.description}</p>
          </div>
-         <div className="flex justify-around w-full lg:w-6/12 lg:mx-10">
-            <div className="p-1 sm:px-4 md:px-4 lg:px-4 lg:py-1 cursor-pointer text-center mx-1 sm:mx-1 md:mx-1 lg:mx-2 my-3 text-white
-                           bg-orange-400 h-8 active:bg-orange-200 rounded-xl flex flex-between overflow-x-scroll no-scrollbar">
+         <div className="flex justify-around w-full md:w-6/12 mx-auto md:mx-[14%]">
+            <div className="px-4 py-1 cursor-pointer text-center md:mx-2 my-3 text-white
+                           bg-orange-400 h-8 active:bg-orange-200 rounded-xl flex flex-between">
                <p
                   onClick={() => applyFilter('lessThan40Mins', () => 
                                     allItem?.filter((itemInfo) => itemInfo?.card?.card?.info?.sla?.slaString?.slice(0, 2) < 40))}
@@ -73,7 +73,7 @@ const MindItemCollection = () => {
                )}
             </div>
 
-            <div className="p-1 sm:px-4 md:px-4 lg:px-4 lg:py-1  cursor-pointer text-center sm:mx-1 md:mx-1 lg:mx-2  my-3 text-white bg-orange-400 
+            <div className="px-4 py-1 cursor-pointer text-center md:mx-2 my-3 text-white bg-orange-400 
                        h-8 active:bg-orange-200 rounded-xl flex flex-between">
                <p
                   onClick={() => applyFilter('rs300To600', () => 
@@ -89,7 +89,7 @@ const MindItemCollection = () => {
                )}
             </div>
 
-            <div className="p-1 sm:px-4 md:px-4 lg:px-4 lg:py-1  cursor-pointer text-center sm:mx-1 md:mx-1 lg:mx-2 my-3 text-white bg-orange-400 
+            <div className="px-4 py-1 cursor-pointer text-center md:mx-2 my-3 text-white bg-orange-400 
                      h-8 active:bg-orange-200 rounded-xl flex flex-between">
                <p
                   onClick={() => applyFilter('lessThanRs300', () => 
@@ -105,12 +105,11 @@ const MindItemCollection = () => {
             </div>
          </div>
 
-         <p className="text-2xl sm:text-2xl lg:text-3xl
-                       px-1 lg:px-4 lg:py-1  sm:px-0 font-bold opacity-90 mx-12 sm:mx-12 lg:mx-20 my-4">Restaurants to explore</p>
-         <div className="flex flex-wrap mx-[5%] w-11.8/12">
+         <p className="text-xl sm:text-3xl md:px-4 md:py-1 font-bold opacity-90 mx-10 md:mx-[14%] my-4">Restaurants to explore</p>
+         <div className="flex flex-wrap mx-auto w-full overflow-x-hidden md:w-9/12">
             {mindItem?.map((itemInfo, index) =>(
                <Link key={index} to={"/restaurants/" + resId}>
-                  <RestaurantCard restauList={itemInfo?.card?.card} />
+                  <RestaurantCard restauList={itemInfo?.card?.card}/>
                </Link>
              ))}
          </div>

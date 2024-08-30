@@ -10,7 +10,7 @@ const Mind = ({ imageId, itemLink, itemName })=>{
           <div>
              <Link key={ resId }
                     to= { "/collections/"+ resId +"/"+ itemName }>
-                   <div className="w-20 h-[4%] lg:w-40 lg:h-[10%]  sm:w-20 sm:h-[4%]">
+                   <div className="w-20 h-[4%] md:w-40 md:h-[10%]">
                         <img src={ CDN_URL + imageId }  alt="itemImg"/>
                    </div>
               </Link>

@@ -8,7 +8,6 @@ import OfferCard from "./OfferCard";
 import { LuShoppingBag } from "react-icons/lu";
 import { PiLineSegmentFill } from "react-icons/pi";
 import { IoBicycle } from "react-icons/io5";
-import { useState } from "react";
 import { TiLocation } from "react-icons/ti";
 import { DEFAULT_RESTAURANT_IMG } from "../utils/constant";
 const CDN_URL = process.env.REACT_APP_CDN_URL;
@@ -31,7 +30,6 @@ const RestaurantMenu = ()=>{
             areaName, 
             sla,
             cloudinaryImageId } = resInfo?.cards[2]?.card?.card?.info;
-            console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
    const categories = (resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards)?.filter(
         (c)=>{
              return c?.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory" 
@@ -83,8 +81,6 @@ return (
 					                            </Link>
                               </div> ): null 
                }
-            
-               
             </div>
         </>
     )
