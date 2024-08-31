@@ -42,8 +42,8 @@ const Header = ()=>{
         <header className="flex justify-between shadow-lg w-full fixed top-0 left-0 bg-white z-20">
                <div>
                  <Link to="/">
-                     <h1 className="font-bold text-2xl sm:text-4xl px-1 py-1 sm:p-2 my-4">
-                         <FaJava className="inline text-4xl sm:text-6xl bottom-4"/>
+                     <h1 className="font-bold text-2xl sm:text-3xl px-1 py-1 sm:p-2 my-4">
+                         <FaJava className="inline text-4xl sm:text-5xl bottom-1"/>
                            good<i className="text-orange-500">food</i>
                     </h1>
                 </Link>

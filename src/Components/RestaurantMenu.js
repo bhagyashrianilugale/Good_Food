@@ -50,7 +50,7 @@ return (
                              <h3 className="text-orange-600 text-lg font-semibold text-start mx-4">
                                  < TiLocation className="text-purple-700 inline text-2xl m-auto"/> {city}</h3>
                              <div className="flex mx-2">
-                                <PiLineSegmentFill  className="-rotate-45 text-zinc-500 my-2 sm:my-6 text-4xl"/>
+                                 <PiLineSegmentFill  className="-rotate-45 text-zinc-500 my-2 sm:my-6 text-4xl"/>
                                  <p className="my-1 sm:my-4"><b>Outlet</b> &nbsp; <span className="text-zinc-600 text-sm">{ areaName } </span><br/>
                                  <b className="flex flex-start">< IoBicycle className="mx-2 my-1" /> {sla.slaString?.toLowerCase()} </b>
                                 </p>
@@ -67,7 +67,7 @@ return (
                            return <RestaurantCategory 
                            key = { category?.card?.card?.title }
                            data = { category?.card?.card }
-                           showItem={ index == showItemIndex ? true : false }
+                           showItem={ index === showItemIndex ? true : false }
                            showIndex = { index }
                            restaurant = {resInfo?.cards[2]?.card?.card?.info}
                  />
@@ -75,14 +75,14 @@ return (
                { cartItems?.length !== 0 ? (
 				                      <div className="h-20 w-full mr-[20%] md:w-6/12 md:mx-[23%] flex justify-between p-4 md:my-2 
                                           bg-lime-600 text-white fixed top-[90%] z-40">
-					                       <h4 className="text-sm">{cartItems?.length} item added</h4>
-					                            <Link to="/cart">
-						                                  <h3 className="text-sm font-bold">VIEW CART 
+					                     <h4 className="text-sm">{cartItems?.length} item added</h4>
+					                     <Link to="/cart">
+						                      <h3 className="text-sm font-bold">VIEW CART 
                                                   <LuShoppingBag className="text-white font-semibold p-0.5 mr-4 text-center text-xl inline md:m-0"/>
                                               </h3>
-					                            </Link>
-                              </div> ): null 
-               }
+					                    </Link>
+                  </div> ): null 
+                 }
             </div>
         </>
     )

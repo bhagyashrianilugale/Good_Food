@@ -75,15 +75,15 @@ const Body = () => {
                 </div>
             )}
             <div className="w-full md:w-9/12 m-auto overflow-x-hidden">
-                <h1 className="font-bold text-xl sm:text-3xl inline-block mx-4
-                              mt-[34%] sm:mt-[24%] md:mt-[14%] relative">What's on your mind?</h1>
-                <div className="flex overflow-x-scroll no-scrollbar p-4 border-b-2">
+                <h1 className="font-bold text-xl sm:text-2xl inline-block mx-4
+                              mt-[34%] sm:mt-[22%] md:mt-[14%] relative">What's on your mind?</h1>
+                <div className="flex overflow-x-scroll no-scrollbar p-4 shadow-xs border-b-2">
                     {mindItem?.map((item, index) => (
                         <Mind key={index} imageId={item.imageId} itemLink={item.action.link} itemName={item.action.text} />
                     ))}
                 </div>
 
-                <h1 className="font-bold text-xl sm:text-3xl  md:my-8 md:mx-4 my-4 ml-4">Restaurants with online food delivery in Nashik</h1>
+                <h1 className="font-bold text-xl sm:text-2xl md:my-8 md:mx-4 my-4 ml-4">Restaurants with online food delivery in Nashik</h1>
                 <div className="flex">
                     <div className="flex overflow-x-scroll no-scrollbar md:mx-8">
                       <Search />

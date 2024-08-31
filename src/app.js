@@ -14,7 +14,7 @@ import Login from './pages/Login';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './Components/Footer';
-
+import { IoIosArrowDropupCircle } from "react-icons/io";
 
 
 const About = lazy(()=> import('./pages/About'));
@@ -31,10 +31,11 @@ return(
               <ToastContainer position="top-center"
                               autoClose={1000}
                               closeOnClick/>
-               <div className="w-5 h-5 bg-red-500 z-50"
-                        onClick={()=>{ globalThis.scrollTo({top:0, left:0, behavior:"smooth"})}}>
-                       
-               </div>
+               <IoIosArrowDropupCircle 
+                              className="w-5 h-5 text-orange-500 z-50 left-0"
+                              onClick={()=>{ globalThis.scrollTo({top:0, left:0, behavior:"smooth"})}}>
+               </IoIosArrowDropupCircle>
+               
                <Footer/>
             </div>
      </Provider>

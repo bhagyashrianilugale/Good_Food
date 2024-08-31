@@ -14,9 +14,25 @@
   }
 }
 
+@layer utilities {
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 10px;
+        background-color: #a3acbe;
+    }
+}
+
 body{
     cursor: 'pointer';
     scroll-behavior: 'smooth';
 }
+
+.enhanced-image{
+    filter: 
+      contrast(120%)     /* Increase contrast */
+      brightness(100%)   /* Adjust brightness */
+      saturate(100%)     /* Increase saturation */
+      hue-rotate(4deg)   /* Slight hue adjustment */
+  }
 
 

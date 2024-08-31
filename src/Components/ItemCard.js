@@ -9,9 +9,8 @@ const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 const ItemCard =({ item, restaurants }) =>{
   
-  const { items  } = useSelector((store)=>( store.cart));
+  const { items } = useSelector((store)=>( store?.cart));
   const dispatch = useDispatch();
-
     const handleCount= (e, item) => { 
          if(e.target.innerText == "ADD"){
                                dispatch(addItem({ item: [item, 1], restaurant: restaurants }));
@@ -34,14 +33,15 @@ const ItemCard =({ item, restaurants }) =>{
 
 return(
         <>
+        {}
           <div className="p-2 m-2 border-grey-200 border-b-2 text-left flex justify-between">
                         <div className="w-9/12">
                                  <div className="py-2 font-medium">
                                            <span>
-                                             {item?.card?.info?.itemAttribute?.vegClassifier == 'VEG' 
+                                             { item?.card?.info?.itemAttribute?.vegClassifier == 'VEG' 
                                                     ? <BsRecordCircle className="text-green-700 inline text-center m-1"/> 
                                                     : <IoCaretUpCircleOutline  className=" text-red-700 inline text-center m-1" />
-                                             }
+                                              }
                                              <p className="trucate inline">{ item?.card.info.name }</p>
                                            </span>
                                              <br/> 
@@ -72,7 +72,7 @@ return(
                                                                <button className="mx-auto md:mx-2 font-bold text-xl" onClick={(e)=> handleCount(e, item) }>+</button>
                                                              </div>
                                                           )
-                                                    }
+                                                }
                                     </div>
 
                           </div>
