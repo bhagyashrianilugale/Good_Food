@@ -1,5 +1,5 @@
 import { RestaurantCard } from "../Components/RestaurantCard";
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import { withPromotedLabel } from "../Components/RestaurantCard";
@@ -61,9 +61,9 @@ const Body = () => {
         <>
             {showHiddenUI && (
                 <div className="px-4 w-full my-8 h-60 bg-gradient-to-t -mb-16
-                               from-violet-300 rounded-3xl mt-[10%] relative hidden md:block sm:hidden">
+                               from-orange-400 rounded-3xl mt-[10%] relative hidden md:block sm:hidden">
                     <div className="flex justify-around">
-                        <h1 className="text-6xl font-extrabold opacity-80">
+                        <h1 className="text-6xl font-extrabold opacity-90">
                             Order Food <br />
                             Online in <br />
                             Nashik

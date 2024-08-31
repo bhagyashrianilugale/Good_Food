@@ -23,19 +23,21 @@ const Cart = lazy(()=> import('./Components/Cart'));
 
 const AppLayout = ()=>{
 
-//Authentication logic
-
 return(
     <Provider store={appStore}>
-          <div className="app flex flex-col">
+          <div className="flex flex-col">
               <Header/>
               <Outlet className="min-h-screen"/>
               <ToastContainer position="top-center"
                               autoClose={1000}
                               closeOnClick/>
+               <div className="w-5 h-5 bg-red-500 z-50"
+                        onClick={()=>{ globalThis.scrollTo({top:0, left:0, behavior:"smooth"})}}>
+                       
+               </div>
                <Footer/>
             </div>
-    </Provider>
+     </Provider>
    )
 }
 

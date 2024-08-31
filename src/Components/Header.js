@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateShowList } from "../utils/restaurantSlice";
 import { FaJava } from "react-icons/fa6";
 import { IoSyncCircleOutline, IoPersonCircleSharp } from "react-icons/io5";
-import { PiShoppingCartBold } from "react-icons/pi";
 import { RiCheckboxCircleFill,  RiCloseCircleFill, RiContactsLine } from "react-icons/ri";
 import { auth } from "../utils/firebase";
 import { signOut } from "firebase/auth";
