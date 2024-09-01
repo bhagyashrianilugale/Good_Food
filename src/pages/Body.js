@@ -10,9 +10,10 @@ import { useDispatch, useSelector } from "react-redux";
 import Shimmer from "../Components/Shimmer";
 import Search from "../Components/Search";
 import { RxCross1 } from "react-icons/rx";
-import { BG_IMG_URL } from "../utils/constant";
+import  Background_img from "../assets/Background_img.jpg";
+import { IoIosArrowDroprightCircle } from "react-icons/io";
+import { IoIosArrowDropleftCircle } from "react-icons/io";
 const SWIGGY_URL =  process.env.REACT_APP_SWIGGY_URL;
-
 
 const Body = () => {
   
@@ -59,97 +60,99 @@ const Body = () => {
 
     return listOfRestaurant?.length ? (
         <>
-            {showHiddenUI && (
-                <div className="px-4 w-full my-8 h-60 bg-gradient-to-t -mb-16
-                               from-orange-400 rounded-3xl mt-[10%] relative hidden md:block sm:hidden">
-                    <div className="flex justify-around">
-                        <h1 className="text-6xl font-extrabold opacity-90">
-                            Order Food <br />
-                            Online in <br />
-                            Nashik
-                        </h1>
-                        <div className="h-60 w-[30%]">
-                            <img src={BG_IMG_URL} alt="background"/>
-                        </div>
+          <div className="px-4 w-full my-8 h-80 -mb-16
+                               rounded-b-3xl mt-[6%] hidden md:block sm:hidden hero_section">
+                    <div className="h-60 w-[40%] mx-[60%] mt-10 opacity-95">
+                          <h1 className="font-bold mx-6 text-center text-4xl pt-[20%]">
+                              Best <i className="text-orange-500"> food</i> for your taste
+                          </h1>
+                          <i className="font-bold text-2xl mx-[16%] underline">&quot; Choose, Order & TakeOut &quot;</i>
                     </div>
-                </div>
-            )}
-            <div className="w-full md:w-9/12 m-auto overflow-x-hidden">
-                <h1 className="font-bold text-xl sm:text-2xl inline-block mx-4
-                              mt-[34%] sm:mt-[22%] md:mt-[14%] relative">What's on your mind?</h1>
-                <div className="flex overflow-x-scroll no-scrollbar p-4 shadow-xs border-b-2">
-                    {mindItem?.map((item, index) => (
-                        <Mind key={index} imageId={item.imageId} itemLink={item.action.link} itemName={item.action.text} />
-                    ))}
-                </div>
-
-                <h1 className="font-bold text-xl sm:text-2xl md:my-8 md:mx-4 my-4 ml-4">Restaurants with online food delivery in Nashik</h1>
+               </div>
+               <div className="w-full md:w-10/12 m-auto">
+                   {/**Mind Items Section */}
+                   {/* <IoIosArrowDropleftCircle 
+                              className="w-5 h-5 text-orange-500 z-50"
+                              onClick={()=>(this.scrollLeft +=100)}/> */}
+                   <div className="flex mx-12 mt-[40%] sm:mt-[20%] md:mt-0">
+                         <div className="flex overflow-x-scroll no-scrollbar">
+                           { mindItem?.map((item, index) => (
+                             <Mind key={index} imageId={item.imageId} 
+                                               itemLink={item.action.link} 
+                                               itemName={item.action.text} />
+                            ))}
+                         </div>
+                   </div>
+                 {/* <IoIosArrowDroprightCircle 
+                              className="w-5 h-5 text-orange-500 z-50"
+                              onClick={()=>(this.scrollRight +=100)}/>
+            */}
+                {/**Restaurants with online food delivery Section */}
+                <h1 className="font-bold text-xl text-center sm:text-2xl md:my-8 md:mx-4 py-8 ml-4">
+                         Restaurants with online food delivery<br/>
+                           <i className="text-orange-500 underline">&quot; Freshness in every bite &quot;</i>
+                </h1>
                 <div className="flex">
-                    <div className="flex overflow-x-scroll no-scrollbar md:mx-8">
+                    <div className="flex justify-evenly w-full overflow-x-scroll no-scrollbar">
                       <Search />
-                          <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
-                                       active:bg-orange-200 rounded-xl flex flex-between px-1">
+                          <button className="rounded-xl h-8 px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
                             <p
-                                className="w-40 sm:w-40 md:w-35 px-1 py-1"
+                                className="px-1"
                                 onClick={() => handleFilter('price300to600', (itemInfo) => 300 < itemInfo?.info?.costForTwo?.slice(1, 4) < 600)}
                             >
                                 Rs.300-Rs.600
                             </p>
                             {activeFilters.price300to600 && <span onClick={() => handleCross('price300to600')}>
-                                     <RxCross1 className="text-lg mr-1 my-3" /></span>}
-                        </div>
+                                     <RxCross1 className="pt-2 text-xl" /></span>}
+                        </button>
 
-                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
-                                  active:bg-orange-200 rounded-xl flex flex-between px-1">
+                        <button className="rounded-xl h-8 px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
                             <p
-                                className="w-40 sm:w-40 md:w-35 px-2 py-2"
+                                className="px-1"
                                 onClick={() => handleFilter('lessThan300', (itemInfo) => itemInfo?.info?.costForTwo?.slice(1, 4) < 300)}
                             >
                                 Less than Rs.300
                             </p>
                             {activeFilters.lessThan300 && <span onClick={() => handleCross('lessThan300')}>
-                                     <RxCross1 className="text-lg mr-1 my-3" /></span>}
-                        </div>
+                                     <RxCross1 className="pt-2 text-xl"/></span>}
+                        </button>
 
-                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
-                                  active:bg-orange-200 rounded-xl flex flex-between px-1">
+                        <button className="rounded-xl h-8 px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
                             <p
-                                className="w-40 sm:w-40 md:w-35 px-2 py-2"
+                                className="px-1"
                                 onClick={() => handleFilter('fastDelivery', (itemInfo) => itemInfo?.info?.sla?.deliveryTime < 35)}
                             >
                                 Fast delivery
                             </p>
                             {activeFilters.fastDelivery && <span onClick={() => handleCross('fastDelivery')}>
-                                      <RxCross1 className="text-lg mr-1 my-3" /></span>}
-                        </div>
+                                      <RxCross1 className="pt-2 text-xl" /></span>}
+                        </button>
 
-                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
-                                 active:bg-orange-200 rounded-xl flex flex-between px-1">
+                        <button className="rounded-xl h-8 px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
                             <p
-                                className="w-40 sm:w-40 md:w-35 px-2 py-2"
+                                className="px-1"
                                 onClick={() => handleFilter('hotOffers', (itemInfo) =>itemInfo?.info?.aggregatedDiscountInfoV3?.header?.slice(0,2) > 20)}
                             >
                                 Hot offers
                             </p>
                             {activeFilters.hotOffers && <span onClick={() => handleCross('hotOffers')}>
-                                       <RxCross1 className="text-lg mr-1 my-3" /></span>}
-                        </div>
+                                       <RxCross1 className="pt-2 text-xl" /></span>}
+                        </button>
 
-                        <div className="cursor-pointer text-center text-white bg-orange-400 h-10 mx-4
-                                active:bg-orange-200 rounded-xl flex flex-between px-1">
+                        <button className="rounded-xl h-8 px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
                             <p
-                                className="w-40 sm:w-40 md:w-35 px-2 py-2"
+                                className="px-1"
                                 onClick={() => handleFilter('highRatings', (itemInfo) => 4.0 < itemInfo?.info?.avgRating)}
                             >
                                 Ratings 4.0+
                             </p>
                             {activeFilters.highRatings && <span onClick={() => handleCross('highRatings')}>
-                                     <RxCross1 className="text-lg mr-1 my-3" /></span>}
-                        </div>
+                                     <RxCross1 className="pt-2 text-xl" /></span>}
+                        </button>
                     </div>
                 </div>
 
-                <div className="flex md:w-11.5/12 flex-wrap cursor-pointer mt-[5%] border-b-2">
+                <div className="flex md:w-11.5/12 flex-wrap cursor-pointer py-[5%] border-b-2">
                     {filteredRestaurant.length !== undefined && filteredRestaurant.map((restaurant) => (
                         <Link
                             key={restaurant.info.id}
@@ -161,8 +164,15 @@ const Body = () => {
                         </Link>
                     ))}
                 </div>
-                <h1 className="font-bold text-xl sm:text-2xl md:text-3xl my-4 w-10/12 ml-4 sm:w-full sm:ml-4 md:w-10/12">Top restaurant chains in Nashik</h1>
-                <Toprestaurantchain />
+                <div>
+                    <h1 className="font-bold text-xl text-center sm:text-2xl md:my-6 md:mx-4 py-4 ml-4">
+                         Top restaurants chain for you<br/>
+                           <i className="text-orange-500 underline">&quot; Healthy food for busy people &quot;</i>
+                    </h1>
+                   {/* <h1 className="font-bold text-xl sm:text-2xl md:text-3xl w-10/12 ml-4 sm:w-full md:w-10/12">
+                              Top restaurant chains in for you</h1> */}
+                    <Toprestaurantchain />
+                </div>
             </div>
         </>
     ) : <Shimmer />;

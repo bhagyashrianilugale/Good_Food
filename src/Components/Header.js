@@ -42,7 +42,7 @@ const Header = ()=>{
         <header className="flex justify-between shadow-lg w-full fixed top-0 left-0 bg-white z-20">
                <div>
                  <Link to="/">
-                     <h1 className="font-bold text-2xl sm:text-3xl px-1 py-1 sm:p-2 my-4">
+                     <h1 className="font-bold text-2xl p-4 sm:text-3xl px-1 sm:p-2 my-2">
                          <FaJava className="inline text-4xl sm:text-5xl bottom-1"/>
                            good<i className="text-orange-500">food</i>
                     </h1>
@@ -52,10 +52,10 @@ const Header = ()=>{
                                    className="h-10 w-20 text-zinc-800 hidden my-6 md:block" 
                                    onClick={handleHeaderItem}/> }
                { !isSideBarOpen && <IoPersonCircleSharp  
-                                    className="h-10 w-20 text-zinc-800 my-6               block md:hidden" 
+                                    className="h-10 w-20 text-zinc-800 my-6 block md:hidden" 
                                     onClick={toggleSideBar}/>}
-               {  showHiddenUI && <div className="items-center">
-                                  <ul className="flex m-4 p-4 font-semibold cursor-pointer space-y-2 md:space-y-0 md:space-x-4">
+               { showHiddenUI && <div className="items-center">
+                                  <ul className="flex m-2 p-4 font-semibold cursor-pointer space-y-2 md:space-y-0 md:space-x-4">
                     <li className="px-4 md:px-4"> 
                                       Internet Status: {
                       (status == true) ? < RiCheckboxCircleFill className="inline text-green-600" /> : < RiCloseCircleFill className="inline text-red-600" />

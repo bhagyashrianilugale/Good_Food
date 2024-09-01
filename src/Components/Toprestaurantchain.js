@@ -10,14 +10,14 @@ const Toprestaurantchain = () => {
  const result = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
  return result?.length == 0 ? (<Shimmer/>) : (
       <>
-         <div className='flex overflow-x-scroll no-scrollbar border-b-2'>
+         <div className='flex overflow-x-scroll no-scrollbar py-10 border-b-2'>
            { result?.map((restaurant, index)=>{
                          return <div  key = {index}>
                                <Link key ={ restaurant.id } to = {"/restaurants/" + restaurant.info.id }>
                                    <RestaurantCard 
                                         restauList = { restaurant } 
-                                        className = {"m-2 w-[250px] h-[300px] rounded-lg p-6"}
-                                        classNameImg = {"w-[80%]"}/></Link>
+                                        
+                                        /></Link>
             
                     </div>}
               )}

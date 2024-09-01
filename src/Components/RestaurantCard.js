@@ -1,10 +1,13 @@
-import { MdStars } from "react-icons/md";
 import { DEFAULT_RESTAURANT_IMG } from "../utils/constant";
+import { IoRestaurantSharp } from "react-icons/io5";
+import { IoStarOutline } from "react-icons/io5";
+import { IoIosBicycle } from "react-icons/io";
+
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 export const RestaurantCard = (props)=>{
 
-   const { restauList, className, classNameImg} = props; //  Destructing the props
+   const { restauList} = props; //  Destructing the props
    const {
        name,
        avgRating,
@@ -14,32 +17,31 @@ export const RestaurantCard = (props)=>{
       } = restauList?.info;
 
    return(
-       <div className={`w-[280px] h-100 mx-[20%] md:mx-4 p-4 rounded-2xl overflow-hidden hover:transition-none 
-                       transition-transform duration-200 transform hover:scale-90 ${className}`}>
-           <div className="relative">
-                <img src={ cloudinaryImageId ?(CDN_URL+cloudinaryImageId):(DEFAULT_RESTAURANT_IMG)} 
-                alt="cart-img" 
-                className={`rounded-2xl h-40 w-80 shadow-lg shadow-zinc-400 absolute${classNameImg}`}></img>
-                <div className="">
-                   <p className="font-bold text-2xl md:text-3xl text-white bottom-0 
-                                 absolute px-2 bg-gradient-to-t from-black w-full rounded-b-2xl py-2">
-                                    {restauList?.info?.aggregatedDiscountInfoV3?.header}</p>
+       <div className="w-[240px] h-80 mx-[20%] md:mx-3 my-2 shadow-xs rounded-lg hover:translate-x-4 bg-white 
+                        duration-500">
+               <div>
+                  <img src={(CDN_URL+cloudinaryImageId)||(DEFAULT_RESTAURANT_IMG)} 
+                   alt="cart-img" 
+                   className="rounded-t-lg h-40 w-60 shadow-lg shadow-zinc-400 relative"></img>
+                   {/* <p className="font-bold text-xl md:text-3xl text-white
+                                 absolute px-2 bg-gradient-to-t from-black w-full rounded-xl">
+                                    {restauList?.info?.aggregatedDiscountInfoV3?.header}</p> */}
+               </div>
+              <div className="p-2">
+                 <h3 className="text-lg md:text-lg truncate font-bold font-serif">
+                     <IoRestaurantSharp className="inline mx-2 mb-1 text-orange-500"/>{ name }
+                 </h3>
+                 
+                 <p className="opacity-90 text-lg"> 
+                 <IoStarOutline className=" text-green-700 inline mx-2 mb-1" /> 
+                     { avgRating } <span> <IoIosBicycle className="inline m-1"/> {restauList?.info?.sla?.slaString}</span>
+                 </p>
+                <div className="truncate text-black text-sm px-2 text-center opacity-50">
+                     {cuisines.join(",")}
+                     <p>{locality}</p>
                 </div>
-          </div>
-          <div>
-            <h3 className="font-bold opacity-90 text-lg md:text-xl">
-               { name }
-            </h3>
-            <p className="font-bold opacity-90 text-lg"> 
-               <MdStars className=" text-green-700 inline mr-2 text-center text-2xl mb-1" /> 
-                  { avgRating } <span> . {restauList?.info?.sla?.slaString}</span>
-            </p>
-            <div className="truncate text-black text-sm lg:text-lg opacity-50 font-semibold">
-               {cuisines.join(",")}
-               <p>{locality}</p>
             </div>
-         </div>
-      </div>                       
+        </div>                       
     )
  };
 
@@ -47,11 +49,14 @@ export const RestaurantCard = (props)=>{
    return (props)=>{
       return(
          <> 
-            <div className="h-4">
-               <label 
-                      className=" bg-amber-400 text-white text-xs font-bold p-1 absolute rounded-lg mt-6 ml-2 z-10">
-                        PROMOTED
-                </label> 
+            <div className="h-4 absolute">
+               <span 
+                   className="animate-ping absolute inline-flex rounded-full h-6 w-24 z-10 bg-amber-400 opacity-75 ">
+               </span>
+               <span 
+                     className="relative inline-flex rounded-full bg-amber-400 h-6 w-24 px-4 text-white py-1 text-xs font-bold z-10">
+                     PROMOTED
+               </span>
             </div>
             <RestaurantCard {...props}/>
         </>

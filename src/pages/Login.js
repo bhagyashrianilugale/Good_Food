@@ -66,8 +66,8 @@ const Login = () => {
          }
     }
 return(<>
-        <div className="h-[70%] w-11/12 sm:w-8/12 md:w-4/12 bg-white m-auto my-[40%] sm:my-[20%] md:my-[16%] 
-                 shadow shadow-orange-500 md:shadow-orange-500 p-10">
+        <div className="h-[70%] w-11/12 sm:w-8/12 md:w-4/12 bg-white/30 m-auto my-[40%] sm:my-[20%] md:my-[16%] 
+                 shadow shadow-orange-500 md:shadow-black rounded-sm p-10">
                <div className="flex justify-between">
                    <p className="text-lg">
                        <b className="text-2xl md:text-3xl py-2">{isLog ? "Log in" : "Sign up"}</b><br />
@@ -76,12 +76,7 @@ return(<>
                                 { isLog ? "create an account" : "login to your account"}
                           </span>
                    </p>
-                   <img 
-                       src={LOGIN_PAGE_IMG} 
-                       alt="login_img"
-                       className="w-[30%] h-[35%] md:w-40 md:h-20"
-                   />
-               </div>
+                 </div>
                  {!isLog && 
                    <span>
                        <input type="text" 
@@ -117,8 +112,8 @@ return(<>
                        className="shadow-lg w-full md:w-[85%] my-1"
                    />
                    <button type="submit" onClick={generateOTP} 
-                       className="rounded-lg p-2 block h-10 w-full sm:w-[96%] md:w-[85%] font-semibold 
-                               bg-orange-500 text-white my-4 hover:bg-orange-600"
+                       className="rounded-lg text-center p-2 block h-10 w-full sm:w-[96%] md:w-[85%] 
+                                 font-semibold bg-orange-500 text-white my-4 hover:bg-orange-600"
                    >
                     {loader ? <CgSpinner className="w-8 h-8 mx-auto mb-4 animate-spin"/> : "Send OTP"}
                    </button>
@@ -133,8 +128,8 @@ return(<>
                    />
                 </span>
                <p className="text-orange-500 text-center font-bold px-2">{errorMessage ? errorMessage : null}</p>
-               { isLogged ? <Link to="/"><span className="rounded-lg text-center p-2 block h-10 w-full sm:w-[96%]  md:w-[85%] font-semibold bg-orange-500 
-                                      text-white my-4 hover:bg-orange-600" 
+               { isLogged ? <Link to="/"><span className="rounded-lg text-center p-2 block h-10 w-full sm:w-[96%]  md:w-[85%] 
+                                 font-semibold bg-orange-500 text-white my-4 hover:bg-orange-600"
                                         onClick={verifyOTP}>
                                           Verify OTP
                                          </span></Link>
@@ -142,7 +137,7 @@ return(<>
                                  font-semibold bg-orange-500 text-white my-4 hover:bg-orange-600">
                                     Verify OTP
                            </span>}
-               <p className="text-xs font-normal w-[80%]">By clicking on login, I accept the <b>
+               <p className="text-xs mx-auto font-normal w-[80%]">By clicking on login, I accept the <b>
                    Terms & Conditions & Privacy Policy
                </b> 
                </p>

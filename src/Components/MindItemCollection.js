@@ -3,6 +3,7 @@ import Shimmer from "./Shimmer";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { RxCross1 } from "react-icons/rx";
+import { IoFastFoodSharp } from "react-icons/io5";
 
 const MindItemCollection = () => {
    const { resId, itemName } = useParams();
@@ -53,29 +54,33 @@ const MindItemCollection = () => {
       <Shimmer />
    ) : (
       <>
-         <div className="mt-[36%] sm:mt-[20%] md:mt-[12%]">
-            <h2 className="text-3xl sm:text-4xl mx-10 md:mx-[15%] font-bold opacity-90">{allItem[0].card.card.title}</h2>
-            <p className="text-sm sm:text-lg mx-10 md:mx-[15%] my-4 opacity-80">{allItem[0].card.card.description}</p>
+         <div className="mt-[36%] sm:mt-[20%] md:mt-[12%] text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold opacity-90">
+                {allItem[0].card.card.title} <IoFastFoodSharp  className="inline mx-2 my-1"/>
+            </h2>
+            <i className="text-sm text-orange-500 underline sm:text-lg my-4 opacity-80">
+                   &quot; {allItem[0].card.card.description} &quot;</i>
          </div>
-         <div className="flex justify-around w-full md:w-6/12 mx-auto md:mx-[14%]">
-            <div className="px-4 py-1 cursor-pointer text-center md:mx-2 my-3 text-white
-                           bg-orange-400 h-8 active:bg-orange-200 rounded-xl flex flex-between">
+         <p className="text-xl sm:text-3xl md:px-4 md:py-1 font-bold opacity-90 text-center my-4">Restaurants to explore</p>
+         <div className="flex justify-around w-full md:w-6/12 py-4 mx-auto">
+            <button className="rounded-xl h-8 px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
                <p
+                  className="px-1"
                   onClick={() => applyFilter('lessThan40Mins', () => 
                                     allItem?.filter((itemInfo) => itemInfo?.card?.card?.info?.sla?.slaString?.slice(0, 2) < 40))}
                >
                   Less than 40mins
                </p>
                {filterState.lessThan40Mins && (
-                  <span onClick={() => handleCross('lessThan40Mins')} className="mx-2 my-1 text-lg">
-                     <RxCross1 />
+                  <span onClick={() => handleCross('lessThan40Mins')}>
+                     <RxCross1 className="pt-2 text-xl"/>
                   </span>
                )}
-            </div>
+            </button>
 
-            <div className="px-4 py-1 cursor-pointer text-center md:mx-2 my-3 text-white bg-orange-400 
-                       h-8 active:bg-orange-200 rounded-xl flex flex-between">
+            <button className="rounded-xl h-8 px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
                <p
+                  className="px-1"
                   onClick={() => applyFilter('rs300To600', () => 
                                               allItem?.filter((itemInfo) =>(itemInfo?.card?.card?.info?.costForTwo?.slice(1, 4) > 300)
                                                                            &&  (itemInfo?.card?.card?.info?.costForTwo?.slice(1, 4) < 600)))}
@@ -83,30 +88,29 @@ const MindItemCollection = () => {
                   Rs.300-Rs.600
                </p>
                {filterState.rs300To600 && (
-                  <span onClick={() => handleCross('rs300To600')} className="mx-2 my-1 text-lg">
-                     <RxCross1 />
+                  <span onClick={() => handleCross('rs300To600')}>
+                     <RxCross1 className="pt-2 text-xl"/>
                   </span>
                )}
-            </div>
+            </button>
 
-            <div className="px-4 py-1 cursor-pointer text-center md:mx-2 my-3 text-white bg-orange-400 
-                     h-8 active:bg-orange-200 rounded-xl flex flex-between">
+            <button className="rounded-xl h-8 px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
                <p
+                  className="px-1"
                   onClick={() => applyFilter('lessThanRs300', () => 
                                                allItem?.filter((itemInfo) => itemInfo?.card?.card?.info?.costForTwo?.slice(1, 4) < 300))}
                >
                   Less than Rs.300
                </p>
                {filterState.lessThanRs300 && (
-                  <span onClick={() => handleCross('lessThanRs300')} className="mx-2 my-1 text-lg">
-                     <RxCross1 />
+                  <span onClick={() => handleCross('lessThanRs300')}>
+                     <RxCross1 className="pt-2 text-xl"/>
                   </span>
                )}
-            </div>
+            </button>
          </div>
 
-         <p className="text-xl sm:text-3xl md:px-4 md:py-1 font-bold opacity-90 mx-10 md:mx-[14%] my-4">Restaurants to explore</p>
-         <div className="flex flex-wrap mx-auto w-full overflow-x-hidden md:w-9/12">
+         <div className="flex flex-wrap w-full overflow-x-hidden px-0 md:px-[7%] md:w-11.5/12 ">
             {mindItem?.map((itemInfo, index) =>(
                <Link key={index} to={"/restaurants/" + resId}>
                   <RestaurantCard restauList={itemInfo?.card?.card}/>

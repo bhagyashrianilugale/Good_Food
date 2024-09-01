@@ -7,16 +7,13 @@ const Mind = ({ imageId, itemLink, itemName })=>{
    
    return(
         <>
-          <div>
              <Link key={ resId }
                     to= { "/collections/"+ resId +"/"+ itemName }>
-                   <div className="w-20 h-[4%] sm:w-40 sm:h-[10%] sm:p-3">
+                   <div className="w-10 h-10 px-2 rounded-full bg-orange-100 shadow-orange-50 sm:w-20 sm:h-20 md:w-40 md:h-40 sm:px-4">
                         <img src={ CDN_URL + imageId }  alt="itemImg" className="enhanced-image"/>
                    </div>
               </Link>
-          </div>
       </>
-
     )
 };
 
