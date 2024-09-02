@@ -34,49 +34,51 @@ const ItemCard =({ item, restaurants }) =>{
 return(
         <>
         {}
-          <div className="p-2 m-2 border-grey-200 border-b-2 text-left flex justify-between">
-                        <div className="w-9/12">
-                                 <div className="py-2 font-medium">
-                                           <span>
-                                             { item?.card?.info?.itemAttribute?.vegClassifier == 'VEG' 
-                                                    ? <BsRecordCircle className="text-green-700 inline text-center m-1"/> 
-                                                    : <IoCaretUpCircleOutline  className=" text-red-700 inline text-center m-1" />
-                                              }
-                                             <p className="trucate inline">{ item?.card.info.name }</p>
-                                           </span>
-                                             <br/> 
-                                             <div className="mx-5">&#8377;{ item?.card.info.price  
-                                                ? (item?.card.info.price)/100 
-                                                : (item?.card.info.defaultPrice)/100 }
-                                             </div>
-                                        </div>
-                                          <p className="text-sm px-4 truncate">{ item?.card.info.description }</p>
-                                 </div>
-                                 <div className="w-3/12 rounded-lg">
-                                           <img src={ item?.card?.info?.imageId?.length ? CDN_URL + item?.card?.info?.imageId : DEFAULT_RESTAURANT_IMG } 
-                                                className="rounded-lg md:w-full my-4 w-[100%]  h-[60%] sm:h-[60%] md:h-40 lg:my-12 shadow-lg -top-1 shadow-zinc-400 relative" 
-                                                alt="item_card_img"/> 
-                                                <div className="px-2 py-1 sm:p-2 sm:mx-6 bg-white w-[18%] sm:w-[10%] md:w-[8%] 
-                                                                h-18 md:h-10 -mt-10 sm:-mt-12 md:-mt-16 absolute text-green-600 rounded-2xl shadow-lg shadow-zinc-500">
-                                                {items?.filter(
+          <div className="border-grey-200 border-b-2 text-left flex justify-between">
+                            <div>
+                                  <div className="sm:p-1 md:mx-10 mx-1 sm:mx-8 bg-white w-[16%] sm:w-[12%] md:w-[6%] 
+                                                                h-8 md:h-9 -mt-0 absolute text-green-600 z-10 rounded-lg sm:rounded-xl shadow-lg shadow-zinc-500">
+                                                  {items?.filter(
                                                    (itm) => (itm[0]?.card?.info?.id == item?.card?.info?.id)
                                                        ).length == 0
-                                                        ? <button className="px-2 sm:px-7 font-medium" onClick = {(e)=> handleCount(e, item) } >ADD</button>
-                                                        :  ( <div>
-                                                               <button className="mx-auto md:mx-2 font-bold text-xl" onClick = {(e)=> handleCount(e, item) }>-</button>
+                                                        ? <b className="px-4 sm:px-5 md:py-1 font-medium" onClick = {(e)=> handleCount(e, item) } >ADD</b>
+                                                        :  (<span className="px-1 text-xs sm:text-xl">
+                                                               <b className="px-2" onClick = {(e)=> handleCount(e, item) }>-</b>
                                                                 {items.map((itm, index)=>(itm[0]?.card?.info?.id == item?.card?.info?.id 
-                                                                                         ?<span key={ index } className="mx-1 p-2 md:p-0 md:mx-2 font-semibold  text-xl">{itm[1]}</span>
+                                                                                         ?<b key={ index } >{itm[1]}</b>
                                                                                          : null)
                                                                                    
                                                                 )}
-                                                               <button className="mx-auto md:mx-2 font-bold text-xl" onClick={(e)=> handleCount(e, item) }>+</button>
-                                                             </div>
-                                                          )
-                                                }
+                                                               <b className="px-2" onClick={(e)=> handleCount(e, item) }>+</b>
+                                                            </span>
+                                                  )}
                                     </div>
-
+                                    <img 
+                                      src={ item?.card?.info?.imageId?.length ? CDN_URL + item?.card?.info?.imageId : DEFAULT_RESTAURANT_IMG } 
+                                      className="my-4 w-20 h-20 sm:w-40 sm:h-30 md:h-40 shadow-lg -top-1 shadow-zinc-400 relative" 
+                                      alt="item_card_img"/>
+                            
+                             </div>
+                             <div className="w-9/12">
+                             <div className="py-2 px-2 md:px-4">
+                                              <span>
+                                                 { item?.card?.info?.itemAttribute?.vegClassifier == 'VEG' 
+                                                    ? <BsRecordCircle className="text-green-700 inline text-center m-1"/> 
+                                                    : <IoCaretUpCircleOutline  className=" text-red-700 inline text-center m-1" />
+                                                 }
+                                                <p className="truncate text-sm sm:text-lg inline text-orange-400 font-semibold">
+                                                   { item?.card.info.name }
+                                                </p>
+                                               </span>&nbsp;
+                                               <span className="m-auto">&#8377;{ item?.card.info.price  
+                                                ? (item?.card.info.price)/100 
+                                                : (item?.card.info.defaultPrice)/100 }
+                                              </span>
+                                              <hr className="w-40 sm:w-60 md:w-80 h-0.5 text-center mt-4 bg-black"/>
+                                             <p className="text-xs sm:text-sm  line-clamp-2 mx-4 md:line-clamp-4">{ item?.card.info.description }</p>
+                               </div>
                           </div>
-                </div>
+                  </div>
           </>
     )
 };

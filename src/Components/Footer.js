@@ -9,7 +9,7 @@ const Footer = () => {
          उदरभरण नोहे जाणिजे यज्ञकर्म ॥</p>
         <p className="text-center text-white cursor-pointer">
            &copy; 2024 <span className="text-orange-500">goodfood</span> ||
-           Developed by <span className="text-orange-500">Bhagyashri Ugale</span>
+           Developed by <span className="text-orange-500">Bhagyashri</span>
         </p>
     </footer>
   );

@@ -32,7 +32,7 @@ return(
                               autoClose={1000}
                               closeOnClick/>
                <IoIosArrowDropupCircle 
-                              className="w-20 h-20 p-5 text-orange-500 z-10 left-0"
+                              className="w-20 h-20 p-5 text-orange-500 z-4 fixed bottom-0 right-5"
                               onClick={()=>{ globalThis.scrollTo({top:0, left:0, behavior:"smooth"})}}>
                </IoIosArrowDropupCircle>
              <Footer/>
