@@ -17,12 +17,12 @@ export const RestaurantCard = (props)=>{
       } = restauList?.info;
 
    return(
-       <div className="w-[240px] h-80 mx-[20%] md:mx-3 my-2 shadow-xs rounded-lg hover:translate-x-4 bg-white 
+       <div className="w-[260px] h-80 mx-10 md:mx-3 my-4 shadow-xs rounded-lg hover:translate-x-4 bg-white 
                         duration-500">
                <div>
                   <img src={(CDN_URL+cloudinaryImageId)||(DEFAULT_RESTAURANT_IMG)} 
                    alt="cart-img" 
-                   className="rounded-t-lg h-40 w-60 shadow-lg shadow-zinc-400 relative"></img>
+                   className="rounded-t-lg h-40 w-full shadow-lg shadow-zinc-400 relative"></img>
                    {/* <p className="font-bold text-xl md:text-3xl text-white
                                  absolute px-2 bg-gradient-to-t from-black w-full rounded-xl">
                                     {restauList?.info?.aggregatedDiscountInfoV3?.header}</p> */}

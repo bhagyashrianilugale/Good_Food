@@ -69,7 +69,7 @@ const Body = () => {
                           <i className="font-bold text-2xl mx-[16%] underline">&quot; Choose, Order & TakeOut &quot;</i>
                     </div>
                </div>
-               <div className="w-full md:w-10/12 m-auto">
+               <div className="w-full md:w-11/12 m-auto">
                    {/**Mind Items Section */}
                    {/* <IoIosArrowDropleftCircle 
                               className="w-5 h-5 text-orange-500 z-50"
@@ -93,9 +93,9 @@ const Body = () => {
                            <i className="text-orange-500 underline">&quot; Freshness in every bite &quot;</i>
                 </h1>
                 <div className="flex">
-                    <div className="flex justify-evenly w-full overflow-x-scroll no-scrollbar">
+                    <div className="flex justify-evenly w-full overflow-y-hidden overflow-x-scroll no-scrollbar">
                       <Search />
-                          <button className="rounded-xl h-8 px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
+                          <button className="rounded-xl h-8 px-2 mx-4 bg-white shadow-sm border-2 border-black w-min-40 flex">
                             <p
                                 className="px-1"
                                 onClick={() => handleFilter('price300to600', (itemInfo) => 300 < itemInfo?.info?.costForTwo?.slice(1, 4) < 600)}
