@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Shimmer from "../Components/Shimmer";
 import Search from "../Components/Search";
 import { RxCross1 } from "react-icons/rx";
-import  Background_img from "../assets/Background_img.jpg";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 const SWIGGY_URL =  process.env.REACT_APP_SWIGGY_URL;
@@ -20,7 +19,6 @@ const Body = () => {
     const dispatch = useDispatch();
     const { listOfRestaurant, filteredRestaurant } = useSelector((store) => store.restaurant);
     const mindItem = useSelector((store) => store.restaurant.mindItems);
-    const showHiddenUI = useSelector((store) => store.restaurant.showHiddenUI);
     const status = useOnline();
     const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
     const [activeFilters, setActiveFilters] = useState({
@@ -89,13 +87,13 @@ const Body = () => {
             */}
                 {/**Restaurants with online food delivery Section */}
                 <h1 className="font-bold text-xl text-center sm:text-2xl md:my-8 md:mx-4 py-8 ml-4">
-                         Restaurants with online food delivery<br/>
+                           Restaurants with online food delivery<br/>
                            <i className="text-orange-500 underline">&quot; Freshness in every bite &quot;</i>
                 </h1>
                 <div className="flex">
-                    <div className="flex justify-evenly w-full overflow-y-hidden overflow-x-scroll no-scrollbar">
+                    <div className="flex text-xs sm:text-lg sm:justify-evenly w-full overflow-y-hidden overflow-x-scroll no-scrollbar">
                       <Search />
-                          <button className="rounded-xl h-8 px-2 mx-4 bg-white shadow-sm border-2 border-black w-min-40 flex">
+                          <button className="rounded-xl h-8 py-1 sm:py-0 sm:px-2 bg-white shadow-sm border-2 border-black flex">
                             <p
                                 className="px-1"
                                 onClick={() => handleFilter('price300to600', (itemInfo) => 300 < itemInfo?.info?.costForTwo?.slice(1, 4) < 600)}
@@ -103,51 +101,51 @@ const Body = () => {
                                 Rs.300-Rs.600
                             </p>
                             {activeFilters.price300to600 && <span onClick={() => handleCross('price300to600')}>
-                                     <RxCross1 className="pt-2 text-xl" /></span>}
+                                     <RxCross1 className="p-1 sm:p-0 sm:pt-2 text-xl" /></span>}
                         </button>
 
-                        <button className="rounded-xl h-8 px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
+                        <button className="rounded-xl h-8 py-1 sm:py-0 sm:px-2 bg-white shadow-sm border-2 border-black flex">
                             <p
-                                className="px-1"
+                                className="sm:px-1"
                                 onClick={() => handleFilter('lessThan300', (itemInfo) => itemInfo?.info?.costForTwo?.slice(1, 4) < 300)}
                             >
                                 Less than Rs.300
                             </p>
                             {activeFilters.lessThan300 && <span onClick={() => handleCross('lessThan300')}>
-                                     <RxCross1 className="pt-2 text-xl"/></span>}
+                                     <RxCross1 className="p-1 sm:p-0 sm:pt-2 text-xl"/></span>}
                         </button>
 
-                        <button className="rounded-xl h-8 px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
+                        <button className="rounded-xl h-8 py-1 sm:py-0 sm:px-2 bg-white shadow-sm border-2 border-black flex">
                             <p
-                                className="px-1"
+                                className="sm:px-1"
                                 onClick={() => handleFilter('fastDelivery', (itemInfo) => itemInfo?.info?.sla?.deliveryTime < 35)}
                             >
                                 Fast delivery
                             </p>
                             {activeFilters.fastDelivery && <span onClick={() => handleCross('fastDelivery')}>
-                                      <RxCross1 className="pt-2 text-xl" /></span>}
+                                      <RxCross1 className="p-1 sm:p-0 sm:pt-2  text-xl" /></span>}
                         </button>
 
-                        <button className="rounded-xl h-8 px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
+                        <button className="rounded-xl h-8 py-1 sm:py-0 sm:px-2 bg-white shadow-sm border-2 border-black flex">
                             <p
-                                className="px-1"
+                                className="sm:px-1"
                                 onClick={() => handleFilter('hotOffers', (itemInfo) =>itemInfo?.info?.aggregatedDiscountInfoV3?.header?.slice(0,2) > 20)}
                             >
                                 Hot offers
                             </p>
                             {activeFilters.hotOffers && <span onClick={() => handleCross('hotOffers')}>
-                                       <RxCross1 className="pt-2 text-xl" /></span>}
+                                       <RxCross1 className="p-1 sm:p-0 sm:pt-2 text-xl" /></span>}
                         </button>
 
-                        <button className="rounded-xl h-8 px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
+                        <button className="rounded-xl h-8 py-1 sm:py-0 sm:px-2 bg-white shadow-sm border-2 border-black flex">
                             <p
-                                className="px-1"
+                                className="sm:px-1"
                                 onClick={() => handleFilter('highRatings', (itemInfo) => 4.0 < itemInfo?.info?.avgRating)}
                             >
                                 Ratings 4.0+
                             </p>
                             {activeFilters.highRatings && <span onClick={() => handleCross('highRatings')}>
-                                     <RxCross1 className="pt-2 text-xl" /></span>}
+                                     <RxCross1 className="p-1 sm:p-0 sm:pt-2 text-xl" /></span>}
                         </button>
                     </div>
                 </div>

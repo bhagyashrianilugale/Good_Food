@@ -36,7 +36,7 @@ export const RestaurantCard = (props)=>{
                  <IoStarOutline className=" text-green-700 inline mx-2 mb-1" /> 
                      { avgRating } <span> <IoIosBicycle className="inline m-1"/> {restauList?.info?.sla?.slaString}</span>
                  </p>
-                <div className="line-clamp-1 text-black text-sm px-2 text-center opacity-50">
+                <div className="line-clamp-3 text-black text-sm px-2 text-center opacity-50">
                      {cuisines.join(",")}
                      <p>{locality}</p>
                 </div>

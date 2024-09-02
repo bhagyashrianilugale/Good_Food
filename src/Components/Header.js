@@ -50,10 +50,10 @@ const Header = ()=>{
                 </div>
                { !showHiddenUI && <IoPersonCircleSharp  
                                    className="h-10 w-20 text-zinc-800 hidden my-6 md:block" 
-                                   onClick={handleHeaderItem}/> }
+                                   onClick={ handleHeaderItem }/> }
                { !isSideBarOpen && <IoPersonCircleSharp  
                                     className="h-10 w-20 text-zinc-800 my-6 block md:hidden" 
-                                    onClick={toggleSideBar}/>}
+                                    onClick={ toggleSideBar }/>}
                { showHiddenUI && <div className="items-center">
                                   <ul className="flex m-2 p-4 font-semibold cursor-pointer space-y-2 md:space-y-0 md:space-x-4">
                     <li className="px-4 md:px-4"> 

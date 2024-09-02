@@ -62,8 +62,8 @@ const MindItemCollection = () => {
                    &quot; {allItem[0].card.card.description} &quot;</i>
          </div>
          <p className="text-xl sm:text-3xl md:px-4 md:py-1 font-bold opacity-90 text-center my-4">Restaurants to explore</p>
-         <div className="flex justify-around w-full md:w-6/12 py-4 mx-auto">
-            <button className="rounded-xl h-8 px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
+         <div className="flex text-xs sm:text-lg justify-around w-full md:w-6/12 py-2 mx-auto">
+            <button className="rounded-xl h-8 py-1 sm:py-0 sm:px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
                <p
                   className="px-1"
                   onClick={() => applyFilter('lessThan40Mins', () => 
@@ -73,12 +73,12 @@ const MindItemCollection = () => {
                </p>
                {filterState.lessThan40Mins && (
                   <span onClick={() => handleCross('lessThan40Mins')}>
-                     <RxCross1 className="pt-2 text-xl"/>
+                     <RxCross1 className="p-1 sm:p-0 sm:pt-2  text-xl"/>
                   </span>
                )}
             </button>
 
-            <button className="rounded-xl h-8 px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
+            <button className="rounded-xl h-8 py-1 sm:py-0  sm:px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
                <p
                   className="px-1"
                   onClick={() => applyFilter('rs300To600', () => 
@@ -89,12 +89,12 @@ const MindItemCollection = () => {
                </p>
                {filterState.rs300To600 && (
                   <span onClick={() => handleCross('rs300To600')}>
-                     <RxCross1 className="pt-2 text-xl"/>
+                     <RxCross1 className="p-1 sm:p-0 sm:pt-2 text-xl"/>
                   </span>
                )}
             </button>
 
-            <button className="rounded-xl h-8 px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
+            <button className="rounded-xl h-8 py-1 sm:py-0  sm:px-2 bg-white shadow-sm border-2 border-black w-min-40 flex">
                <p
                   className="px-1"
                   onClick={() => applyFilter('lessThanRs300', () => 
@@ -104,7 +104,7 @@ const MindItemCollection = () => {
                </p>
                {filterState.lessThanRs300 && (
                   <span onClick={() => handleCross('lessThanRs300')}>
-                     <RxCross1 className="pt-2 text-xl"/>
+                     <RxCross1 className="p-1 sm:p-0 sm:pt-2 text-xl"/>
                   </span>
                )}
             </button>
