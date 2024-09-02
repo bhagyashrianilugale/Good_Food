@@ -33,16 +33,15 @@ const ItemCard =({ item, restaurants }) =>{
 
 return(
         <>
-        {}
-          <div className="border-grey-200 border-b-2 text-left flex justify-between">
+         <div className="border-grey-200 border-b-2 text-left flex justify-between">
                             <div>
                                   <div className="sm:p-1 md:mx-10 mx-1 sm:mx-8 bg-white w-[16%] sm:w-[12%] md:w-[6%] 
                                                                 h-8 md:h-9 -mt-0 absolute text-green-600 z-10 rounded-lg sm:rounded-xl shadow-lg shadow-zinc-500">
                                                   {items?.filter(
                                                    (itm) => (itm[0]?.card?.info?.id == item?.card?.info?.id)
                                                        ).length == 0
-                                                        ? <b className="px-4 sm:px-5 md:py-1 font-medium" onClick = {(e)=> handleCount(e, item) } >ADD</b>
-                                                        :  (<span className="px-1 text-xs sm:text-xl">
+                                                        ? <b className="px-3 sm:px-5 md:py-1 text-xs sm:text-lg font-medium" onClick = {(e)=> handleCount(e, item) } >ADD</b>
+                                                        :  (<span className="sm:px-1 text-xs sm:text-xl">
                                                                <b className="px-2" onClick = {(e)=> handleCount(e, item) }>-</b>
                                                                 {items.map((itm, index)=>(itm[0]?.card?.info?.id == item?.card?.info?.id 
                                                                                          ?<b key={ index } >{itm[1]}</b>
@@ -50,7 +49,7 @@ return(
                                                                                    
                                                                 )}
                                                                <b className="px-2" onClick={(e)=> handleCount(e, item) }>+</b>
-                                                            </span>
+                                                      </span>
                                                   )}
                                     </div>
                                     <img 
@@ -66,7 +65,7 @@ return(
                                                     ? <BsRecordCircle className="text-green-700 inline text-center m-1"/> 
                                                     : <IoCaretUpCircleOutline  className=" text-red-700 inline text-center m-1" />
                                                  }
-                                                <p className="truncate text-sm sm:text-lg inline text-orange-400 font-semibold">
+                                                <p className="truncate mx-2 w-6 text-sm sm:text-lg inline text-orange-400 font-semibold">
                                                    { item?.card.info.name }
                                                 </p>
                                                </span>&nbsp;
@@ -75,7 +74,7 @@ return(
                                                 : (item?.card.info.defaultPrice)/100 }
                                               </span>
                                               <hr className="w-40 sm:w-60 md:w-80 h-0.5 text-center mt-4 bg-black"/>
-                                             <p className="text-xs sm:text-sm  line-clamp-2 mx-4 md:line-clamp-4">{ item?.card.info.description }</p>
+                                      <p className="text-xs sm:text-sm  line-clamp-2 mx-4 md:line-clamp-4">{ item?.card.info.description }</p>
                                </div>
                           </div>
                   </div>
