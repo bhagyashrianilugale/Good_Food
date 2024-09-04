@@ -40,8 +40,8 @@ return(
                                                   {items?.filter(
                                                    (itm) => (itm[0]?.card?.info?.id == item?.card?.info?.id)
                                                        ).length == 0
-                                                        ? <b className="px-3 sm:px-5 md:py-1 text-xs sm:text-lg font-medium" onClick = {(e)=> handleCount(e, item) } >ADD</b>
-                                                        :  (<span className="sm:px-1 text-xs sm:text-xl">
+                                                        ? <b className="px-3 sm:px-3 md:py-1 text-xs sm:text-lg font-medium" onClick = {(e)=> handleCount(e, item) } >ADD</b>
+                                                        :  (<span className="text-xs sm:text-xl">
                                                                <b className="px-2" onClick = {(e)=> handleCount(e, item) }>-</b>
                                                                 {items.map((itm, index)=>(itm[0]?.card?.info?.id == item?.card?.info?.id 
                                                                                          ?<b key={ index } >{itm[1]}</b>

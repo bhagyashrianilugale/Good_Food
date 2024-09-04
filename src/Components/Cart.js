@@ -54,16 +54,14 @@ const Cart = () => {
     }, [items]);
 
     return ( 
-        <div className="mt-[32%] sm:my-[20%] md:mt-[10%]">
-             <div>
-                 {items?.length !== 0 ? (
-                    <div className="mx-auto w-11/12 sm:w-10/12 md:w-6/12 p-8
-                                    sm:shadow-lg md:shadow-lg lg:shadow-lg text-gray-800 rounded-lg 
-                                  md:shadow-black">
-                        <h1 className="text-center text-2xl lg:text-4xl mx-20 my-4 top-0 lg:my-0 font-bold">Cart</h1>
-                        <div className="flex justify-between m-auto">
+        <div className="mt-[32%] sm:my-[20%] md:mt-[10%] p-4">
+                <div>
+                  {items?.length !== 0 ? (
+                    <div className="mx-auto w-11/12 md:w-6/12 text-gray-800 rounded-lg bg-white">
+
+                        <div className="m-auto">
                             <Link to={"/restaurants/" + resId}><img
-                                className="rounded-lg w-40 lg:w-[40%] h-20 lg:h-[70%] lg:p-0"
+                                className="rounded-sm w-[100%] h-40 p-0 enhanced-image"
                                 src={
                                     restaurant?.cloudinaryImageId
                                         ? CDN_URL + restaurant?.cloudinaryImageId
@@ -71,17 +69,12 @@ const Cart = () => {
                                 }
                                 alt="Restaurant_img"
                             /></Link>
-                            <div className="my-2 lg:my-0 px-6 lg:px-2 lg:p-0">
-                                <h2 className="text-xl lg:text-2xl font-bold">{restaurant?.name}</h2>
-                                <p className="text-gray-500 text-sm border"> 
-                                     <MdOutlineLocationCity className="inline text-cyan-700 mx-2"/>
-                                     {restaurant?.city}
-                                </p>
-                            </div>
+                          <i className="text-xl block mx-auto sm:text-2xl my-2 text-center font-bold">{restaurant?.name}</i>
                         </div>
+                        <hr className="bg-orange-500 h-1"/>
                         <div className="text-gray-800 py-2 text-left">
                             {items?.map((item, index) => (
-                                <div key={index} className="flex items-center mx-0 lg:mx-16 my-1">
+                                <div key={index} className="flex items-center mx-0 sm:mx-16 my-1">
                                     <span className="mx-2">
                                         {item[0]?.card?.info?.itemAttribute?.vegClassifier === "VEG" ? (
                                             <BsRecordCircle className="text-green-700 inline" />
@@ -89,23 +82,23 @@ const Cart = () => {
                                             <IoCaretUpCircleOutline className="text-red-700 inline" />
                                         )}
                                     </span>
-                                    <span className="w-60 text-sm truncate lg:text-lg mx-2 lg:mx-4">{item[0]?.card?.info?.name}</span>
-                                    <div className="bg-white shadow-lg w-80 sm:w-20  md:w-20 lg:w-20 shadow-zinc-500 text-center mx-4 h-8 
-                                                   text-green-600 rounded-2xl">
-                                        <button
-                                            className="font-bold mx-2 my-1"
+                                    <span className="w-full sm:w-60 text-sm truncate">{item[0]?.card?.info?.name}</span>
+                                    <button className="bg-white shadow-lg w-40 sm:w-20 px-2 shadow-zinc-500 text-center mx-4 h-8 
+                                                   text-green-600 rounded-2xl text-bold">
+                                        <b
+                                            className="px-2"
                                             onClick={(e) => handleCount(e, item[0])}
                                         >
                                             -
-                                        </button>
-                                        <span className="text-lg lg:text-xl">{item[1]}</span>
-                                        <button
-                                            className="font-bold mx-2 my-1"
+                                        </b>
+                                        <b>{item[1]}</b>
+                                        <b
+                                            className="px-2"
                                             onClick={(e) => handleCount(e, item[0])}
                                         >
                                             +
-                                        </button>
-                                    </div>
+                                        </b>
+                                    </button>
                                     <div className="w-20 text-right mx-8">
                                         ₹
                                         {item[0]?.card?.info?.price
@@ -118,16 +111,17 @@ const Cart = () => {
                         <div className="h-10 w-80 bg-gray-100 m-auto">
                               <RiDoubleQuotesL className="inline m-auto mx-1"/>
                               <input placeholder="Any suggestions? We will pass it on..." 
-                              className="text-sm lg:text-lg text-center m-auto h-10 w-60 outline-none bg-gray-100"/> 
+                              className="text-sm text-center m-auto h-10 w-60 outline-none bg-gray-100"/> 
                         </div>
                         <div className="flex justify-center my-2">
                             <button
-                                className="bg-white shadow-lg mx-10 w-40 text-center text-lg font-bold h-10 text-orange-500 rounded-lg shadow-zinc-500"
+                                className="bg-white shadow-lg mx-10 w-40 text-center text-sm sm:text-lg font-bold h-10 text-orange-500 
+                                             rounded-sm shadow-zinc-500"
                                 onClick={handleClearCart}>
                                 Clear cart
                             </button>
                         </div>
-                        <div className="border border-gray-300">
+                        <div className="border border-gray-300 m-4">
                             <div className="flex items-center p-4">
                                 <input
                                     id="checked-checkbox"
@@ -139,10 +133,10 @@ const Cart = () => {
                                 {!changeText ? (
                                     <label
                                         htmlFor="checked-checkbox"
-                                        className="text-sm lg:text-lg"
+                                        className="text-sm"
                                     >
                                        <b>Opt in for No-contact Delivery</b> <br />
-                                        <span className="text-zinc-400">Unwell, or avoiding contact? Please select no-contact 
+                                        <span className="text-zinc-400 text-sm">Unwell, or avoiding contact? Please select no-contact 
                                               delivery. Partner will safely place the order outside 
                                               your door (not for COD)
                                         </span>
@@ -150,7 +144,7 @@ const Cart = () => {
                                 ) : (
                                     <label
                                         htmlFor="checked-checkbox"
-                                        className="text-sm lg:text-lg"
+                                        className="text-sm"
                                     >
                                         <b>Opt in for No-contact Delivery</b> <br />
                                          <span  className="text-zinc-400">Our delivery partner will call to confirm. 
@@ -160,7 +154,7 @@ const Cart = () => {
                                 )}
                             </div>
                         </div>
-                        <div className="border-t border-gray-300 pt-4 mt-4 text-sm lg:text-lg m-auto">
+                        <div className="border-t border-gray-300 pt-4 mt-4 text-sm m-4">
                             <div className="grid grid-cols-2 gap-2 text-gray-800">
                                 <span className="col-span-2 font-semibold text-lg">Bill Details</span>
                                 <span>Item Total</span>
@@ -187,16 +181,16 @@ const Cart = () => {
                         <hr  className="my-2 w-full bg-gray-900 h-0.5 m-auto"/>
                         <div className="flex justify-between w-full">
                           { !isLogged ? <button 
-                                           className="bg-white shadow-lg mx-10 w-40 my-2 text-center text-lg font-bold 
-                                                 h-10 text-orange-500 rounded-lg shadow-zinc-500">
+                                           className="bg-white shadow-lg mx-4 sm:mx-10 w-20 sm:w-40 my-2 text-center  text-sm sm:text-lg  font-bold 
+                                                 h-10 text-orange-500 rounded-sm shadow-zinc-500">
                                             <Link to="/login">TO PAY</Link>
                                           </button>
                                       : <button onClick={()=>toast.success("Paymenet successful!")} 
-                                          className="bg-white shadow-lg mx-0 lg:mx-10 w-40 my-2 text-center text-lg font-bold 
-                                                  h-10 text-orange-500 rounded-lg shadow-zinc-500">
+                                          className="bg-white shadow-lg mx-0 w-20 sm:w-30 my-2 text-center text-sm sm:text-lg font-bold 
+                                                  h-10 text-orange-500 rounded-sm shadow-zinc-500">
                                           TO PAY
                                         </button>}
-                                   <p className="font-extrabold text-lg my-2">
+                                   <p className="font-extrabold text-sm sm:text-lg my-2">
                                     ₹{" "}
                                     {Math.floor(totalPrice) +
                                         (restaurant.feeDetails.amount / 100
@@ -210,12 +204,12 @@ const Cart = () => {
                       </div>
                     </div>
                 ) : (
-                    <div className="text-center py-16 lg:p-0 my-10">
+                    <div className="text-center py-16 my-10">
                         <img src={EMPTY_CART_IMG} className="h-60 w-80 m-auto" alt="Empty Cart" />
                         <p className="text-lg font-bold opacity-80">Your cart is empty</p>
                         <p className="text-sm opacity-80">You can go to home page to view more restaurants</p>
                         <Link to={"/"}>
-                            <button className="p-2 rounded-lg font-semibold bg-orange-500 text-white my-2 hover:bg-orange-600">
+                            <button className="p-2 rounded-sm font-semibold bg-orange-500 text-white my-2 hover:bg-orange-600">
                                 SEE RESTAURANTS NEAR YOU
                             </button>
                         </Link>
