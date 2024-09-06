@@ -17,7 +17,7 @@ export const RestaurantCard = (props)=>{
       } = restauList?.info;
 
    return(
-       <div className="w-[260px] h-80 mx-10 md:mx-3 my-4 shadow-xs rounded-lg hover:translate-x-4 bg-white 
+       <div className="w-[260px] h-80 mx-5 md:mx-10 my-4 shadow-xs rounded-lg hover:translate-x-4 bg-white 
                         duration-500">
                <div>
                   <img src={(CDN_URL+cloudinaryImageId)||(DEFAULT_RESTAURANT_IMG)} 

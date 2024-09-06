@@ -62,7 +62,7 @@ const Body = () => {
                           <h1 className="font-bold mx-0 md:mx-6 text-center text-sm sm:text-2xl md:text-4xl pt-[20%]">
                               Best <i className="text-orange-500"> food</i> for your taste
                           </h1>
-                          <i className="font-bold text-sm sm:text-xl md:text-2xl mx-0 md:mx-[16%] underline">&quot; Choose, Order & TakeOut &quot;</i>
+                          <i className="font-bold text-lg md:text-2xl md:mx-[16%] underline">&quot; Choose, Order & TakeOut &quot;</i>
                     </div>
                </div>
                <div className="w-full md:w-11/12 m-auto">
@@ -160,8 +160,7 @@ const Body = () => {
                          Top restaurants chain for you<br/>
                            <i className="text-orange-500 underline">&quot; Healthy food for busy people &quot;</i>
                     </h1>
-                   {/* <h1 className="font-bold text-xl sm:text-2xl md:text-3xl w-10/12 ml-4 sm:w-full md:w-10/12">
-                              Top restaurant chains in for you</h1> */}
+                  
                     <Toprestaurantchain />
                 </div>
             </div>
