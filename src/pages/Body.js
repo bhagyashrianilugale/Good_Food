@@ -10,8 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Shimmer from "../Components/Shimmer";
 import Search from "../Components/Search";
 import { RxCross1 } from "react-icons/rx";
-import { IoIosArrowDroprightCircle } from "react-icons/io";
-import { IoIosArrowDropleftCircle } from "react-icons/io";
 const SWIGGY_URL =  process.env.REACT_APP_SWIGGY_URL;
 
 const Body = () => {
@@ -58,21 +56,19 @@ const Body = () => {
 
     return listOfRestaurant?.length ? (
         <>
-          <div className="px-4 w-full my-8 h-80 -mb-16
-                               rounded-b-3xl mt-[6%] hidden md:block sm:hidden hero_section">
-                    <div className="h-60 w-[40%] mx-[60%] mt-10 opacity-95">
-                          <h1 className="font-bold mx-6 text-center text-4xl pt-[20%]">
+          <div className="px-4 sm:w-full my-8 sm:h-80 -mb-16
+                               rounded-b-3xl mt-[6%] hero_section">
+                    <div className="h-40 sm:h-60 w-[40%] mx-[60%] mt-20 md:mt-10 opacity-95">
+                          <h1 className="font-bold mx-0 md:mx-6 text-center text-sm sm:text-2xl md:text-4xl pt-[20%]">
                               Best <i className="text-orange-500"> food</i> for your taste
                           </h1>
-                          <i className="font-bold text-2xl mx-[16%] underline">&quot; Choose, Order & TakeOut &quot;</i>
+                          <i className="font-bold text-sm sm:text-xl md:text-2xl mx-0 md:mx-[16%] underline">&quot; Choose, Order & TakeOut &quot;</i>
                     </div>
                </div>
                <div className="w-full md:w-11/12 m-auto">
                    {/**Mind Items Section */}
-                   {/* <IoIosArrowDropleftCircle 
-                              className="w-5 h-5 text-orange-500 z-50"
-                              onClick={()=>(this.scrollLeft +=100)}/> */}
-                   <div className="flex mx-12 mt-[40%] sm:mt-[20%] md:mt-0">
+                   
+                   <div className="flex mx-12 mt-[15%] sm:mt-[3%] md:mt-0">
                          <div className="flex overflow-x-scroll no-scrollbar">
                            { mindItem?.map((item, index) => (
                              <Mind key={index} imageId={item.imageId} 
@@ -81,10 +77,7 @@ const Body = () => {
                             ))}
                          </div>
                    </div>
-                 {/* <IoIosArrowDroprightCircle 
-                              className="w-5 h-5 text-orange-500 z-50"
-                              onClick={()=>(this.scrollRight +=100)}/>
-            */}
+                 
                 {/**Restaurants with online food delivery Section */}
                 <h1 className="font-bold text-xl text-center sm:text-2xl md:my-8 md:mx-4 py-8 ml-4">
                            Restaurants with online food delivery<br/>
