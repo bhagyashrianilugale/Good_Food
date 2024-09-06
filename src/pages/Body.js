@@ -62,7 +62,7 @@ const Body = () => {
                           <h1 className="font-bold mx-0 md:mx-6 text-center text-sm sm:text-2xl md:text-4xl pt-[20%]">
                               Best <i className="text-orange-500"> food</i> for your taste
                           </h1>
-                          <i className="font-bold text-lg md:text-2xl md:mx-[16%] underline">&quot; Choose, Order & TakeOut &quot;</i>
+                          <i className="font-bold text-sm sm:text-lg md:text-2xl md:mx-[16%] underline">&quot; Choose, Order & TakeOut &quot;</i>
                     </div>
                </div>
                <div className="w-full md:w-11/12 m-auto">
@@ -86,7 +86,7 @@ const Body = () => {
                 <div className="flex">
                     <div className="flex text-xs sm:text-lg sm:justify-evenly w-full overflow-y-hidden overflow-x-scroll no-scrollbar">
                       <Search />
-                          <button className="rounded-xl h-8 py-1 sm:py-0 sm:px-2 bg-white shadow-sm border-2 border-black flex">
+                          <button className="rounded-xl w-30 h-8 py-1 sm:py-0 sm:px-2 bg-white shadow-sm border-2 border-black flex">
                             <p
                                 className="px-1"
                                 onClick={() => handleFilter('price300to600', (itemInfo) => 300 < itemInfo?.info?.costForTwo?.slice(1, 4) < 600)}

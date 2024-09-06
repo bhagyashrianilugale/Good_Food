@@ -33,14 +33,14 @@ const ItemCard =({ item, restaurants }) =>{
 
 return(
         <>
-         <div className="border-grey-200 border-b-2 text-left flex justify-between">
+         <div className="border-grey-200 border-b-2 text-left flex">
                             <div>
-                                  <div className="sm:p-1 md:mx-10 mx-1 sm:mx-8 bg-white w-[16%] sm:w-[12%] md:w-[6%] 
+                                  <div className="sm:p-1 md:mx-10 mx-4 sm:mx-8 bg-white w-[16%] sm:w-[12%] md:w-[6%] 
                                                                 h-8 md:h-9 -mt-0 absolute text-green-600 z-10 rounded-lg sm:rounded-xl shadow-lg shadow-zinc-500">
                                                   {items?.filter(
                                                    (itm) => (itm[0]?.card?.info?.id == item?.card?.info?.id)
                                                        ).length == 0
-                                                        ? <b className="px-3 sm:px-3 md:py-1 text-xs sm:text-lg font-medium" onClick = {(e)=> handleCount(e, item) } >ADD</b>
+                                                        ? <b className="px-3 sm:px-4 md:py-1 text-xs sm:text-lg font-medium" onClick = {(e)=> handleCount(e, item) } >ADD</b>
                                                         :  (<span className="text-xs sm:text-xl">
                                                                <b className="px-2" onClick = {(e)=> handleCount(e, item) }>-</b>
                                                                 {items.map((itm, index)=>(itm[0]?.card?.info?.id == item?.card?.info?.id 
@@ -58,14 +58,14 @@ return(
                                       alt="item_card_img"/>
                             
                              </div>
-                             <div className="w-9/12">
+                             <div className="w-6/12">
                              <div className="py-2 px-2 md:px-4">
                                               <span>
                                                  { item?.card?.info?.itemAttribute?.vegClassifier == 'VEG' 
                                                     ? <BsRecordCircle className="text-green-700 inline text-center m-1"/> 
                                                     : <IoCaretUpCircleOutline  className=" text-red-700 inline text-center m-1" />
                                                  }
-                                                <p className="truncate mx-2 w-6 text-sm sm:text-lg inline text-orange-400 font-semibold">
+                                                <p className="truncate w-4 text-sm sm:text-lg inline text-orange-400 font-semibold">
                                                    { item?.card.info.name }
                                                 </p>
                                                </span>&nbsp;
