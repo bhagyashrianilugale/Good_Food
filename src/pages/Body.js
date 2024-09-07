@@ -58,17 +58,17 @@ const Body = () => {
         <>
           <div className="px-4 sm:w-full my-8 sm:h-80 -mb-16
                                rounded-b-3xl mt-[6%] hero_section">
-                    <div className="h-40 sm:h-60 w-[40%] mx-[60%] mt-20 md:mt-10 opacity-95">
+                    <div className="h-40 sm:h-60 w-[70%] md:w-[40%] mx-[40%] md:mx-[60%] mt-10 opacity-95">
                           <h1 className="font-bold mx-0 md:mx-6 text-center text-sm sm:text-2xl md:text-4xl pt-[20%]">
                               Best <i className="text-orange-500"> food</i> for your taste
                           </h1>
-                          <i className="font-bold text-sm sm:text-lg md:text-2xl md:mx-[16%] underline">&quot; Choose, Order & TakeOut &quot;</i>
+                          <i className="font-bold text-sm sm:text-lg md:text-2xl sm:px-[20%] md:px-0 md:mx-[16%] underline">&quot; Choose, Order & TakeOut &quot;</i>
                     </div>
                </div>
                <div className="w-full md:w-11/12 m-auto">
                    {/**Mind Items Section */}
                    
-                   <div className="flex mx-12 mt-[15%] sm:mt-[3%] md:mt-0">
+                   <div className="flex mx-14 mt-[15%] sm:mt-[3%] md:mt-0">
                          <div className="flex overflow-x-scroll no-scrollbar">
                            { mindItem?.map((item, index) => (
                              <Mind key={index} imageId={item.imageId} 
@@ -84,7 +84,7 @@ const Body = () => {
                            <i className="text-orange-500 underline">&quot; Freshness in every bite &quot;</i>
                 </h1>
                 <div className="flex">
-                    <div className="flex text-xs sm:text-lg sm:justify-evenly w-full overflow-y-hidden overflow-x-scroll no-scrollbar">
+                    <div className="flex-none md:flex text-xs sm:text-lg sm:justify-evenly">
                       <Search />
                           <button className="rounded-xl w-30 h-8 py-1 sm:py-0 sm:px-2 bg-white shadow-sm border-2 border-black flex">
                             <p
@@ -139,7 +139,7 @@ const Body = () => {
                             </p>
                             {activeFilters.highRatings && <span onClick={() => handleCross('highRatings')}>
                                      <RxCross1 className="p-1 sm:p-0 sm:pt-2 text-xl" /></span>}
-                        </button>
+                          </button>
                     </div>
                 </div>
 
