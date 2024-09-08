@@ -84,9 +84,9 @@ const Body = () => {
                            <i className="text-orange-500 underline">&quot; Freshness in every bite &quot;</i>
                 </h1>
                 <div className="flex">
-                    <div className="flex-none md:flex text-xs sm:text-lg sm:justify-evenly">
-                      <Search />
-                          <button className="rounded-xl w-30 h-8 py-1 sm:py-0 sm:px-2 bg-white shadow-sm border-2 border-black flex">
+                    <div className="flex-none w-full overflow-x-scroll no-scrollbar sm:flex text-xs md:text-lg sm:justify-evenly">
+                          <Search />
+                          <button className="rounded-xl mx-[30%] my-2 sm:m-0 w-30 h-8 py-1 sm:py-0 px-2 bg-white shadow-sm border-2 border-black flex">
                             <p
                                 className="px-1"
                                 onClick={() => handleFilter('price300to600', (itemInfo) => 300 < itemInfo?.info?.costForTwo?.slice(1, 4) < 600)}
@@ -97,7 +97,7 @@ const Body = () => {
                                      <RxCross1 className="p-1 sm:p-0 sm:pt-2 text-xl" /></span>}
                         </button>
 
-                        <button className="rounded-xl h-8 py-1 sm:py-0 sm:px-2 bg-white shadow-sm border-2 border-black flex">
+                        <button className="rounded-xl h-8 py-1 mx-[30%] my-2 sm:m-0  sm:py-0 px-2 bg-white shadow-sm border-2 border-black flex">
                             <p
                                 className="sm:px-1"
                                 onClick={() => handleFilter('lessThan300', (itemInfo) => itemInfo?.info?.costForTwo?.slice(1, 4) < 300)}
@@ -108,7 +108,7 @@ const Body = () => {
                                      <RxCross1 className="p-1 sm:p-0 sm:pt-2 text-xl"/></span>}
                         </button>
 
-                        <button className="rounded-xl h-8 py-1 sm:py-0 sm:px-2 bg-white shadow-sm border-2 border-black flex">
+                        <button className="rounded-xl h-8 py-1 mx-[30%] my-2 sm:m-0  sm:py-0 px-2 bg-white shadow-sm border-2 border-black flex">
                             <p
                                 className="sm:px-1"
                                 onClick={() => handleFilter('fastDelivery', (itemInfo) => itemInfo?.info?.sla?.deliveryTime < 35)}
@@ -119,7 +119,7 @@ const Body = () => {
                                       <RxCross1 className="p-1 sm:p-0 sm:pt-2  text-xl" /></span>}
                         </button>
 
-                        <button className="rounded-xl h-8 py-1 sm:py-0 sm:px-2 bg-white shadow-sm border-2 border-black flex">
+                        <button className="rounded-xl h-8 py-1 mx-[30%] my-2 sm:m-0  sm:py-0 px-2 bg-white shadow-sm border-2 border-black flex">
                             <p
                                 className="sm:px-1"
                                 onClick={() => handleFilter('hotOffers', (itemInfo) =>itemInfo?.info?.aggregatedDiscountInfoV3?.header?.slice(0,2) > 20)}
@@ -130,7 +130,7 @@ const Body = () => {
                                        <RxCross1 className="p-1 sm:p-0 sm:pt-2 text-xl" /></span>}
                         </button>
 
-                        <button className="rounded-xl h-8 py-1 sm:py-0 sm:px-2 bg-white shadow-sm border-2 border-black flex">
+                        <button className="rounded-xl h-8 py-1 mx-[30%] my-2 sm:m-0  sm:py-0 px-2 bg-white shadow-sm border-2 border-black flex">
                             <p
                                 className="sm:px-1"
                                 onClick={() => handleFilter('highRatings', (itemInfo) => 4.0 < itemInfo?.info?.avgRating)}
