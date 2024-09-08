@@ -62,7 +62,7 @@ const Body = () => {
                           <h1 className="font-bold mx-0 md:mx-6 text-center text-sm sm:text-2xl md:text-4xl pt-[20%]">
                               Best <i className="text-orange-500"> food</i> for your taste
                           </h1>
-                          <i className="font-bold text-sm sm:text-lg md:text-2xl sm:px-[20%] md:px-0 md:mx-[16%] underline">&quot; Choose, Order & TakeOut &quot;</i>
+                          <i className="font-bold text-sm sm:text-lg md:text-2xl mx-6 sm:px-[20%] md:px-0 md:mx-[16%] underline">&quot; Choose, Order & TakeOut &quot;</i>
                     </div>
                </div>
                <div className="w-full md:w-11/12 m-auto">
