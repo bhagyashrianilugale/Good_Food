@@ -13,7 +13,7 @@ import { RxCross1 } from "react-icons/rx";
 const SWIGGY_URL =  process.env.REACT_APP_SWIGGY_URL;
 
 const Body = () => {
-    // frist commit
+    // second commit
     const dispatch = useDispatch();
     const { listOfRestaurant, filteredRestaurant } = useSelector((store) => store.restaurant);
     const mindItem = useSelector((store) => store.restaurant.mindItems);
