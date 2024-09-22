@@ -70,10 +70,10 @@ const submitForm =(e)=>{
                                                 required/>
                                                 <br/>
                                          <textarea 
-                                                   className="px-4 py-2 mt-4 rounded-md focus:outline-none"
+                                                   className="px-6 py-2 mt-4 rounded-md focus:outline-none"
                                                    name="message" 
                                                    placeholder="Your Message" 
-                                                   cols="32" rows="4"></textarea>
+                                                   cols="36" rows="4"></textarea>
                                                 <br/>
                                          <button type="submit"className="px-6 py-2 mt-4 text-white bg-orange-500 rounded-md hover:bg-orange-700 focus:outline-none">Submit</button>
                                    </form>

@@ -65,10 +65,10 @@ return(
                                                     ? <BsRecordCircle className="text-green-700 inline text-center m-1"/> 
                                                     : <IoCaretUpCircleOutline  className=" text-red-700 inline text-center m-1" />
                                                  }
-                                                <p className="line-clamp-1 w-4 text-sm inline text-orange-400 font-semibold">
+                                                <p className="truncate w-4 text-sm sm:text-lg inline text-orange-400 font-semibold">
                                                    { item?.card.info.name }
-                                                </p>&nbsp;
-                                               </span>&nbsp;&nbsp;
+                                                </p>
+                                               </span>&nbsp;
                                                <span className="m-auto">&#8377;{ item?.card.info.price  
                                                 ? (item?.card.info.price)/100 
                                                 : (item?.card.info.defaultPrice)/100 }
