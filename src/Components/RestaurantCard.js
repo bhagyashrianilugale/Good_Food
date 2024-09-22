@@ -23,9 +23,7 @@ export const RestaurantCard = (props)=>{
                   <img src={(CDN_URL+cloudinaryImageId)||(DEFAULT_RESTAURANT_IMG)} 
                    alt="cart-img" 
                    className="rounded-t-lg h-40 w-full shadow-lg shadow-zinc-400 relative"></img>
-                   {/* <p className="font-bold text-xl md:text-3xl text-white
-                                 absolute px-2 bg-gradient-to-t from-black w-full rounded-xl">
-                                    {restauList?.info?.aggregatedDiscountInfoV3?.header}</p> */}
+                   
                </div>
               <div className="p-2">
                  <h3 className="text-lg md:text-lg truncate font-bold font-serif">
