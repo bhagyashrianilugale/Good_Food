@@ -5,6 +5,7 @@ import { BsRecordCircle } from "react-icons/bs";
 import { IoCaretUpCircleOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { RiDoubleQuotesL } from "react-icons/ri";
+import { MdOutlineLocationCity } from "react-icons/md";
 import { DEFAULT_RESTAURANT_IMG } from "../utils/constant";
 import { EMPTY_CART_IMG } from "../utils/constant";
 import { toast } from "react-toastify";
