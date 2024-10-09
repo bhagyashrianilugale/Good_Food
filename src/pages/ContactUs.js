@@ -77,7 +77,7 @@ const submitForm =(e)=>{
                                                 <br/>
                                          <button type="submit"className="px-6 py-2 mt-4 text-white bg-orange-500 rounded-md hover:bg-orange-700 focus:outline-none">Submit</button>
                                    </form>
-                        <span id="msg" ref={msg}></span>
+                        <span id="msg" ref={ msg }></span>
                 </div>
            </div>
         </div>

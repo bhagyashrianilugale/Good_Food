@@ -26,7 +26,7 @@ const About = () => {
                         <img 
                             src={require("../assets/Delivery-boy.jpg")}                            
                             className="w-40 sm:w-40 mx-4 sm:mx-20 md:w-60 md:mx-40 cursor-pointer transform 
-                                     transition-transform duration-500 -scale-x-[-1] hover:translate-x-20"
+                                     transition-transform duration-500 hover:translate-x-20"
                         />
                 </div>
                <div className="p-4 sm:m-auto w-[90%] sm:w-[50%] text-center">

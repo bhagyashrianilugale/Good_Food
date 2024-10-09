@@ -56,7 +56,7 @@ const appRouter  = createBrowserRouter([
          },
          {
             path:"/contact",
-            element: <ContactUs/>
+            element: <Suspense fallback={<h1>Loading...</h1>}><ContactUs/></Suspense> 
          },
          {
             path:"/restaurants/:resId",

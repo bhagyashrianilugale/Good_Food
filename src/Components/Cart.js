@@ -5,7 +5,6 @@ import { BsRecordCircle } from "react-icons/bs";
 import { IoCaretUpCircleOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { RiDoubleQuotesL } from "react-icons/ri";
-import { MdOutlineLocationCity } from "react-icons/md";
 import { DEFAULT_RESTAURANT_IMG } from "../utils/constant";
 import { EMPTY_CART_IMG } from "../utils/constant";
 import { toast } from "react-toastify";
@@ -73,7 +72,7 @@ const Cart = () => {
                         </div>
                         <hr className="bg-orange-500 h-1"/>
                         <div className="text-gray-800 py-2 text-left">
-                            {items?.map((item, index) => (
+                            { items?.map((item, index) => (
                                 <div key={index} className="flex items-center mx-0 sm:mx-16 my-1">
                                     <span className="mx-2">
                                         {item[0]?.card?.info?.itemAttribute?.vegClassifier === "VEG" ? (
@@ -135,7 +134,7 @@ const Cart = () => {
                                         htmlFor="checked-checkbox"
                                         className="text-sm"
                                     >
-                                       <b>Opt in for No-contact Delivery</b> <br />
+                                       <b>Opt in for No-contact Delivery</b><br />
                                         <span className="text-zinc-400 text-sm">Unwell, or avoiding contact? Please select no-contact 
                                               delivery. Partner will safely place the order outside 
                                               your door (not for COD)

@@ -34,7 +34,7 @@ const Search = () => {
                                                      return res;
                                             }
                                            });
-                                 filtered?.length ? dispatch(addfilteredRestaurants(filtered)) :  dispatch(addfilteredRestaurants(listOfRestaurant));
+                                 filtered?.length ? dispatch(addfilteredRestaurants(filtered)) : dispatch(addfilteredRestaurants(listOfRestaurant));
                              dispatch(removeSearchText(""));
                       }}>
                       <IoSearchOutline />{" "}
